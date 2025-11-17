@@ -5,15 +5,17 @@ with lib;
 	imports = [];
 	
 	options = {
-		userNames = mkOption {
-			type = types.listOf types.str;
-			default = [];
-			example = [ "user1" "user2" ];
-			description = "List of user-names to create on the system";
+		myUsers = {
+			names = mkOption {
+				type = types.listOf types.str;
+				default = [];
+				example = [ "user1" "user2" ];
+				description = "List of user-names to create on the system";
+			};
 		};
 	};
 
-	config = mkIf (length (config.userNames or []) > 0) {
+	config = mkIf (config.myUsers.names != null || config.myUsers.names != []) {
 		users = {
 			# Set password manually after login using passwd
 			# There were some issues with managing the password with nix which is why this approach is the most straightforward
@@ -35,7 +37,7 @@ with lib;
 					];
 					packages = [];
 				};
-			}) config.userNames);
+			}) config.myUsers.names);
 		};
 	};
 }

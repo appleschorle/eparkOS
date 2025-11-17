@@ -4,46 +4,24 @@ let
 	flakeRootPath = ../../../.;
 in
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-	"${flakeRootPath}/modules/users.nix"
-    ];
+	imports = [
+		./hardware-configuration.nix
+		"${flakeRootPath}/modules/configuration/users.nix"
+		"${flakeRootPath}/modules/configuration/networking.nix"
+	];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+	# Use the systemd-boot EFI boot loader.
+	boot.loader.systemd-boot.enable = true;
+	boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "eugene-laptop";
-  networking.networkmanager.enable = true;
+	myUsers.names = [ "epark" ];
+	myNetwork.hostName = "eugene-laptop";
 
-  time.timeZone = "Europe/Stockholm";
+	time.timeZone = "Europe/Stockholm";
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Select internationalisation properties.
-  # i18n.defaultLocale = "en_US.UTF-8";
-  # console = {
-  #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
-  #   useXkbConfig = true; # use xkb.options in tty.
-  # };
-
-  # Enable the X11 windowing system.
-  # services.xserver.enable = true;
-
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   
-
-  # Configure keymap in X11
-  # services.xserver.xkb.layout = "us";
-  # services.xserver.xkb.options = "eurosign:e,caps:escape";
-
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
 
   # Enable sound.
   # services.pulseaudio.enable = true;
@@ -55,20 +33,6 @@ in
 
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
-
-	userNames = [ "epark" ];
-
-  # users.mutableUsers = true;
-  #
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  # users.users.epark = {
-  #   isNormalUser = true;
-  #   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-  #   packages = with pkgs; [
-  #     tree
-  #   ];
-  # };
-
 
   programs.firefox.enable = true;
 
