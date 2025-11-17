@@ -1,9 +1,13 @@
 { pkgs, inputs, config, ... }:
 
+let
+	flakeRootPath = ../../../.;
+in
 {
   imports =
     [
       ./hardware-configuration.nix
+	"${flakeRootPath}/modules/users.nix"
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -52,17 +56,18 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
+	userNames = [ "epark" ];
 
-  users.mutableUsers = true;
-
+  # users.mutableUsers = true;
+  #
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.epark = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      tree
-    ];
-  };
+  # users.users.epark = {
+  #   isNormalUser = true;
+  #   extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+  #   packages = with pkgs; [
+  #     tree
+  #   ];
+  # };
 
 
   programs.firefox.enable = true;
