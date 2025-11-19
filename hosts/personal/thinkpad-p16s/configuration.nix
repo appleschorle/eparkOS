@@ -4,12 +4,13 @@ let
 	flakeRootPath = ../../../.;
 in
 {
+	# TODO: Refactor file further and check home-manager, rofi, nvim configuration, wallpapers, lazygit, waybar, etc.
 	imports = [
 		./hardware-configuration.nix
-		"${flakeRootPath}/modules/configuration/users.nix"
-		"${flakeRootPath}/modules/configuration/networking.nix"
-		"${flakeRootPath}/modules/configuration/boot-loader.nix"
-		"${flakeRootPath}/modules/configuration/audio.nix"
+		"${flakeRootPath}/modules/nixos/users.nix"
+		"${flakeRootPath}/modules/nixos/networking.nix"
+		"${flakeRootPath}/modules/nixos/boot-loader.nix"
+		"${flakeRootPath}/modules/nixos/audio.nix"
 	];
 
 	myBootLoader.enable = true;
@@ -24,8 +25,8 @@ in
 	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
+	# Enable touchpad support (enabled default in most desktopManager).
+	services.libinput.enable = true;
 
   programs.firefox.enable = true;
 
@@ -64,5 +65,4 @@ in
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
-  
 }
