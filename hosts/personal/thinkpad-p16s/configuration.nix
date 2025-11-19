@@ -1,8 +1,5 @@
-{ pkgs, inputs, config, ... }:
+{ pkgs, inputs, config, flakeRootPath, ... }:
 
-let
-	flakeRootPath = ../../../.;
-in
 {
 	# TODO: Refactor file further and check home-manager, rofi, nvim configuration, wallpapers, lazygit, waybar, etc.
 	imports = [
@@ -55,10 +52,10 @@ in
     };
   };
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
+  # programs.neovim = {
+  #   enable = true;
+  #   defaultEditor = true;
+  # };
 
   programs.steam = {
     enable = true;

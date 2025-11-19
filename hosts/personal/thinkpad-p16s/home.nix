@@ -1,7 +1,9 @@
-{pkgs, ...}: {
+{pkgs, inputs, flakeRootPath, ...}:
+
+{
 	home = {
 		username = "epark";
-		homeDirectory = "/home/epark";    
+		homeDirectory = "/home/epark";
 		stateVersion = "25.05";
 		# packages = with pkgs; [
 		# 	git
@@ -9,10 +11,19 @@
 	};
 	programs.home-manager.enable = true;
 
+	imports = [
+		"${flakeRootPath}/modules/nvim.nix"
+	];
+
+	myNvim.enable = true;
+
+	# xdg.enable = true;
+	# xdg.configFile."nvim".source = ../../../dotfiles/nvim;
+
 	# https://jvns.ca/blog/2024/02/16/popular-git-config-options/
 	programs.git = {
 		enable = true;
-		extraConfig = {
+		settings = {
 			init.defaultBranch = "main";
 			user.name = "Eugene Park";
 			user.email = "eugenepark2001@gmail.com";
@@ -149,6 +160,4 @@
       );
   };
 
-	# xdg.enable = true;
-	# xdg.configFile."hypr/hyprland.conf".source = ../../../dotfiles/hypr/hyprland.conf;
 }
