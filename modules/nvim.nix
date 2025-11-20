@@ -15,8 +15,8 @@ with lib; {
   config = mkIf config.myNvim.enable {
     home.packages = with pkgs; [
       alejandra
-      # Add other formatters you might want here, e.g., stylua, black, prettier
     ];
+
     programs.nixvim = {
       enable = true;
 
@@ -31,6 +31,15 @@ with lib; {
         tree-sitter.enable = true;
         nodejs.enable = true;
       };
+
+      keymaps = [
+        {
+          action = "<cmd>Oil<CR>";
+          key = "-";
+          mode = "n";
+          options.desc = "Open parent directory with Oil";
+        }
+      ];
 
       lsp.servers = {
         "*" = {
@@ -77,6 +86,7 @@ with lib; {
         };
       };
       colorschemes.gruvbox-material-nvim.enable = true;
+      plugins.oil.enable = true;
       plugins.treesitter = {
         enable = true;
         settings = {
