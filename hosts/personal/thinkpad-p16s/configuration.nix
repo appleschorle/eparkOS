@@ -1,29 +1,32 @@
-{ pkgs, inputs, config, flakeRootPath, ... }:
-
 {
-	# TODO: Refactor file further and check home-manager, rofi, nvim configuration, wallpapers, lazygit, waybar, etc.
-	imports = [
-		./hardware-configuration.nix
-		"${flakeRootPath}/modules/nixos/users.nix"
-		"${flakeRootPath}/modules/nixos/networking.nix"
-		"${flakeRootPath}/modules/nixos/boot-loader.nix"
-		"${flakeRootPath}/modules/nixos/audio.nix"
-	];
+  pkgs,
+  inputs,
+  config,
+  flakeRootPath,
+  ...
+}: {
+  # TODO: Refactor file further and check home-manager, rofi, nvim configuration, wallpapers, lazygit, waybar, etc.
+  imports = [
+    ./hardware-configuration.nix
+    "${flakeRootPath}/modules/nixos/users.nix"
+    "${flakeRootPath}/modules/nixos/networking.nix"
+    "${flakeRootPath}/modules/nixos/boot-loader.nix"
+    "${flakeRootPath}/modules/nixos/audio.nix"
+  ];
 
-	myBootLoader.enable = true;
-	myAudio.enable = true;
+  myBootLoader.enable = true;
+  myAudio.enable = true;
 
-	myUsers.names = [ "epark" ];
-	myNetwork.hostName = "eugene-laptop";
+  myUsers.names = ["epark"];
+  myNetwork.hostName = "eugene-laptop";
 
-	time.timeZone = "Europe/Stockholm";
+  time.timeZone = "Europe/Stockholm";
 
-  	nixpkgs.config.allowUnfree = true;
-	nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nixpkgs.config.allowUnfree = true;
+  nix.settings.experimental-features = ["nix-command" "flakes"];
 
-
-	# Enable touchpad support (enabled default in most desktopManager).
-	services.libinput.enable = true;
+  # Enable touchpad support (enabled default in most desktopManager).
+  services.libinput.enable = true;
 
   programs.firefox.enable = true;
 
