@@ -15,6 +15,11 @@ with lib; {
   config = mkIf config.myNvim.enable {
     home.packages = with pkgs; [
       alejandra
+      ruby
+      rubyfmt
+      gcc
+      gnumake
+      pkg-config
     ];
 
     programs.nixvim = {
@@ -81,6 +86,14 @@ with lib; {
             root_markers = ["flake.nix" "flake.json"];
           };
         };
+        ruby_lsp = {
+          enable = true;
+          config = {
+            cmd = ["bundle" "exec" "ruby-lsp"];
+            filetypes = ["ruby"];
+            root_markers = ["Gemfile" "Gemfile.lock"];
+          };
+        };
         lua_ls = {
           enable = true;
         };
@@ -98,6 +111,7 @@ with lib; {
       plugins.conform-nvim.settings = {
         formatters_by_ft = {
           nix = ["alejandra"];
+          ruby = ["rubyfmt"];
         };
         format_on_save = {
           lsp_format = "fallback";

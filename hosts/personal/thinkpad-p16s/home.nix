@@ -20,6 +20,24 @@
 
   myNvim.enable = true;
 
+  programs.waybar = {
+    enable = true;
+    systemd.enable = true;
+    settings = {
+      mainBar = {
+        position = "top";
+        modules-right = ["clock"];
+      };
+
+      clock = {
+        format = "{:%H:%M}";
+        tooltip-format = "<tt><small>{calendar}</small></tt>";
+        interval = 60; # Update every 60 seconds
+        timezone = "Europe/Stockholm";
+      };
+    };
+  };
+
   # xdg.enable = true;
   # xdg.configFile."nvim".source = ../../../dotfiles/nvim;
 
