@@ -9,10 +9,12 @@
   imports = [
     "${flakeRootPath}/modules/home-manager/nvim.nix"
     "${flakeRootPath}/modules/home-manager/kanshi.nix"
+    "${flakeRootPath}/modules/home-manager/hyprpaper.nix"
   ];
 
   epark.kanshi.enable = true;
   epark.nvim.enable = true;
+  epark.hyprpaper.enable = true;
 
   programs.waybar = {
     enable = true;
