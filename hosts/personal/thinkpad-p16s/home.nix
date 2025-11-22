@@ -10,32 +10,15 @@
     "${flakeRootPath}/modules/home-manager/nvim.nix"
     "${flakeRootPath}/modules/home-manager/kanshi.nix"
     "${flakeRootPath}/modules/home-manager/hyprpaper.nix"
+    "${flakeRootPath}/modules/home-manager/rofi.nix"
+    "${flakeRootPath}/modules/home-manager/waybar.nix"
   ];
 
   epark.kanshi.enable = true;
   epark.nvim.enable = true;
   epark.hyprpaper.enable = true;
-
-  programs.waybar = {
-    enable = true;
-    systemd.enable = true;
-    settings = {
-      mainBar = {
-        position = "top";
-        modules-right = ["clock"];
-      };
-
-      clock = {
-        format = "{:%H:%M}";
-        tooltip-format = "<tt><small>{calendar}</small></tt>";
-        interval = 60; # Update every 60 seconds
-        timezone = "Europe/Stockholm";
-      };
-    };
-  };
-
-  # xdg.enable = true;
-  # xdg.configFile."nvim".source = ../../../dotfiles/nvim;
+  epark.rofi.enable = true;
+  epark.waybar.enable = true;
 
   # https://jvns.ca/blog/2024/02/16/popular-git-config-options/
   programs.git = {
@@ -74,6 +57,7 @@
       [
         "$mod, F, exec, firefox"
         "$mod, Return, exec, kitty"
+        "$mod, SPACE, exec, rofi -show run"
         "$mod, C, killactive"
         "$mod, h, movefocus, l"
         "$mod, l, movefocus, r"
