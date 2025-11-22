@@ -102,7 +102,23 @@ in
           };
         };
         colorschemes.gruvbox-material-nvim.enable = true;
+
+        plugins.nvim-autopairs.enable = true;
+        plugins.todo-comments.enable = true;
+        plugins.web-devicons.enable = true;
+        plugins.render-markdown.enable = true;
+        plugins.telescope.enable = true;
+
+        plugins.nvim-surround.enable = true;
+        plugins.indent-blankline = {
+          enable = true;
+          settings = {};
+        };
         plugins.oil.enable = true;
+        plugins.trouble.enable = true;
+        plugins.undotree.enable = true;
+        plugins.which-key.enable = true;
+        plugins.visual-whitespace.enable = true;
         plugins.treesitter = {
           enable = true;
           settings = {
