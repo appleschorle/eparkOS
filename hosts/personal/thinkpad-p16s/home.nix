@@ -1,24 +1,18 @@
-{
-  pkgs,
-  inputs,
-  flakeRootPath,
-  ...
-}: {
+{flakeRootPath, ...}: {
   home = {
     username = "epark";
     homeDirectory = "/home/epark";
     stateVersion = "25.05";
-    # packages = with pkgs; [
-    # 	git
-    # ];
   };
   programs.home-manager.enable = true;
 
   imports = [
-    "${flakeRootPath}/modules/nvim.nix"
+    "${flakeRootPath}/modules/home-manager/nvim.nix"
+    "${flakeRootPath}/modules/home-manager/kanshi.nix"
   ];
 
-  myNvim.enable = true;
+  epark.kanshi.enable = true;
+  epark.nvim.enable = true;
 
   programs.waybar = {
     enable = true;
@@ -53,90 +47,6 @@
       help.autocorrect = "prompt";
       # https://luppeng.wordpress.com/2020/10/10/when-to-use-each-of-the-git-diff-algorithms/
       diff.algorithm = "histogram";
-    };
-  };
-
-  services.kanshi = {
-    enable = true;
-    systemdTarget = "hyprland-session.target";
-    profiles = {
-      laptop = {
-        outputs = [
-          {
-            criteria = "eDP-1";
-            status = "enable";
-            mode = "1920x1200@60.00Hz";
-            scale = 1.0;
-          }
-        ];
-      };
-
-      laptopmain = {
-        outputs = [
-          {
-            criteria = "eDP-1";
-            status = "enable";
-            mode = "1920x1200@60.00Hz";
-            position = "0,1200";
-            scale = 1.0;
-          }
-
-          # main
-          {
-            criteria = "Dell Inc. DELL P2425HE CNQFD94";
-            mode = "1920x1080@100.00Hz";
-            position = "0,0";
-            scale = 1.0;
-          }
-        ];
-      };
-
-      laptopvertical = {
-        outputs = [
-          {
-            criteria = "eDP-1";
-            status = "enable";
-            mode = "1920x1200@60.00Hz";
-            scale = 1.0;
-          }
-
-          # rotated
-          {
-            criteria = "Dell Inc. DELL P2425HE FNQFD94";
-            mode = "1920x1080@100.00Hz";
-            position = "1920,0";
-            transform = "90";
-            scale = 1.0;
-          }
-        ];
-      };
-
-      dock = {
-        outputs = [
-          {
-            criteria = "eDP-1";
-            status = "disable";
-            scale = 1.0;
-          }
-
-          # main
-          {
-            criteria = "Dell Inc. DELL P2425HE CNQFD94";
-            mode = "1920x1080@100.00Hz";
-            position = "0,0";
-            scale = 1.0;
-          }
-
-          # rotated
-          {
-            criteria = "Dell Inc. DELL P2425HE FNQFD94";
-            mode = "1920x1080@100.00Hz";
-            position = "1920,0";
-            transform = "90";
-            scale = 1.0;
-          }
-        ];
-      };
     };
   };
 
