@@ -1,7 +1,5 @@
 {
   pkgs,
-  inputs,
-  config,
   flakeRootPath,
   ...
 }: {
@@ -44,7 +42,7 @@
   system.stateVersion = "25.05"; # Did you read the comment?
 
   # CUSTOM
-  programs.hyprland.enable = true;
+  # programs.hyprland.enable = true;
 
   # https://github.com/sjcobb2022/nixos-config/blob/main/hosts/common/optional/greetd.nix
   services.greetd = {
@@ -54,11 +52,6 @@
       user = "epark";
     };
   };
-
-  # programs.neovim = {
-  #   enable = true;
-  #   defaultEditor = true;
-  # };
 
   programs.steam = {
     enable = true;
