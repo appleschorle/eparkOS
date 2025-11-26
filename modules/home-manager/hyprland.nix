@@ -35,7 +35,7 @@ in
               "$mod, F, exec, firefox"
               "$mod, Return, exec, kitty"
               "$mod, SPACE, exec, rofi -show run"
-              "$mod, C, killactive"
+              "$mod, Q, killactive"
               "$mod, h, movefocus, l"
               "$mod, l, movefocus, r"
               "$mod, k, movefocus, u"
