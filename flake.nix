@@ -1,50 +1,52 @@
 {
-	description = "Nix Configuration";
+  description = "Nix Configuration";
 
-	inputs = {
-		# nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-		home-manager = {
-			# url = "github:nix-community/home-manager/release-25.05";
-			url = "github:nix-community/home-manager";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-		nixvim = {
-			# url = "github:nix-community/nixvim/nixos-25.05";
-			url = "github:nix-community/nixvim";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-	};
+  inputs = {
+    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    home-manager = {
+      # url = "github:nix-community/home-manager/release-25.05";
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixvim = {
+      # url = "github:nix-community/nixvim/nixos-25.05";
+      url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
 
-	# https://www.reddit.com/r/NixOS/comments/18eomkl/homemanager_as_nixos_module_or_as_standalone/
-	outputs = { self, nixpkgs, ... } @ inputs:
-	let 
-		system = "x86_64-linux";
-		pkgs = nixpkgs.legacyPackages."${system}";
-		personalPath = "${self}/hosts/personal/thinkpad-p16s";
-		flakeRootPath = ./.;
-	in
-	{
-		nixosConfigurations = {
-			personal = nixpkgs.lib.nixosSystem {
-				inherit system;
+  # https://www.reddit.com/r/NixOS/comments/18eomkl/homemanager_as_nixos_module_or_as_standalone/
+  outputs = {
+    self,
+    nixpkgs,
+    ...
+  } @ inputs: let
+    system = "x86_64-linux";
+    pkgs = nixpkgs.legacyPackages."${system}";
+    personalPath = "${self}/hosts/personal/thinkpad-p16s";
+    flakeRootPath = ./.;
+  in {
+    nixosConfigurations = {
+      personal = nixpkgs.lib.nixosSystem {
+        inherit system;
 
-				specialArgs = { inherit inputs flakeRootPath; };
-				modules = [
-					"${personalPath}/configuration.nix"
-				];
-			};
-		};
+        specialArgs = {inherit inputs flakeRootPath;};
+        modules = [
+          "${personalPath}/configuration.nix"
+        ];
+      };
+    };
 
-		homeConfigurations = {
-			personal = inputs.home-manager.lib.homeManagerConfiguration {
-				inherit pkgs;
-				
-				extraSpecialArgs = { inherit inputs flakeRootPath; };
-				modules = [
-					"${personalPath}/home.nix"
-				];
-			};
-		};
-	};
+    homeConfigurations = {
+      personal = inputs.home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+
+        extraSpecialArgs = {inherit inputs flakeRootPath;};
+        modules = [
+          "${personalPath}/home.nix"
+        ];
+      };
+    };
+  };
 }

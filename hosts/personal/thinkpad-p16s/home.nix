@@ -7,11 +7,12 @@
   programs.home-manager.enable = true;
 
   imports = [
-    "${flakeRootPath}/modules/home-manager/nvim.nix"
+    "${flakeRootPath}/modules/home-manager/editors/nvim.nix"
     "${flakeRootPath}/modules/home-manager/kanshi.nix"
     "${flakeRootPath}/modules/home-manager/hyprpaper.nix"
     "${flakeRootPath}/modules/home-manager/rofi.nix"
     "${flakeRootPath}/modules/home-manager/waybar.nix"
+    "${flakeRootPath}/modules/home-manager/git.nix"
   ];
 
   epark.kanshi.enable = true;
@@ -19,21 +20,7 @@
   epark.hyprpaper.enable = true;
   epark.rofi.enable = true;
   epark.waybar.enable = true;
-
-  # https://jvns.ca/blog/2024/02/16/popular-git-config-options/
-  programs.git = {
-    enable = true;
-    settings = {
-      init.defaultBranch = "main";
-      user.name = "Eugene Park";
-      user.email = "eugenepark2001@gmail.com";
-      pull.rebase = true;
-      push.autoSetupRemote = true;
-      help.autocorrect = "prompt";
-      # https://luppeng.wordpress.com/2020/10/10/when-to-use-each-of-the-git-diff-algorithms/
-      diff.algorithm = "histogram";
-    };
-  };
+  epark.git.enable = true;
 
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {

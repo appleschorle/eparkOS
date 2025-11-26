@@ -101,40 +101,70 @@ in
             enable = true;
           };
         };
+
         colorschemes.gruvbox-material-nvim.enable = true;
 
-        plugins.nvim-autopairs.enable = true;
-        plugins.todo-comments.enable = true;
-        plugins.web-devicons.enable = true;
-        plugins.render-markdown.enable = true;
-        plugins.telescope.enable = true;
-
-        plugins.nvim-surround.enable = true;
-        plugins.indent-blankline = {
-          enable = true;
-          settings = {};
-        };
-        plugins.oil.enable = true;
-        plugins.trouble.enable = true;
-        plugins.undotree.enable = true;
-        plugins.which-key.enable = true;
-        plugins.visual-whitespace.enable = true;
-        plugins.treesitter = {
-          enable = true;
-          settings = {
-            auto_install = true;
+        plugins = {
+          nvim-autopairs.enable = true;
+          todo-comments.enable = true;
+          web-devicons.enable = true;
+          render-markdown.enable = true;
+          telescope.enable = true;
+          nvim-surround.enable = true;
+          oil.enable = true;
+          trouble.enable = true;
+          undotree.enable = true;
+          which-key.enable = true;
+          visual-whitespace.enable = true;
+          lualine.enable = true;
+          blink-cmp.enable = true;
+          luasnip.enable = true;
+          treesitter = {
+            enable = true;
+            settings = {
+              auto_install = true;
+            };
           };
-        };
-        plugins.lualine.enable = true;
-        plugins.conform-nvim.enable = true;
-        plugins.conform-nvim.settings = {
-          formatters_by_ft = {
-            nix = ["alejandra"];
-            ruby = ["rubyfmt"];
+          indent-blankline = {
+            enable = true;
+            settings = {
+              exclude = {
+                buftypes = [
+                  "terminal"
+                  "quickfix"
+                ];
+                filetypes = [
+                  ""
+                  "checkhealth"
+                  "help"
+                  "lspinfo"
+                  "packer"
+                  "TelescopePrompt"
+                  "TelescopeResults"
+                ];
+              };
+              indent = {
+                char = "│";
+              };
+              scope = {
+                show_end = true;
+                show_exact_scope = true;
+                show_start = true;
+              };
+            };
           };
-          format_on_save = {
-            lsp_format = "fallback";
-            timeout_ms = 500;
+          conform-nvim = {
+            enable = true;
+            settings = {
+              formatters_by_ft = {
+                nix = ["alejandra"];
+                ruby = ["rubyfmt"];
+              };
+              format_on_save = {
+                lsp_format = "fallback";
+                timeout_ms = 500;
+              };
+            };
           };
         };
       };
