@@ -14,6 +14,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # https://www.reddit.com/r/NixOS/comments/18eomkl/homemanager_as_nixos_module_or_as_standalone/
@@ -23,7 +27,11 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages."${system}";
+    # pkgs = nixpkgs.legacyPackages."${system}";
+    pkgs = import nixpkgs {
+      system = system;
+      overlays = [inputs.nur.overlays.default];
+    };
     personalPath = "${self}/hosts/personal/thinkpad-p16s";
     flakeRootPath = ./.;
   in {

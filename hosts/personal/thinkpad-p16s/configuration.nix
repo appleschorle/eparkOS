@@ -26,23 +26,23 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
-  programs.firefox.enable = true;
-
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     wget
     kitty
     vivaldi
+    grim
+    slurp
+    wl-clipboard
   ];
 
-  # swapDevices = [
-  #   { device = "/dev/nvme0n1p3"; }
-  # ];
-  system.stateVersion = "25.05"; # Did you read the comment?
+  systemd.tmpfiles.rules = [
+    "d /home/epark/Media 0700 epark users -"
+    "d /home/epark/Media/Screenshots 0700 epark users -"
+  ];
 
-  # CUSTOM
-  # programs.hyprland.enable = true;
+  system.stateVersion = "25.05"; # Did you read the comment?
 
   # https://github.com/sjcobb2022/nixos-config/blob/main/hosts/common/optional/greetd.nix
   services.greetd = {
