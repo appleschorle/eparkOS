@@ -25,6 +25,7 @@ in {
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [
       alejandra
+      prettier
       ruby
       rubyfmt
       gcc

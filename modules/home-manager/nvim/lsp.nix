@@ -48,6 +48,15 @@ in {
         };
       };
 
+      cssls = {
+        enable = true;
+        config = {
+          cmd = ["vscode-css-language-server" "--stdio"];
+          filetypes = ["css"];
+          root_markers = ["index.html" "index.css" "index.js" ".git"];
+        };
+      };
+
       lua_ls = {
         enable = true;
         config = {
