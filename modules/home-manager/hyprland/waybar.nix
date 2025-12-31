@@ -11,6 +11,7 @@ in
     options.epark.waybar.enable = mkEnableOption "Enable Waybar";
 
     config = mkIf cfg.enable {
+      fonts.fontconfig.enable = true;
       programs.waybar = {
         enable = true;
         systemd.enable = true;
@@ -20,35 +21,103 @@ in
         settings = {
           mainBar = {
             position = "top";
-            height = 35;
-            spacing = 5;
+            height = 0;
+            width = 0;
+            margin = "0";
+            spacing = "0";
 
             modules-left = ["hyprland/workspaces"];
-            modules-right = ["network" "battery" "hyprland/language" "clock"];
+            modules-center = ["custom/divider#left_2" "clock#weekday" "custom/divider#left_1" "custom/logo" "custom/divider#right_1" "clock#time" "custom/divider#right_2"];
+            modules-right = ["network" "battery" "pulseaudio" "backlight" "hyprland/language"];
 
-            battery = {
-              format = "BAT: {capacity}%";
+            "custom/logo" = {
+              format = "";
+              tooltip = false;
             };
-            clock = {
-              format = "{:%a | %H:%M}";
+            "custom/divider#left_1" = {
+              format = "";
+              tooltip = false;
+            };
+            "custom/divider#right_1" = {
+              format = "";
+              tooltip = false;
+            };
+            "custom/divider#left_2" = {
+              format = "";
+              tooltip = false;
+            };
+            "custom/divider#right_2" = {
+              format = "";
+              tooltip = false;
+            };
+
+            pulseaudio = {
+              format = "{icon}";
+              format-icons = ["󰕿" "󰖀" "󰕾"];
+              format-muted = ["󰝟"];
+              format-source-muted = ["󰝟"];
+              tooltip-format = "{volume}% | {desc}";
+            };
+            backlight = {
+              format = "{icon}";
+              format-icons = ["󰃝" "󰃞" "󰃟" "󰃠"];
+              tooltip-format = "Brightness: {percent}%";
+            };
+            battery = {
+              states = {
+                warning = 30;
+                critical = 15;
+              };
+              format = "{icon}";
+              format-icons = {
+                default = ["󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹"];
+                charging = ["󰢜" "󰂆" "󰂇" "󰂈" "󰢝" "󰂉" "󰢞" "󰂊" "󰂋" "󰂄"];
+              };
+              tooltip-format = "{capacity}% | {timeTo}";
+            };
+            "clock#weekday" = {
+              format = "{:%a}";
               tooltip-format = "<tt><small>{calendar}</small></tt>";
-              interval = 60; # Update every 60 seconds
+              interval = 60;
+              timezone = "Europe/Stockholm";
+              calendar = {
+                mode = "month";
+                mode-mon-col = 3;
+                weeks-pos = "right";
+                on-scroll = 1;
+                format = {
+                  months = "<span color='#d3869b'><b>{}</b></span>";
+                  days = "<span color='#d4be98'><b>{}</b></span>";
+                  weeks = "<span color='#89b482'><b>W{}</b></span>";
+                  weekdays = "<span color='#d8a657'><b>{}</b></span>";
+                  today = "<span color='#ea6962'><b><u>{}</u></b></span>";
+                };
+              };
+              actions = {
+                on-click-right = "mode";
+                on-scroll-up = "shift_up";
+                on-scroll-down = "shift_down";
+              };
+            };
+            "clock#time" = {
+              format = "{:%H:%M}";
+              tooltip-format = "{:%d-%m-%Y}";
+              interval = 60;
               timezone = "Europe/Stockholm";
             };
             network = {
-              interface = "wlp2s0";
-              format = "{ifname}";
-              format-wifi = "{essid} ({signalStrength}%)";
-              format-ethernet = "{ipaddr}/{cidr}";
-              format-disconnected = "Disconnected";
-              tooltip-format = "{ifname} via {gwaddr}";
-              tooltip-format-wifi = "{essid} ({signalStrength}%)";
-              tooltip-format-ethernet = "{ifname}";
+              interval = 5;
+              format = "{icon}";
+              format-icons = ["󰤟" "󰤢" "󰤥" "󰤨"];
+              format-ethernet = "󰈀{icon}";
+              format-disconnected = "󰌙";
+              tooltip-format = "{essid} ({signalStrength}%) ({bandwidthDownBits})";
               tooltip-format-disconnected = "Disconnected";
-              max-length = 50;
             };
             "hyprland/language" = {
               format = "{}";
+              format-en = "🇺🇸";
+              format-de = "🇩🇪";
             };
           };
         };

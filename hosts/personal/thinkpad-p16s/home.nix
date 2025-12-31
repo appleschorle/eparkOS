@@ -1,4 +1,8 @@
-{flakeRootPath, ...}: {
+{
+  flakeRootPath,
+  pkgs,
+  ...
+}: {
   home = {
     username = "epark";
     homeDirectory = "/home/epark";
@@ -22,4 +26,11 @@
   epark.git.enable = true;
   epark.discord.enable = true;
   epark.firefox.enable = true;
+
+  # fonts.fontconfig.enable = true;
+  #
+  # home.packages = with pkgs; [
+  #   nerdfonts.fira-code
+  #   nerdfonts.fira-code-symbols
+  # ];
 }

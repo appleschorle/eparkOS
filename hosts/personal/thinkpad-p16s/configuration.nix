@@ -26,6 +26,10 @@
   # Enable touchpad support (enabled default in most desktopManager).
   services.libinput.enable = true;
 
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
+  ];
+
   # List packages installed in system profile.
   # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
@@ -35,6 +39,8 @@
     grim
     slurp
     wl-clipboard
+    brightnessctl
+    # ddcutil -> for external screen brightness
   ];
 
   systemd.tmpfiles.rules = [

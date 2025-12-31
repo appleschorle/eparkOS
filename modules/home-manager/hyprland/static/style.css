@@ -1,26 +1,84 @@
-@define-color bg #1d2021;
-@define-color fg #ebdbb2;
-@define-color green #b8bb26;
-@define-color yellow #fabd2f;
-@define-color orange #fe8019;
-@define-color red #fb4934;
-@define-color blue #83a598;
+@define-color bgdim #141617;
+@define-color bg5 #504945;
+@define-color fg #d4be98;
+@define-color gray #7c6f64;
+@define-color green #a9b665;
+@define-color yellow #d8a657;
+@define-color orange #e78a4e;
+@define-color red #ea6962;
+@define-color blue #7daea3;
 @define-color purple #d3869b;
-@define-color cyan #8ec07c;
-@define-color gray #928374;
+@define-color aqua #89b482;
 
 * {
-  font-family: "FiraCode Nerd Font", monospace;
-  font-size: 12px;
-  background-color: @bg;
+  font-family: "FiraCode Nerd Font Propo";
+  font-size: 14px;
+  min-width: 32px;
+  background-color: rgba(0, 0, 0, 0);
   color: @fg;
 }
 
-.modules-right > widget > * {
-  margin: 0 1rem 0 0;
+tooltip {
+  background-color: @bg5;
+}
+
+#custom-logo {
+  background-color: @bgdim;
+  color: @blue;
+  font-size: 24px;
+  padding: 0;
+}
+
+#custom-divider {
+  min-width: 0;
+  font-size: 27px;
+}
+
+#custom-divider.right_1 {
+  background-color: @bg5;
+  color: @bgdim;
+}
+
+#custom-divider.right_2 {
+  color: @bg5;
+}
+
+#custom-divider.left_1 {
+  background-color: @bg5;
+  color: @bgdim;
+}
+
+#custom-divider.left_2 {
+  color: @bg5;
+}
+
+#clock {
+  color: @aqua;
+  background-color: @bg5;
+  padding: 0 0.5rem;
+}
+
+#network,
+#battery,
+#pulseaudio,
+#backlight,
+#language {
+  font-size: 16px;
 }
 
 #workspaces button.active {
   border-bottom: 1px solid @orange;
   border-radius: 0;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning {
+  color: @orange;
+}
+
+#battery.critical {
+  color: @red;
 }
