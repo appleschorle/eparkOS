@@ -11,6 +11,11 @@ in
     options.epark.firefox.enable = mkEnableOption "Enable FireFox";
 
     config = mkIf cfg.enable {
+      programs.lazygit = {
+        enable = true;
+        enableZshIntegration = true;
+      };
+
       # https://discourse.nixos.org/t/declare-firefox-extensions-and-settings/36265
       programs.firefox = {
         enable = true;
