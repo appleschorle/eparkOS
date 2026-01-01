@@ -15,6 +15,10 @@ in
         enable = true;
         enableZshIntegration = true;
       };
+      programs.tmux = {
+        enable = true;
+        shortcut = "a";
+      };
 
       # https://discourse.nixos.org/t/declare-firefox-extensions-and-settings/36265
       programs.firefox = {
