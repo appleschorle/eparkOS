@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }:
 with lib; {
@@ -18,6 +19,8 @@ with lib; {
   };
 
   config = mkIf (config.myUsers.names != null || config.myUsers.names != []) {
+    programs.zsh.enable = true;
+    environment.pathsToLink = ["/share/zsh"];
     users = {
       # Set password manually after login using passwd
       # There were some issues with managing the password with nix which is why this approach is the most straightforward
@@ -38,6 +41,7 @@ with lib; {
               "scanner"
             ];
             packages = [];
+            shell = pkgs.zsh;
           };
         })
         config.myUsers.names);
