@@ -1,4 +1,8 @@
-{flakeRootPath, ...}: let
+{
+  flakeRootPath,
+  inputs,
+  ...
+}: let
   homePath = "/home/epark";
 in {
   home = {
@@ -24,6 +28,13 @@ in {
   epark.git.enable = true;
   epark.discord.enable = true;
   epark.firefox.enable = true;
+
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
+
+  programs.kitty = {
+    enable = true;
+    themeFile = "GruvboxMaterialDarkHard";
+  };
 
   programs.zsh = {
     enable = true;

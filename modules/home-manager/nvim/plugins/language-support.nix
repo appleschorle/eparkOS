@@ -1,6 +1,7 @@
 {
   config,
   lib,
+  pkgs,
   ...
 }: let
   cfg = config.epark.nvim.plugins.language-support;
@@ -31,8 +32,27 @@ in {
         treesitter = {
           enable = true;
           settings = {
-            auto_install = true;
+            highlight.enable = true;
+            indent.enable = true;
+            folding.enable = true;
+            incremental_selection.enable = true;
           };
+          grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+            css
+            bash
+            json
+            lua
+            make
+            markdown
+            nix
+            regex
+            toml
+            vim
+            vimdoc
+            xml
+            yaml
+            ruby
+          ];
         };
         luasnip.enable = true;
       };

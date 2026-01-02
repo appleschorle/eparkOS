@@ -18,6 +18,7 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-colors.url = "github:misterio77/nix-colors";
   };
 
   # https://www.reddit.com/r/NixOS/comments/18eomkl/homemanager_as_nixos_module_or_as_standalone/
@@ -52,6 +53,7 @@
 
         extraSpecialArgs = {inherit inputs flakeRootPath;};
         modules = [
+          inputs.nix-colors.homeManagerModules.default
           "${personalPath}/home.nix"
         ];
       };
