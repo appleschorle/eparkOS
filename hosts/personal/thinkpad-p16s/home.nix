@@ -12,10 +12,11 @@ in {
   };
   programs.home-manager.enable = true;
 
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
+
   imports = [
     "${flakeRootPath}/modules/home-manager/nvim"
     "${flakeRootPath}/modules/home-manager/hyprland"
-
     "${flakeRootPath}/modules/home-manager/git.nix"
     "${flakeRootPath}/modules/home-manager/discord.nix"
     "${flakeRootPath}/modules/home-manager/firefox.nix"
@@ -28,8 +29,6 @@ in {
   epark.git.enable = true;
   epark.discord.enable = true;
   epark.firefox.enable = true;
-
-  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
 
   programs.kitty = {
     enable = true;
@@ -78,14 +77,7 @@ in {
       ];
     };
     sessionVariables = {
-      EDITOR = "vim";
+      EDITOR = "vi";
     };
   };
-
-  # fonts.fontconfig.enable = true;
-  #
-  # home.packages = with pkgs; [
-  #   nerdfonts.fira-code
-  #   nerdfonts.fira-code-symbols
-  # ];
 }
