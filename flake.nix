@@ -2,15 +2,12 @@
   description = "Nix Configuration";
 
   inputs = {
-    # nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      # url = "github:nix-community/home-manager/release-25.05";
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nixvim = {
-      # url = "github:nix-community/nixvim/nixos-25.05";
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -28,11 +25,7 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
-    # pkgs = nixpkgs.legacyPackages."${system}";
-    pkgs = import nixpkgs {
-      system = system;
-      overlays = [inputs.nur.overlays.default];
-    };
+    pkgs = nixpkgs.legacyPackages."${system}".extend inputs.nur.overlays.default;
     personalPath = "${self}/hosts/personal/thinkpad-p16s";
     flakeRootPath = ./.;
   in {

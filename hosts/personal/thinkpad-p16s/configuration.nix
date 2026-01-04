@@ -1,37 +1,12 @@
-{
-  pkgs,
-  flakeRootPath,
-  ...
-}: {
-  # TODO: Refactor file further and check home-manager, rofi, nvim configuration, wallpapers, lazygit, waybar, etc.
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
-    "${flakeRootPath}/modules/nixos/users.nix"
-    "${flakeRootPath}/modules/nixos/networking.nix"
-    "${flakeRootPath}/modules/nixos/boot-loader.nix"
-    "${flakeRootPath}/modules/nixos/audio.nix"
   ];
-
-  myBootLoader.enable = true;
-  myAudio.enable = true;
-
-  myUsers.names = ["epark"];
-  myNetwork.hostName = "eugene-laptop";
-
-  time.timeZone = "Europe/Stockholm";
 
   nixpkgs.config.allowUnfree = true;
+
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.libinput.enable = true;
-
-  fonts.packages = with pkgs; [
-    nerd-fonts.fira-code
-  ];
-
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
   environment.systemPackages = with pkgs; [
     wget
     kitty
@@ -40,7 +15,67 @@
     slurp
     wl-clipboard
     brightnessctl
-    # ddcutil -> for external screen brightness
+    # ddcutil -> external screen brightness
+  ];
+
+  time.timeZone = "Europe/Stockholm";
+
+  networking = {
+    hostName = "eugene-laptop";
+    networkmanager.enable = true;
+  };
+
+  boot.loader = {
+    systemd-boot.enable = true;
+    efi.canTouchEfiVariables = true;
+  };
+
+  users.mutableUsers = true;
+  users.users.epark = {
+    isNormalUser = true;
+    extraGroups = [
+      "wheel" # sudo
+      "networkmanager"
+      "storage"
+      "audio"
+      "video"
+      "camera"
+      "lp" # printer devices
+      "scanner"
+    ];
+    packages = [];
+    shell = pkgs.zsh;
+  };
+
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+    jack.enable = true;
+    alsa = {
+      enable = true;
+      support32Bit = true;
+    };
+  };
+
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+  };
+  services.blueman.enable = true;
+
+  services.libinput.enable = true; # Touchpad support
+
+  services.greetd.enable = true;
+  services.greetd.settings.default_session = {
+    command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-session --sessions ${pkgs.hyprland}/share/wayland-sessions";
+    user = "epark";
+  };
+
+  programs.zsh.enable = true;
+  environment.pathsToLink = ["/share/zsh"];
+
+  fonts.packages = with pkgs; [
+    nerd-fonts.fira-code
   ];
 
   systemd.tmpfiles.rules = [
@@ -48,20 +83,11 @@
     "d /home/epark/Media/Screenshots 0700 epark users -"
   ];
 
-  system.stateVersion = "25.05"; # Did you read the comment?
-
-  # https://github.com/sjcobb2022/nixos-config/blob/main/hosts/common/optional/greetd.nix
-  services.greetd = {
-    enable = true;
-    settings.default_session = {
-      command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-session --sessions ${pkgs.hyprland}/share/wayland-sessions";
-      user = "epark";
-    };
-  };
-
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
   };
+
+  system.stateVersion = "25.05";
 }
