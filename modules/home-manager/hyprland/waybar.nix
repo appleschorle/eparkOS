@@ -8,7 +8,14 @@ in
   with lib; {
     imports = [];
 
-    options.epark.waybar.enable = mkEnableOption "Enable Waybar";
+    options.epark.waybar = {
+      enable = mkEnableOption "Enable Waybar";
+      colorScheme = lib.mkOption {
+        type = with lib.types; AttrSet;
+        default = nix-colors.colorSchemes.gruvboxMaterialDarkHard;
+        description = "Base16 color scheme for Waybar";
+      };
+    };
 
     config = mkIf cfg.enable {
       fonts.fontconfig.enable = true;
@@ -19,33 +26,22 @@ in
         style =
           # css
           ''
-            @define-color bgdim #141617;
-            @define-color bg5 #504945;
-            @define-color fg #d4be98;
-            @define-color gray #7c6f64;
-            @define-color green #a9b665;
-            @define-color yellow #d8a657;
-            @define-color orange #e78a4e;
-            @define-color red #ea6962;
-            @define-color blue #7daea3;
-            @define-color purple #d3869b;
-            @define-color aqua #89b482;
-
             * {
               font-family: "FiraCode Nerd Font Propo";
               font-size: 14px;
               min-width: 32px;
               background-color: rgba(0, 0, 0, 0);
-              color: @fg;
+              color: #${config.colorScheme.palette.base05};
+              border-radius: 0;
             }
 
             tooltip {
-              background-color: @bg5;
+              background-color: #${config.colorScheme.palette.base02};
             }
 
             #custom-logo {
-              background-color: @bgdim;
-              color: @blue;
+              background-color: #${config.colorScheme.palette.base00};
+              color: #${config.colorScheme.palette.base0D};
               font-size: 24px;
               padding: 0;
             }
@@ -56,26 +52,26 @@ in
             }
 
             #custom-divider.right_1 {
-              background-color: @bg5;
-              color: @bgdim;
+              background-color: #${config.colorScheme.palette.base02};
+              color: #${config.colorScheme.palette.base00};
             }
 
             #custom-divider.right_2 {
-              color: @bg5;
+              color: #${config.colorScheme.palette.base02};
             }
 
             #custom-divider.left_1 {
-              background-color: @bg5;
-              color: @bgdim;
+              background-color: #${config.colorScheme.palette.base02};
+              color: #${config.colorScheme.palette.base00};
             }
 
             #custom-divider.left_2 {
-              color: @bg5;
+              color: #${config.colorScheme.palette.base02};
             }
 
             #clock {
-              color: @aqua;
-              background-color: @bg5;
+              /* color: #${config.colorScheme.palette.base0C}; */
+              background-color: #${config.colorScheme.palette.base02};
               padding: 0 0.5rem;
             }
 
@@ -88,20 +84,19 @@ in
             }
 
             #workspaces button.active {
-              border-bottom: 1px solid @orange;
-              border-radius: 0;
+              border-bottom: 1px solid #${config.colorScheme.palette.base0B};
             }
 
             #battery.charging {
-              color: @green;
+              color: #${config.colorScheme.palette.base0B};
             }
 
             #battery.warning {
-              color: @orange;
+              color: #${config.colorScheme.palette.base09};
             }
 
             #battery.critical {
-              color: @red;
+              color: #${config.colorScheme.palette.base08};
             }
           '';
 
