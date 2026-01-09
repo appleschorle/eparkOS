@@ -22,6 +22,10 @@ in {
           background-color: #${colors.base02};
         }
 
+        #custom-power {
+          color: #${colors.base08};
+        }
+
         #custom-logo {
           background-color: #${colors.base00};
           color: #${colors.base0D};
@@ -93,7 +97,13 @@ in {
 
         modules-left = ["hyprland/workspaces"];
         modules-center = ["custom/divider#left_2" "clock#weekday" "custom/divider#left_1" "custom/logo" "custom/divider#right_1" "clock#time" "custom/divider#right_2"];
-        modules-right = ["network" "battery" "pulseaudio" "backlight" "hyprland/language"];
+        modules-right = ["network" "battery" "pulseaudio" "backlight" "hyprland/language" "custom/power"];
+
+        "custom/power" = {
+          format = "";
+          tooltip = false;
+          on-click = "rofi-powermenu";
+        };
 
         "custom/logo" = {
           format = "";

@@ -20,6 +20,7 @@ in {
     "${flakeRootPath}/modules/home-manager/git.nix"
     "${flakeRootPath}/modules/home-manager/discord.nix"
     "${flakeRootPath}/modules/home-manager/firefox.nix"
+    "${flakeRootPath}/modules/home-manager/cursor.nix"
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -33,6 +34,10 @@ in {
   programs.kitty = {
     enable = true;
     themeFile = "GruvboxMaterialDarkHard";
+    font = {
+      name = "FiraCode Nerd Font";
+      size = 14;
+    };
   };
 
   programs.zsh = {

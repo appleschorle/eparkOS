@@ -22,7 +22,8 @@
       [
         "$mod, F, exec, firefox"
         "$mod, Return, exec, kitty"
-        "$mod, SPACE, exec, rofi -show run"
+        "$mod, D, exec, rofi -show drun"
+        "$mod, R, exec, rofi -show run"
         "$mod+CONTROL, L, exec, hyprlock"
         "$mod, Q, killactive"
         "$mod, H, movefocus, l"

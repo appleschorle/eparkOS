@@ -16,6 +16,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-colors.url = "github:misterio77/nix-colors";
+    rose-pine-hyprcursor = {
+      url = "github:ndom91/rose-pine-hyprcursor";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # https://www.reddit.com/r/NixOS/comments/18eomkl/homemanager_as_nixos_module_or_as_standalone/
