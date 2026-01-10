@@ -22,6 +22,7 @@ in {
     "${flakeRootPath}/modules/home-manager/firefox.nix"
     "${flakeRootPath}/modules/home-manager/cursor.nix"
     "${flakeRootPath}/modules/home-manager/tmux.nix"
+    "${flakeRootPath}/modules/home-manager/lazygit.nix"
   ];
 
   nixpkgs.config.allowUnfree = true;
