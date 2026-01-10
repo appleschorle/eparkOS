@@ -21,7 +21,7 @@
     bind =
       [
         "$mod, F, exec, firefox"
-        "$mod, Return, exec, kitty"
+        "$mod, T, exec, kitty --hold tmux"
         "$mod, D, exec, rofi -show drun"
         "$mod, R, exec, rofi -show run"
         "$mod+CONTROL, L, exec, hyprlock"
