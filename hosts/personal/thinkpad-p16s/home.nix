@@ -21,6 +21,7 @@ in {
     "${flakeRootPath}/modules/home-manager/discord.nix"
     "${flakeRootPath}/modules/home-manager/firefox.nix"
     "${flakeRootPath}/modules/home-manager/cursor.nix"
+    "${flakeRootPath}/modules/home-manager/tmux.nix"
   ];
 
   nixpkgs.config.allowUnfree = true;
