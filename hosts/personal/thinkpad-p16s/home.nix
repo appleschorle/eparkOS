@@ -24,6 +24,7 @@ in {
     "${flakeRootPath}/modules/home-manager/tmux.nix"
     "${flakeRootPath}/modules/home-manager/lazygit.nix"
     "${flakeRootPath}/modules/home-manager/zoxide.nix"
+    "${flakeRootPath}/modules/home-manager/zsh.nix"
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -40,52 +41,6 @@ in {
     font = {
       name = "FiraCode Nerd Font";
       size = 14;
-    };
-  };
-
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    enableVteIntegration = true;
-    autocd = true;
-    autosuggestion = {
-      enable = true;
-    };
-    defaultKeymap = "viins";
-    dirHashes = {
-      repos = "homePath/repos";
-    };
-    history = {
-      append = true;
-      expireDuplicatesFirst = true;
-      extended = true;
-      findNoDups = true;
-    };
-    historySubstringSearch = {
-      enable = true;
-    };
-    shellAliases = {
-      ll = "ls -l";
-    };
-    shellGlobalAliases = {
-      G = "| grep";
-    };
-    siteFunctions = {
-      mkcd = ''
-        mkdir --parents "$1" && cd "$1"
-      '';
-    };
-    syntaxHighlighting = {
-      enable = true;
-      highlighters = [
-        "main"
-        "brackets"
-        "root"
-        "cursor"
-      ];
-    };
-    sessionVariables = {
-      EDITOR = "vi";
     };
   };
 }
