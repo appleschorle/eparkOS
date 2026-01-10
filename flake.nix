@@ -20,6 +20,10 @@
       url = "github:ndom91/rose-pine-hyprcursor";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    sysc-greet = {
+      url = "github:Nomadcxx/sysc-greet";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # https://www.reddit.com/r/NixOS/comments/18eomkl/homemanager_as_nixos_module_or_as_standalone/
@@ -40,6 +44,7 @@
         specialArgs = {inherit inputs flakeRootPath;};
         modules = [
           "${personalPath}/configuration.nix"
+          inputs.sysc-greet.nixosModules.default
         ];
       };
     };

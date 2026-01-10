@@ -1,7 +1,15 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  flakeRootPath,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
+    "${flakeRootPath}/modules/nixos/tuigreet.nix"
+    "${flakeRootPath}/modules/nixos/sysc-greet.nix"
   ];
+
+  epark.tuigreet.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -64,12 +72,6 @@
   services.blueman.enable = true;
 
   services.libinput.enable = true; # Touchpad support
-
-  services.greetd.enable = true;
-  services.greetd.settings.default_session = {
-    command = "${pkgs.tuigreet}/bin/tuigreet --time --remember --remember-session --sessions ${pkgs.hyprland}/share/wayland-sessions";
-    user = "epark";
-  };
 
   programs.zsh.enable = true;
   environment.pathsToLink = ["/share/zsh"];
