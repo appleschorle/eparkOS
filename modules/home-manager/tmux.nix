@@ -16,7 +16,12 @@
           set -g @tmux-gruvbox-right-status-z "Magic  "
         '';
       }
-      tmuxPlugins.vim-tmux-navigator
+      {
+        plugin = tmuxPlugins.vim-tmux-navigator;
+        extraConfig = ''
+          bind C-z send-keys 'C-l'
+        '';
+      }
       tmuxPlugins.pain-control
       {
         plugin = tmuxPlugins.resurrect;
