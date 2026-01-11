@@ -14,6 +14,7 @@ in
       ./hypridle.nix
       ./hyprlock.nix
       ./settings/keybinds.nix
+      ./settings/general.nix
     ];
 
     options.epark.hyprland.enable = mkEnableOption "Enable Hyprland";
