@@ -9,6 +9,7 @@
   # Customize browser more with certain start pages and also with custom search engines for nixos or others etc.
   # Custom apps such as whatsapp.
   # Icon pack.
+  # Garbage collection.
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";

@@ -9,6 +9,8 @@
     "${flakeRootPath}/modules/nixos/sysc-greet.nix"
   ];
 
+  programs.dconf.enable = true;
+
   epark.tuigreet.enable = true;
 
   nixpkgs.config.allowUnfree = true;

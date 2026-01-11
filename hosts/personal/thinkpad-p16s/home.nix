@@ -27,6 +27,7 @@ in {
     "${flakeRootPath}/modules/home-manager/chatgpt.nix"
     "${flakeRootPath}/modules/home-manager/zoxide.nix"
     "${flakeRootPath}/modules/home-manager/zsh.nix"
+    "${flakeRootPath}/modules/home-manager/icon-pack.nix"
   ];
 
   nixpkgs.config.allowUnfree = true;
