@@ -20,17 +20,29 @@
 
     bind =
       [
-        "$mod, F, exec, firefox"
+        "$mod, Tab, workspace, e+1"
+        "$mod SHIFT, Tab, workspace, e-1"
+        "$mod, F, fullscreen, 0"
+        "$mod, Space, togglefloating"
+        "$mod, B, exec, firefox"
         "$mod, T, exec, kitty --hold tmux"
         "$mod, D, exec, rofi -show drun"
         "$mod, R, exec, rofi -show run"
-        "$mod+CONTROL, L, exec, hyprlock"
-        "$mod, Q, killactive"
+        "$mod SHIFT, Q, killactive"
+        "$mod CONTROL, H, movewindow, l"
+        "$mod CONTROL, L, movewindow, r"
+        "$mod CONTROL, K, movewindow, u"
+        "$mod CONTROL, J, movewindow, d"
+        "$mod+ALT, H, movecurrentworkspacetomonitor, l"
+        "$mod+ALT, L, movecurrentworkspacetomonitor, r"
+        "$mod+ALT, K, movecurrentworkspacetomonitor, u"
+        "$mod+ALT, J, movecurrentworkspacetomonitor, d"
         "$mod, H, movefocus, l"
         "$mod, L, movefocus, r"
         "$mod, K, movefocus, u"
         "$mod, J, movefocus, d"
         "$mod, P, exec, grim -g \"\$(slurp -w 0)\" - | wl-copy"
+        "$mod CONTROL, Q, exec, hyprlock"
       ]
       ++ (
         # workspaces
