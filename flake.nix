@@ -8,6 +8,7 @@
   # Perhaps check better language defaults in nvim for indentation etc.
   # Customize browser more with certain start pages and also with custom search engines for nixos or others etc.
   # Custom apps such as whatsapp.
+  # Icon pack.
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
