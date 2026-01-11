@@ -23,6 +23,7 @@ in {
     "${flakeRootPath}/modules/home-manager/cursor.nix"
     "${flakeRootPath}/modules/home-manager/tmux.nix"
     "${flakeRootPath}/modules/home-manager/lazygit.nix"
+    "${flakeRootPath}/modules/home-manager/whatsapp.nix"
     "${flakeRootPath}/modules/home-manager/zoxide.nix"
     "${flakeRootPath}/modules/home-manager/zsh.nix"
   ];
