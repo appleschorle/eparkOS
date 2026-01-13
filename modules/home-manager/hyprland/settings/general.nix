@@ -11,7 +11,6 @@ in {
     };
 
     decoration = {
-      rounding = 10;
       inactive_opacity = 0.7;
     };
   };
