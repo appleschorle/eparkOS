@@ -28,6 +28,7 @@ in {
     "${flakeRootPath}/modules/home-manager/zoxide.nix"
     "${flakeRootPath}/modules/home-manager/zsh.nix"
     "${flakeRootPath}/modules/home-manager/icon-pack.nix"
+    "${flakeRootPath}/modules/home-manager/dunst.nix"
   ];
 
   nixpkgs.config.allowUnfree = true;
