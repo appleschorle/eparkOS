@@ -8,7 +8,6 @@
   # Perhaps check better language defaults in nvim for indentation etc.
   # Customize browser more with certain start pages and also with custom search engines for nixos or others etc.
   # Custom apps such as whatsapp.
-  # Icon pack.
   # Garbage collection.
 
   inputs = {
