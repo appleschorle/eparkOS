@@ -42,7 +42,7 @@ in {
       ruby_lsp = {
         enable = true;
         config = {
-          cmd = ["bundle" "exec" "ruby-lsp"];
+          cmd = ["solargraph" "stdio"];
           filetypes = ["ruby"];
           root_markers = ["Gemfile" "Gemfile.lock"];
         };

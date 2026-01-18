@@ -27,7 +27,7 @@ in {
       alejandra
       prettier
       ruby
-      rubyfmt
+      # rubyfmt
       gcc
       gnumake
       pkg-config

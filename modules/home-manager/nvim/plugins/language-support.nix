@@ -20,7 +20,7 @@ in {
           settings = {
             formatters_by_ft = {
               nix = ["alejandra"];
-              ruby = ["rubyfmt"];
+              # ruby = ["rubyfmt"];
               css = ["prettier"];
             };
             format_on_save = {
