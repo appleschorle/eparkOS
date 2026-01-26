@@ -29,6 +29,7 @@ in
         hypridle.enable = true;
         hyprlock.enable = true;
         hyprpaper.enable = true;
+        kanshi.enable = true;
       };
     };
   }
