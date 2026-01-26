@@ -9,7 +9,7 @@ in
     imports = [
       ./hyprpaper.nix
       ./kanshi.nix
-      ./rofi.nix
+      ./rofi
       ./waybar.nix
       ./hypridle.nix
       ./hyprlock.nix
@@ -30,6 +30,7 @@ in
         hyprlock.enable = true;
         hyprpaper.enable = true;
         kanshi.enable = true;
+        rofi.enable = true;
       };
     };
   }
