@@ -27,6 +27,7 @@ in
 
       epark.hyprland = {
         hypridle.enable = true;
+        hyprlock.enable = true;
       };
     };
   }
