@@ -24,5 +24,9 @@ in
         enable = true;
         settings.exec-once = true;
       };
+
+      epark.hyprland = {
+        hypridle.enable = true;
+      };
     };
   }
