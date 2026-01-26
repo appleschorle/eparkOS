@@ -28,6 +28,7 @@ in
       epark.hyprland = {
         hypridle.enable = true;
         hyprlock.enable = true;
+        hyprpaper.enable = true;
       };
     };
   }
