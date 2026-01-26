@@ -1,91 +1,27 @@
-{config, ...}: let
+{
+  config,
+  pkgs,
+  ...
+}: let
   colors = config.colorScheme.palette;
+  waybarCss = pkgs.replaceVars ./static/waybar/index.css {
+    bg = "#${colors.base00}";
+    bg-alt = "#${colors.base02}";
+    text = "#${colors.base05}";
+    red = "#${colors.base08}";
+    orange = "#${colors.base09}";
+    yellow = "#${colors.base0A}";
+    green = "#${colors.base0B}";
+    blue = "#${colors.base0D}";
+    cyan = "#${colors.base0C}";
+  };
 in {
   fonts.fontconfig.enable = true;
   programs.waybar = {
     enable = true;
     systemd.enable = true;
 
-    style =
-      # css
-      ''
-        * {
-          font-family: "FiraCode Nerd Font Propo";
-          font-size: 14px;
-          min-width: 32px;
-          background-color: rgba(0, 0, 0, 0);
-          color: #${colors.base05};
-          border-radius: 0;
-        }
-
-        tooltip {
-          background-color: #${colors.base02};
-        }
-
-        #custom-power {
-          color: #${colors.base08};
-        }
-
-        #custom-logo {
-          background-color: #${colors.base00};
-          color: #${colors.base0D};
-          font-size: 24px;
-          padding: 0;
-        }
-
-        #custom-divider {
-          min-width: 0;
-          font-size: 27px;
-        }
-
-        #custom-divider.right_1 {
-          background-color: #${colors.base02};
-          color: #${colors.base00};
-        }
-
-        #custom-divider.right_2 {
-          color: #${colors.base02};
-        }
-
-        #custom-divider.left_1 {
-          background-color: #${colors.base02};
-          color: #${colors.base00};
-        }
-
-        #custom-divider.left_2 {
-          color: #${colors.base02};
-        }
-
-        #clock {
-          /* color: #${colors.base0C}; */
-          background-color: #${colors.base02};
-          padding: 0 0.5rem;
-        }
-
-        #network,
-        #battery,
-        #pulseaudio,
-        #backlight,
-        #language {
-          font-size: 16px;
-        }
-
-        #workspaces button.active {
-          border-bottom: 1px solid #${colors.base0B};
-        }
-
-        #battery.charging {
-          color: #${colors.base0B};
-        }
-
-        #battery.warning {
-          color: #${colors.base09};
-        }
-
-        #battery.critical {
-          color: #${colors.base08};
-        }
-      '';
+    style = waybarCss;
 
     settings = {
       mainBar = {

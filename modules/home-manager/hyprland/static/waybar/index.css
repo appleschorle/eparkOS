@@ -1,0 +1,86 @@
+@define-color bg @bg@;
+@define-color bg-alt @bg-alt@;
+@define-color text @text@;
+@define-color red @red@;
+@define-color orange @orange@;
+@define-color yellow @yellow@;
+@define-color green @green@;
+@define-color blue @blue@;
+@define-color cyan @cyan@;
+
+* {
+  font-family: "FiraCode Nerd Font Propo";
+  font-size: 14px;
+  min-width: 32px;
+  background-color: rgba(0, 0, 0, 0);
+  color: @text;
+  border-radius: 0;
+}
+
+tooltip {
+  background-color: @bg-alt;
+}
+
+#custom-power {
+  color: @red;
+}
+
+#custom-logo {
+  background-color: @bg;
+  color: @blue;
+  font-size: 24px;
+  padding: 0;
+}
+
+#custom-divider {
+  min-width: 0;
+  font-size: 27px;
+}
+
+#custom-divider.right_1 {
+  background-color: @bg-alt;
+  color: @bg;
+}
+
+#custom-divider.right_2 {
+  color: @bg-alt;
+}
+
+#custom-divider.left_1 {
+  background-color: @bg-alt;
+  color: @bg;
+}
+
+#custom-divider.left_2 {
+  color: @bg-alt;
+}
+
+#clock {
+  /* color: @cyan; */
+  background-color: @bg-alt;
+  padding: 0 0.5rem;
+}
+
+#network,
+#battery,
+#pulseaudio,
+#backlight,
+#language {
+  font-size: 16px;
+}
+
+#workspaces button.active {
+  border-bottom: 1px solid @green;
+}
+
+#battery.charging {
+  color: @green;
+}
+
+#battery.warning {
+  color: @orange;
+}
+
+#battery.critical {
+  color: @red;
+}
