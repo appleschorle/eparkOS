@@ -57,6 +57,15 @@ in {
         };
       };
 
+      bashls = {
+        enable = true;
+        config = {
+          cmd = ["bash-language-server" "start"];
+          filetypes = ["bash" "sh"];
+          root_markers = [".git"];
+        };
+      };
+
       lua_ls = {
         enable = true;
         config = {

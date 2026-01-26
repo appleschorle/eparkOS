@@ -31,6 +31,8 @@ in {
       gcc
       gnumake
       pkg-config
+      shellcheck
+      shfmt
     ];
 
     epark.nvim.extra-config.enable = true;
