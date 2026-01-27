@@ -32,6 +32,11 @@ in
         kanshi.enable = true;
         rofi.enable = true;
         waybar.enable = true;
+
+        settings = {
+          general.enable = true;
+          keybinds.enable = true;
+        };
       };
     };
   }
