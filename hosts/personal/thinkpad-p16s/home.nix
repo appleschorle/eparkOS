@@ -5,13 +5,6 @@
 }: let
   homePath = "/home/epark";
 in {
-  home = {
-    username = "epark";
-    homeDirectory = homePath;
-    stateVersion = "25.05";
-  };
-  programs.home-manager.enable = true;
-
   imports = [
     "${flakeRootPath}/modules/home-manager/nvim"
     "${flakeRootPath}/modules/home-manager/hyprland"
@@ -29,22 +22,31 @@ in {
     "${flakeRootPath}/modules/home-manager/dunst.nix"
   ];
 
-  nixpkgs.config.allowUnfree = true;
+  config = {
+    home = {
+      username = "epark";
+      homeDirectory = homePath;
+      stateVersion = "25.05";
+    };
+    programs.home-manager.enable = true;
 
-  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
+    nixpkgs.config.allowUnfree = true;
 
-  epark.nvim.enable = true;
-  epark.hyprland.enable = true;
-  epark.git.enable = true;
-  epark.discord.enable = true;
-  epark.firefox.enable = true;
-  epark.cursor.enable = true;
-  epark.chatgpt.enable = true;
-  epark.dunst.enable = true;
-  epark.icon-pack.enable = true;
-  epark.lazygit.enable = true;
-  epark.tmux.enable = true;
-  epark.whatsapp.enable = true;
-  epark.zoxide.enable = true;
-  epark.zsh.enable = true;
+    colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
+
+    epark.nvim.enable = true;
+    epark.hyprland.enable = true;
+    epark.git.enable = true;
+    epark.discord.enable = true;
+    epark.firefox.enable = true;
+    epark.cursor.enable = true;
+    epark.chatgpt.enable = true;
+    epark.dunst.enable = true;
+    epark.icon-pack.enable = true;
+    epark.lazygit.enable = true;
+    epark.tmux.enable = true;
+    epark.whatsapp.enable = true;
+    epark.zoxide.enable = true;
+    epark.zsh.enable = true;
+  };
 }
