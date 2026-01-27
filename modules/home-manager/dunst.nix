@@ -1,13 +1,24 @@
-{pkgs, ...}: {
-  home.packages = with pkgs; [
-    libnotify
-  ];
-  services.dunst = {
-    enable = true;
-    settings = {
-      global = {
-        enable_posix_regex = true;
-        offset = "(10, 10)";
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}: let
+  cfg = config.epark.dunst;
+in {
+  options.epark.dunst.enable = lib.mkEnableOption "Enable dunst";
+
+  config = lib.mkIf cfg.enable {
+    home.packages = with pkgs; [
+      libnotify
+    ];
+    services.dunst = {
+      enable = true;
+      settings = {
+        global = {
+          enable_posix_regex = true;
+          offset = "(10, 10)";
+        };
       };
     };
   };

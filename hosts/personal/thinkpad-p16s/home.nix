@@ -12,8 +12,6 @@ in {
   };
   programs.home-manager.enable = true;
 
-  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
-
   imports = [
     "${flakeRootPath}/modules/home-manager/nvim"
     "${flakeRootPath}/modules/home-manager/hyprland"
@@ -33,18 +31,20 @@ in {
 
   nixpkgs.config.allowUnfree = true;
 
+  colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
+
   epark.nvim.enable = true;
   epark.hyprland.enable = true;
   epark.git.enable = true;
   epark.discord.enable = true;
   epark.firefox.enable = true;
-
-  programs.kitty = {
-    enable = true;
-    themeFile = "GruvboxMaterialDarkHard";
-    font = {
-      name = "FiraCode Nerd Font";
-      size = 14;
-    };
-  };
+  epark.cursor.enable = true;
+  epark.chatgpt.enable = true;
+  epark.dunst.enable = true;
+  epark.icon-pack.enable = true;
+  epark.lazygit.enable = true;
+  epark.tmux.enable = true;
+  epark.whatsapp.enable = true;
+  epark.zoxide.enable = true;
+  epark.zsh.enable = true;
 }
