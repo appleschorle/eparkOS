@@ -4,7 +4,7 @@ options="Shutdown\nReboot\nLock"
 chosen=$(echo -e "$options" | @rofi@/bin/rofi -dmenu -i -p "Power")
 
 case $chosen in
-    Shutdown) systemctl poweroff ;;
-    Reboot) systemctl reboot ;;
-    Lock) hyprlock ;;
+Shutdown) systemctl poweroff ;;
+Reboot) systemctl reboot ;;
+Lock) hyprlock ;;
 esac
