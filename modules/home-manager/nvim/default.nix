@@ -16,6 +16,7 @@ in {
     ./globals.nix
     ./plugins
     ./highlight.nix
+    ./files.nix
   ];
 
   options = {
@@ -42,6 +43,7 @@ in {
     epark.nvim.globals.enable = true;
     epark.nvim.plugins.enable = true;
     epark.nvim.highlight.enable = true;
+    epark.nixvim.files.enable = true;
 
     programs.nixvim = {
       enable = true;
