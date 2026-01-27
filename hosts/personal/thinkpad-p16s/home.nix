@@ -34,19 +34,21 @@ in {
 
     colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
 
-    epark.nvim.enable = true;
-    epark.hyprland.enable = true;
-    epark.git.enable = true;
-    epark.discord.enable = true;
-    epark.firefox.enable = true;
-    epark.cursor.enable = true;
-    epark.chatgpt.enable = true;
-    epark.dunst.enable = true;
-    epark.icon-pack.enable = true;
-    epark.lazygit.enable = true;
-    epark.tmux.enable = true;
-    epark.whatsapp.enable = true;
-    epark.zoxide.enable = true;
-    epark.zsh.enable = true;
+    epark = {
+      nvim.enable = true;
+      hyprland.enable = true;
+      git.enable = true;
+      discord.enable = true;
+      firefox.enable = true;
+      cursor.enable = true;
+      chatgpt.enable = true;
+      dunst.enable = true;
+      icon-pack.enable = true;
+      lazygit.enable = true;
+      tmux.enable = true;
+      whatsapp.enable = true;
+      zoxide.enable = true;
+      zsh.enable = true;
+    };
   };
 }
