@@ -31,6 +31,7 @@ in
         hyprpaper.enable = true;
         kanshi.enable = true;
         rofi.enable = true;
+        waybar.enable = true;
       };
     };
   }
