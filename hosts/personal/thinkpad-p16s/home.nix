@@ -18,6 +18,7 @@ in {
     "${flakeRootPath}/modules/home-manager/chatgpt.nix"
     "${flakeRootPath}/modules/home-manager/zoxide.nix"
     "${flakeRootPath}/modules/home-manager/zsh.nix"
+    "${flakeRootPath}/modules/home-manager/kitty.nix"
     "${flakeRootPath}/modules/home-manager/icon-pack.nix"
     "${flakeRootPath}/modules/home-manager/dunst.nix"
   ];
@@ -49,6 +50,7 @@ in {
       whatsapp.enable = true;
       zoxide.enable = true;
       zsh.enable = true;
+      kitty.enable = true;
     };
   };
 }

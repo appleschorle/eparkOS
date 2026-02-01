@@ -19,7 +19,6 @@
 
   environment.systemPackages = with pkgs; [
     wget
-    kitty
     vivaldi
     grim
     slurp
