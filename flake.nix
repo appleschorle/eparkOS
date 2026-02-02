@@ -37,14 +37,17 @@
     nixpkgs,
     ...
   } @ inputs: let
-    system = "x86_64-linux";
-    pkgs = nixpkgs.legacyPackages."${system}".extend inputs.nur.overlays.default;
+    linuxSystem = "x86_64-linux";
+    darwinSystem = "aarch64-darwin"; # or "x86_64-darwin" for Intel
+    linuxPkgs = nixpkgs.legacyPackages."${linuxSystem}".extend inputs.nur.overlays.default;
+    darwinPkgs = nixpkgs.legacyPackages."${darwinSystem}".extend inputs.nur.overlays.default;
     personalPath = "${self}/hosts/personal/thinkpad-p16s";
+    workPath = "${self}/hosts/work/macbook-pro-m4";
     flakeRootPath = ./.;
   in {
     nixosConfigurations = {
       personal = nixpkgs.lib.nixosSystem {
-        inherit system;
+        system = linuxSystem;
 
         specialArgs = {inherit inputs flakeRootPath;};
         modules = [
@@ -56,12 +59,21 @@
 
     homeConfigurations = {
       personal = inputs.home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
+        pkgs = linuxPkgs;
 
         extraSpecialArgs = {inherit inputs flakeRootPath;};
         modules = [
           inputs.nix-colors.homeManagerModules.default
           "${personalPath}/home.nix"
+        ];
+      };
+
+      work = inputs.home-manager.lib.homeManagerConfiguration {
+        pkgs = darwinPkgs;
+        extraSpecialArgs = {inherit inputs flakeRootPath;};
+        modules = [
+          inputs.nix-colors.homeManagerModules.default
+          "${workPath}/home.nix"
         ];
       };
     };

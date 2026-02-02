@@ -3,7 +3,7 @@
   inputs,
   ...
 }: let
-  homePath = "/home/epark";
+  homePath = "/Users/eugenepark";
 in {
   imports = [
     "${flakeRootPath}/modules/home-manager/nixvim"
@@ -17,7 +17,7 @@ in {
 
   config = {
     home = {
-      username = "epark";
+      username = "eugenepark";
       homeDirectory = homePath;
       stateVersion = "25.05";
     };

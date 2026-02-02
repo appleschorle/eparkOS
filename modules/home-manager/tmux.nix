@@ -12,11 +12,12 @@ in {
     programs.tmux = {
       enable = true;
       shortcut = "a";
+      shell = "${pkgs.zsh}/bin/zsh";
       extraConfig = ''
         bind -r g popup -d '#{pane_current_path}' -E -w 90% -h 90% lazygit
       '';
       plugins = with pkgs; [
-        tmuxPlugins.sensible
+        # tmuxPlugins.sensible
         {
           plugin = tmuxPlugins.gruvbox;
           extraConfig = ''

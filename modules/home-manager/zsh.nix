@@ -13,7 +13,11 @@ in {
     # https://discourse.nixos.org/t/string-interpolation-in-files-without-substituteall/38779/3
     # https://thevaluable.dev/zsh-completion-guide-examples/
     # And add pasting to nvim from + when in visual mode
-    home.sessionPath = ["/home/epark/.local/share/gem/ruby/3.3.0/bin"];
+    home.sessionPath = [
+      "/opt/homebrew/bin"
+      "/opt/homebrew/sbin"
+      "/home/epark/.local/share/gem/ruby/3.3.0/bin"
+    ];
 
     programs.zsh = {
       enable = true;
