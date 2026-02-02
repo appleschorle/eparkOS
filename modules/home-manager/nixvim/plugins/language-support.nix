@@ -4,12 +4,12 @@
   pkgs,
   ...
 }: let
-  cfg = config.epark.nvim.plugins.language-support;
+  cfg = config.epark.nixvim.plugins.language-support;
 in {
   imports = [];
 
   options = {
-    epark.nvim.plugins.language-support.enable = lib.mkEnableOption "Enable NeoVim Plugins for Language Support";
+    epark.nixvim.plugins.language-support.enable = lib.mkEnableOption "Enable NeoVim Plugins for Language Support";
   };
 
   config = lib.mkIf cfg.enable {

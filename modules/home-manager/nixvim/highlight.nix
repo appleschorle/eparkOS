@@ -3,12 +3,12 @@
   lib,
   ...
 }: let
-  cfg = config.epark.nvim.highlight;
+  cfg = config.epark.nixvim.highlight;
 in {
   imports = [];
 
   options = {
-    epark.nvim.highlight.enable = lib.mkEnableOption "Enable NeoVim Highlight Groups";
+    epark.nixvim.highlight.enable = lib.mkEnableOption "Enable NeoVim Highlight Groups";
   };
 
   config = lib.mkIf cfg.enable {

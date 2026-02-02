@@ -4,12 +4,12 @@
   pkgs,
   ...
 }: let
-  cfg = config.epark.nvim.lsp;
+  cfg = config.epark.nixvim.lsp;
 in {
   imports = [];
 
   options = {
-    epark.nvim.lsp.enable = lib.mkEnableOption "Enable NeoVim LSP";
+    epark.nixvim.lsp.enable = lib.mkEnableOption "Enable NeoVim LSP";
   };
 
   config = lib.mkIf cfg.enable {

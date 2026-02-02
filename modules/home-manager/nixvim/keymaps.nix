@@ -3,12 +3,12 @@
   lib,
   ...
 }: let
-  cfg = config.epark.nvim.keymaps;
+  cfg = config.epark.nixvim.keymaps;
 in {
   imports = [];
 
   options = {
-    epark.nvim.keymaps.enable = lib.mkEnableOption "Enable NeoVim Keymaps";
+    epark.nixvim.keymaps.enable = lib.mkEnableOption "Enable NeoVim Keymaps";
   };
 
   config = lib.mkIf cfg.enable {

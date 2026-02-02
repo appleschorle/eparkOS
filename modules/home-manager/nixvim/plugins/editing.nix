@@ -3,12 +3,12 @@
   lib,
   ...
 }: let
-  cfg = config.epark.nvim.plugins.editing;
+  cfg = config.epark.nixvim.plugins.editing;
 in {
   imports = [];
 
   options = {
-    epark.nvim.plugins.editing.enable = lib.mkEnableOption "Enable NeoVim Plugins for Editing";
+    epark.nixvim.plugins.editing.enable = lib.mkEnableOption "Enable NeoVim Plugins for Editing";
   };
 
   config = lib.mkIf cfg.enable {

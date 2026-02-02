@@ -3,12 +3,12 @@
   lib,
   ...
 }: let
-  cfg = config.epark.nvim.plugins.ui;
+  cfg = config.epark.nixvim.plugins.ui;
 in {
   imports = [];
 
   options = {
-    epark.nvim.plugins.ui.enable = lib.mkEnableOption "Enable NeoVim Plugins for UI";
+    epark.nixvim.plugins.ui.enable = lib.mkEnableOption "Enable NeoVim Plugins for UI";
   };
 
   config = lib.mkIf cfg.enable {

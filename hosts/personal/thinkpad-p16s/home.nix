@@ -6,7 +6,7 @@
   homePath = "/home/epark";
 in {
   imports = [
-    "${flakeRootPath}/modules/home-manager/nvim"
+    "${flakeRootPath}/modules/home-manager/nixvim"
     "${flakeRootPath}/modules/home-manager/hyprland"
     "${flakeRootPath}/modules/home-manager/git.nix"
     "${flakeRootPath}/modules/home-manager/discord.nix"
@@ -36,7 +36,7 @@ in {
     colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
 
     epark = {
-      nvim.enable = true;
+      nixvim.enable = true;
       hyprland.enable = true;
       git.enable = true;
       discord.enable = true;

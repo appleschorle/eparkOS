@@ -3,12 +3,12 @@
   lib,
   ...
 }: let
-  cfg = config.epark.nvim.extra-config;
+  cfg = config.epark.nixvim.extra-config;
 in {
   imports = [];
 
   options = {
-    epark.nvim.extra-config.enable = lib.mkEnableOption "Enable NeoVim Extra Lua Config";
+    epark.nixvim.extra-config.enable = lib.mkEnableOption "Enable NeoVim Extra Lua Config";
   };
 
   config = lib.mkIf cfg.enable {

@@ -3,12 +3,12 @@
   lib,
   ...
 }: let
-  cfg = config.epark.nvim.globals;
+  cfg = config.epark.nixvim.globals;
 in {
   imports = [];
 
   options = {
-    epark.nvim.globals.enable = lib.mkEnableOption "Enable NeoVim Globals";
+    epark.nixvim.globals.enable = lib.mkEnableOption "Enable NeoVim Globals";
   };
 
   config = lib.mkIf cfg.enable {
