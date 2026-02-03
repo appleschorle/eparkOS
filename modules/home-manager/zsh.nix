@@ -16,7 +16,6 @@ in {
     home.sessionPath = [
       "/opt/homebrew/bin"
       "/opt/homebrew/sbin"
-      "/opt/homebrew/opt/ruby/bin/ruby"
       "/home/epark/.local/share/gem/ruby/3.3.0/bin"
     ];
 
