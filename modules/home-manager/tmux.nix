@@ -14,6 +14,7 @@ in {
       mouse = true;
       shortcut = "a";
       sensibleOnTop = true;
+      terminal = "screen-256color";
       extraConfig = ''
         # This is needed because tmux sensible uses $SHELL which points to /bin/sh in nix
         set -g default-command "${pkgs.reattach-to-user-namespace}/bin/reattach-to-user-namespace ${pkgs.zsh}/bin/zsh"

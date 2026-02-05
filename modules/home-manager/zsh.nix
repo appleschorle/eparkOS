@@ -183,6 +183,13 @@ in {
       };
       sessionVariables = {
         EDITOR = "vi";
+
+        AWS_CONFIG_FILE = "$XDG_CONFIG_HOME/aws/config";
+
+        XDG_CONFIG_HOME = "$HOME/.config";
+        XDG_CACHE_HOME = "$HOME/.cache";
+        XDG_DATA_HOME = "$HOME/.local/share";
+        XDG_STATE_HOME = "$HOME/.local/share";
       };
     };
   };
