@@ -15,6 +15,11 @@ in {
         name = "FiraCode Nerd Font";
         size = 16;
       };
+      settings = {
+        scrollback_lines = 10000;
+        shell = "zsh";
+        editor = "nvim";
+      };
     };
   };
 }

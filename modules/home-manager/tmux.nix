@@ -12,12 +12,13 @@ in {
     programs.tmux = {
       enable = true;
       shortcut = "a";
-      shell = "${pkgs.zsh}/bin/zsh";
+      sensibleOnTop = true;
       extraConfig = ''
+        set -g default-command "${pkgs.reattach-to-user-namespace}/bin/reattach-to-user-namespace ${pkgs.zsh}/bin/zsh" # This is needed because tmux sensible uses $SHELL which points to /bin/sh in nix
         bind -r g popup -d '#{pane_current_path}' -E -w 90% -h 90% lazygit
       '';
       plugins = with pkgs; [
-        # tmuxPlugins.sensible
+        tmuxPlugins.sensible
         {
           plugin = tmuxPlugins.gruvbox;
           extraConfig = ''
@@ -30,7 +31,7 @@ in {
         {
           plugin = tmuxPlugins.vim-tmux-navigator;
           extraConfig = ''
-            bind C-z send-keys 'C-l'
+            bind C-l send-keys 'C-l'
           '';
         }
         tmuxPlugins.pain-control
