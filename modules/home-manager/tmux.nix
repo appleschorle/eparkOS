@@ -24,8 +24,8 @@ in {
         ### Lazygit popup ###
         bind -r g popup -d '#{pane_current_path}' -E -w 90% -h 90% lazygit
       '';
+      # TODO: Set up tmux properly with vim https://github.com/christoomey/vim-tmux-navigator
       plugins = with pkgs; [
-        tmuxPlugins.sensible
         {
           plugin = tmuxPlugins.gruvbox;
           extraConfig = ''
@@ -35,12 +35,12 @@ in {
             set -g @tmux-gruvbox-right-status-z "Magic  "
           '';
         }
-        {
-          plugin = tmuxPlugins.vim-tmux-navigator;
-          extraConfig = ''
-            bind C-l send-keys 'C-l'
-          '';
-        }
+        # {
+        #   plugin = tmuxPlugins.vim-tmux-navigator;
+        #   extraConfig = ''
+        #     bind C-z send-keys 'C-l'
+        #   '';
+        # }
         tmuxPlugins.pain-control
       ];
     };
