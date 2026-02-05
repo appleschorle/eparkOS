@@ -11,10 +11,17 @@ in {
   config = lib.mkIf cfg.enable {
     programs.tmux = {
       enable = true;
+      mouse = true;
       shortcut = "a";
       sensibleOnTop = true;
       extraConfig = ''
-        set -g default-command "${pkgs.reattach-to-user-namespace}/bin/reattach-to-user-namespace ${pkgs.zsh}/bin/zsh" # This is needed because tmux sensible uses $SHELL which points to /bin/sh in nix
+        # This is needed because tmux sensible uses $SHELL which points to /bin/sh in nix
+        set -g default-command "${pkgs.reattach-to-user-namespace}/bin/reattach-to-user-namespace ${pkgs.zsh}/bin/zsh"
+
+        ### Copy mode navigation ###
+        setw -g mode-keys vi
+
+        ### Lazygit popup ###
         bind -r g popup -d '#{pane_current_path}' -E -w 90% -h 90% lazygit
       '';
       plugins = with pkgs; [
