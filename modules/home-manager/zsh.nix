@@ -16,7 +16,6 @@ in {
     home.sessionPath = [
       "/opt/homebrew/bin"
       "/opt/homebrew/sbin"
-      "/home/epark/.local/share/gem/ruby/3.3.0/bin"
     ];
 
     programs.zsh = {
@@ -160,6 +159,9 @@ in {
 
           # Ctrl-Space triggers the interactive menu
           bindkey '^ ' menu-select
+
+          ### RUBY ###
+          eval "$(rbenv init - zsh)"
         '';
       shellAliases = {
         ll = "ls -l";

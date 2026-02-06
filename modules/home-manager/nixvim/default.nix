@@ -27,8 +27,6 @@ in {
     home.packages = with pkgs; [
       alejandra
       prettier
-      ruby
-      # rubyfmt
       gcc
       gnumake
       pkg-config

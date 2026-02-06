@@ -42,7 +42,7 @@ in {
       ruby_lsp = {
         enable = true;
         config = {
-          cmd = ["solargraph" "stdio"];
+          cmd = ["/Users/eugenepark/.rbenv/shims/ruby-lsp"];
           filetypes = ["ruby"];
           root_markers = ["Gemfile" "Gemfile.lock"];
         };
