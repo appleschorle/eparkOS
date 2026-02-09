@@ -21,6 +21,7 @@ in {
     "${flakeRootPath}/modules/home-manager/kitty.nix"
     "${flakeRootPath}/modules/home-manager/icon-pack.nix"
     "${flakeRootPath}/modules/home-manager/dunst.nix"
+    "${flakeRootPath}/modules/home-manager/ruby.nix"
   ];
 
   config = {
@@ -51,6 +52,7 @@ in {
       zoxide.enable = true;
       zsh.enable = true;
       kitty.enable = true;
+      ruby.enable = true;
     };
   };
 }

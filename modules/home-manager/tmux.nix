@@ -6,7 +6,9 @@
 }: let
   cfg = config.epark.tmux;
 in {
-  options.epark.tmux.enable = lib.mkEnableOption "Enable Tmux";
+  options.epark.tmux = {
+    enable = lib.mkEnableOption "Enable Tmux";
+  };
 
   config = lib.mkIf cfg.enable {
     programs.tmux = {
@@ -16,8 +18,14 @@ in {
       sensibleOnTop = true;
       terminal = "screen-256color";
       extraConfig = ''
-        # This is needed because tmux sensible uses $SHELL which points to /bin/sh in nix
-        set -g default-command "${pkgs.reattach-to-user-namespace}/bin/reattach-to-user-namespace ${pkgs.zsh}/bin/zsh"
+        ${lib.optionalString pkgs.stdenv.isDarwin ''
+          # Needed on macOS for proper clipboard integration
+          set -g default-command "${pkgs.reattach-to-user-namespace}/bin/reattach-to-user-namespace ${pkgs.zsh}/bin/zsh"
+        ''}
+
+        ${lib.optionalString pkgs.stdenv.isLinux ''
+          set -g default-command "${pkgs.zsh}/bin/zsh"
+        ''}
 
         ### Copy mode navigation ###
         setw -g mode-keys vi

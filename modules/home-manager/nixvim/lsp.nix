@@ -42,9 +42,9 @@ in {
       ruby_lsp = {
         enable = true;
         config = {
-          cmd = ["/Users/eugenepark/.rbenv/shims/ruby-lsp"];
+          cmd = ["bundle" "exec" "ruby-lsp"];
           filetypes = ["ruby"];
-          root_markers = ["Gemfile" "Gemfile.lock"];
+          root_markers = [".solargraph.yml" ".solargraph.yaml" "Gemfile" "Gemfile.lock"];
         };
       };
 
