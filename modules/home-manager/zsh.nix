@@ -159,9 +159,6 @@ in {
 
           # Ctrl-Space triggers the interactive menu
           bindkey '^ ' menu-select
-
-          ### RUBY ###
-          eval "$(rbenv init - zsh)"
         '';
       shellAliases = {
         ll = "ls -l";
