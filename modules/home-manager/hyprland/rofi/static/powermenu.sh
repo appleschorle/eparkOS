@@ -8,7 +8,7 @@ options=" \n󰜉 \n "
 chosen=$(echo -e "$options" | @rofi@/bin/rofi -dmenu -i -p " $USER@" -theme $theme_file)
 
 case $chosen in
-Shutdown) systemctl poweroff ;;
-Reboot) systemctl reboot ;;
-Lock) hyprlock ;;
+" ") systemctl poweroff ;;
+"󰜉 ") systemctl reboot ;;
+" ") hyprlock ;;
 esac
