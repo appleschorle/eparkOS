@@ -16,7 +16,7 @@
     backgroundImage = "/home/epark/.config/${themeFileBackgroundImagePath}";
   };
 
-  powerMenuScript = pkgs.replaceVars ./static/powermenu.sh {
+  powerMenuScript = pkgs.replaceVars ./script/powermenu.sh {
     rofi = pkgs.rofi;
     themeFile = "$HOME/.config/${themeFilePath}";
   };
