@@ -4,43 +4,42 @@ configuration {
 
 * {
 	font: "FiraCode Nerd Font 16";
-	background: #@base00@;
-	background-alt: #@base03@;
-	foreground: #@base05@;
-	selected: #@base03@;
-	active: #@base0B@;
-	urgent: #@base0D@;
+	message-bg: #@base03@;
+	listview-bg: #@base00@;
+	element-bg: #@base03@;
+	fg: #@base05@;
+	selected-fg: #@base00@;
+	selected-bg: #@base08@;
 }
 
 window {
 	width: 1000px;
-	background-color: @background;
 }
 
 mainbox {
 	background-color: transparent;
 	spacing: 0px;
-	children: [dummy, message, listview];
+	children: [cover, message, listview];
 }
 
 inputbar {
 	enabled: false;
 }
 
-dummy {
+cover {
 	background-image: url("@backgroundImage@", width);
 	expand: true;
 	padding: 200px 0px;
 }
 
 message {
-	background-color: @background-alt;
+	background-color: @message-bg;
 	padding: 10px;
 }
 
 textbox {
 	background-color: inherit;
-	text-color: @foreground;
+	text-color: @fg;
 	vertical-align: 0.5;
 	horizontal-align: 0.5;
 }
@@ -58,24 +57,28 @@ listview {
 	fixed-columns: true;
 	spacing: 100px;
 	padding: 25px 50px;
-	background-color: transparent;
+	background-color: @listview-bg;
 }
 
 element {
-	background-color: @background-alt;
+	background-color: @element-bg;
 	cursor: pointer;
 }
 
 element selected.normal {
-	background-color: @urgent;
+	background-color: @selected-bg;
 }
 
 element-text {
 	font: "FiraCode Nerd Font 32";
-	text-color: @foreground;
 	background-color: inherit;
+	text-color: @fg;
 	cursor: inherit;
 	padding: 5px;
 	vertical-align: 0.5;
 	horizontal-align: 0.5;
+}
+
+element-text selected.normal {
+	text-color: @selected-fg;
 }

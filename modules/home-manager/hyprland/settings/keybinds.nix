@@ -52,6 +52,7 @@ in {
           "$mod, J, movefocus, d"
           "$mod, P, exec, grim -g \"\$(slurp -w 0)\" - | wl-copy"
           "$mod CONTROL, Q, exec, hyprlock"
+          "$mod CONTROL, P, exec, rofi-powermenu"
         ]
         ++ (
           # workspaces

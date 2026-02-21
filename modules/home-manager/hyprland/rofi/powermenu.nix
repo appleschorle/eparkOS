@@ -4,15 +4,14 @@
   pkgs,
   ...
 }: let
-  themeFileBackgroundImagePath = "rofi/themes/powermenu.jpg";
+  themeFileBackgroundImagePath = "rofi/themes/powermenu.png";
   themeFilePath = "rofi/themes/powermenu.rasi";
   themeFile = pkgs.replaceVars ./themes/powermenu.rasi {
     base00 = config.colorscheme.palette.base00;
     base03 = config.colorscheme.palette.base03;
     base05 = config.colorscheme.palette.base05;
-    # base08 = config.colorscheme.palette.base08;
-    base0B = config.colorscheme.palette.base0B;
-    base0D = config.colorscheme.palette.base0D;
+    base08 = config.colorscheme.palette.base08;
+
     backgroundImage = "/home/epark/.config/${themeFileBackgroundImagePath}";
   };
 
@@ -32,6 +31,6 @@ in {
     ];
 
     xdg.configFile."${themeFilePath}".source = themeFile;
-    xdg.configFile."${themeFileBackgroundImagePath}".source = ./themes/powermenu.jpg;
+    xdg.configFile."${themeFileBackgroundImagePath}".source = ./themes/powermenu.png;
   };
 }
