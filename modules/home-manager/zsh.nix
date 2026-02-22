@@ -153,12 +153,11 @@ in {
           # 3. Enable interactive menu selection
           zstyle ':completion:*' menu select
 
-          # 4. Set your custom key bindings
-          # Tab accepts the current zsh-autosuggestion
-          bindkey '^I' autosuggest-accept
+          # Autosuggest accept
+          bindkey '^f' autosuggest-accept
 
-          # Ctrl-Space triggers the interactive menu
-          bindkey '^ ' menu-select
+          # Exit menu cleanly
+          bindkey -M menuselect '^[' send-break
         '';
       shellAliases = {
         ll = "ls -l";
