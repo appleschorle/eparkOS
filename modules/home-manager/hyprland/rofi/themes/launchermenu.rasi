@@ -1,0 +1,91 @@
+configuration {
+	modi:                       "drun,run,filebrowser,window";
+	show-icons:                 true;
+	display-drun:               "APPS";
+	display-run:                "RUN";
+	display-filebrowser:        "FILES";
+	display-window:             "WINDOW";
+	drun-display-format:        "{name}";
+	window-format:              "{w} · {c} · {t}";
+}
+//
+// * {
+// 	font: "FiraCode Nerd Font 16";
+// 	message-bg: #@base03@;
+// 	listview-bg: #@base00@;
+// 	element-bg: #@base03@;
+// 	fg: #@base05@;
+// 	selected-fg: #@base00@;
+// 	selected-bg: #@base08@;
+// }
+//
+// window {
+// 	width: 1000px;
+// }
+//
+// mainbox {
+// 	background-color: transparent;
+// 	spacing: 0px;
+// 	children: [cover, message, listview];
+// }
+//
+// inputbar {
+// 	enabled: false;
+// }
+//
+// cover {
+// 	background-image: url("@backgroundImage@", width);
+// 	expand: true;
+// 	padding: 200px 0px;
+// }
+//
+// message {
+// 	background-color: @message-bg;
+// 	padding: 10px;
+// }
+//
+// textbox {
+// 	background-color: inherit;
+// 	text-color: @fg;
+// 	vertical-align: 0.5;
+// 	horizontal-align: 0.5;
+// }
+//
+// listview {
+// 	expand: false;
+// 	columns: 3;
+// 	lines: 1;
+// 	layout: vertical;
+// 	flow: horizontal;
+// 	cycle: true;
+// 	dynamic: true;
+// 	scrollbar: false;
+// 	fixed-height: true;
+// 	fixed-columns: true;
+// 	spacing: 100px;
+// 	padding: 25px 50px;
+// 	background-color: @listview-bg;
+// }
+//
+// element {
+// 	background-color: @element-bg;
+// 	cursor: pointer;
+// }
+//
+// element selected.normal {
+// 	background-color: @selected-bg;
+// }
+//
+// element-text {
+// 	font: "FiraCode Nerd Font 32";
+// 	background-color: inherit;
+// 	text-color: @fg;
+// 	cursor: inherit;
+// 	padding: 5px;
+// 	vertical-align: 0.5;
+// 	horizontal-align: 0.5;
+// }
+//
+// element-text selected.normal {
+// 	text-color: @selected-fg;
+// }

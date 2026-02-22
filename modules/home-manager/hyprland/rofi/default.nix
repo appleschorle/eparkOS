@@ -8,6 +8,7 @@
 in {
   imports = [
     ./powermenu.nix
+    ./launchermenu.nix
   ];
 
   options.epark.hyprland.rofi.enable = lib.mkEnableOption "Enable Rofi";
@@ -26,6 +27,7 @@ in {
 
     epark.hyprland.rofi = {
       powermenu.enable = true;
+      launchermenu.enable = true;
     };
   };
 }
