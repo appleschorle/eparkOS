@@ -16,6 +16,7 @@ in {
     home.sessionPath = [
       "/opt/homebrew/bin"
       "/opt/homebrew/sbin"
+      "/Applications/Rancher Desktop.app/Contents/Resources/resources/darwin/bin"
     ];
 
     programs.zsh = {
