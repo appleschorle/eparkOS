@@ -1,3 +1,5 @@
+/* For debugging purpose run this: GTK_DEBUG=interactive waybar */
+
 @define-color bg @bg@;
 @define-color bg-alt @bg-alt@;
 @define-color text @text@;
@@ -9,6 +11,7 @@
 @define-color cyan @cyan@;
 
 * {
+  all: unset;
   font-family: "FiraCode Nerd Font Propo";
   font-size: 14px;
   min-width: 32px;
@@ -34,7 +37,7 @@ tooltip {
 
 #custom-divider {
   min-width: 0;
-  font-size: 27px;
+  font-size: 30px;
 }
 
 #custom-divider.right_1 {
@@ -56,7 +59,6 @@ tooltip {
 }
 
 #clock {
-  /* color: @cyan; */
   background-color: @bg-alt;
   padding: 0 0.5rem;
 }
@@ -69,8 +71,25 @@ tooltip {
   font-size: 16px;
 }
 
+#workspaces button {
+  padding: 10px;
+}
+
 #workspaces button.active {
+  background-color: @bg;
   border-bottom: 1px solid @green;
+}
+
+#workspaces button:hover box label {
+  color: @bg;
+}
+
+#workspaces button:hover {
+  background-color: @blue;
+}
+
+#workspaces button.active:hover {
+  background-color: @green;
 }
 
 #battery.charging {
