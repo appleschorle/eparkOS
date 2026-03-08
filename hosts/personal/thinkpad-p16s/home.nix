@@ -22,6 +22,7 @@ in {
     "${flakeRootPath}/modules/home-manager/icon-pack.nix"
     "${flakeRootPath}/modules/home-manager/dunst.nix"
     "${flakeRootPath}/modules/home-manager/ruby.nix"
+    "${flakeRootPath}/modules/home-manager/direnv.nix"
   ];
 
   config = {
@@ -53,6 +54,7 @@ in {
       zsh.enable = true;
       kitty.enable = true;
       ruby.enable = true;
+      direnv.enable = true;
     };
   };
 }
