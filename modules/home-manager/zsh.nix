@@ -12,6 +12,7 @@ in {
     home.sessionPath = [
       "/opt/homebrew/bin"
       "/opt/homebrew/sbin"
+      "$HOME/.local/bin"
       "/Applications/Rancher Desktop.app/Contents/Resources/resources/darwin/bin"
     ];
 
@@ -59,7 +60,7 @@ in {
       sessionVariables = {
         EDITOR = "vi";
 
-        AWS_CONFIG_FILE = "$XDG_CONFIG_HOME/aws/config";
+        AWS_CONFIG_FILE = "$HOME/.config/aws/config";
 
         XDG_CONFIG_HOME = "$HOME/.config";
         XDG_CACHE_HOME = "$HOME/.cache";
