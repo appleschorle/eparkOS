@@ -66,6 +66,15 @@ in {
         };
       };
 
+      terraformls = {
+        enable = true;
+        config = {
+          cmd = ["terraform-ls" "serve"];
+          filetypes = ["terraform" "tf"];
+          root_markers = ["main.tf" ".terraform" ".terraform.lock.hcl" ".git"];
+        };
+      };
+
       lua_ls = {
         enable = true;
         config = {
