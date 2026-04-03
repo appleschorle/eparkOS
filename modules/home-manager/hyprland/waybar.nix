@@ -136,6 +136,7 @@ in {
             format = "{}";
             format-en = "🇺🇸";
             format-de = "🇩🇪";
+            format-sv = "🇸🇪";
           };
         };
       };

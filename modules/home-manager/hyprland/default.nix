@@ -13,6 +13,7 @@ in
       ./waybar.nix
       ./hypridle.nix
       ./hyprlock.nix
+      ./keyboard_layout.nix
       ./settings/keybinds.nix
       ./settings/general.nix
     ];
@@ -32,6 +33,7 @@ in
         kanshi.enable = true;
         rofi.enable = true;
         waybar.enable = true;
+        keyboard_layout.enable = true;
 
         settings = {
           general.enable = true;
