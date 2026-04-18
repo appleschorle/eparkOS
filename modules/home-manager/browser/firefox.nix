@@ -1,4 +1,3 @@
-# TODO: Expose bookmarks as an option and make it more customized with search engines etc.
 {
   lib,
   config,
@@ -15,9 +14,15 @@ in
         default = [];
         description = "Bookmarks in firefox";
       };
-      search_engines = lib.mkOption {
+      order = lib.mkOption {
         type = lib.types.listOf lib.types.str;
-        default = ["ddg" "google"];
+        default = ["google"];
+        description = "Order of search engines";
+      };
+      engines = lib.mkOption {
+        type = lib.types.attrs;
+        default = {};
+        description = "Customisation of engines";
       };
     };
 
@@ -34,8 +39,9 @@ in
             isDefault = true;
             search = {
               force = true;
-              default = lib.head cfg.search_engines;
-              order = cfg.search_engines;
+              default = lib.head cfg.order;
+              order = cfg.order;
+              engines = cfg.engines;
             };
             settings = {
               "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
@@ -103,16 +109,7 @@ in
               install_url = moz "bitwarden-password-manager";
               installation_mode = "force_installed";
             };
-            # Gruvbox Dark Theme
-            # "{eb8c4a94-e603-49ef-8e81-73d3c4cc04ff}" = {
-            #   install_url = moz "gruvbox-dark-theme";
-            #   installation_mode = "force_installed";
-            # };
           };
-          # Check about:config for options.
-          # Preferences = {
-          # "extensions.activeThemeID" = "{eb8c4a94-e603-49ef-8e81-73d3c4cc04ff}"; # Gruvbox Dark Theme
-          # };
         };
       };
     };
