@@ -7,7 +7,7 @@
 in {
   imports = [
     "${flakeRootPath}/modules/home-manager/nixvim"
-    "${flakeRootPath}/modules/home-manager/firefox.nix"
+    # "${flakeRootPath}/modules/home-manager/firefox.nix"
     "${flakeRootPath}/modules/home-manager/tmux.nix"
     "${flakeRootPath}/modules/home-manager/lazygit.nix"
     "${flakeRootPath}/modules/home-manager/zoxide.nix"

@@ -1,14 +1,12 @@
 {
   description = "Nix Configuration";
-  # TODO: Different languages for keyboard, rofi ricing (perhaps also a window picker),
+  # TODO: rofi ricing (perhaps also a window picker),
   # dunst notifications, better exponential sound and brightness see eric murphy,
   # specific workspaces (AI, Browser, Terminal), AI integration in nvim and terminal,
   # Nvim global paste on visual mode, keyboard binding utility app to see all keyboard bindings in one go,
   # remap caps lock, refactoring to have a common colorscheme and fonts as inputs and be able to enable disable certain features, macos integration.
   # Perhaps check better language defaults in nvim for indentation etc.
   # Customize browser more with certain start pages and also with custom search engines for nixos or others etc.
-  # Custom apps such as whatsapp.
-  # Garbage collection.
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
