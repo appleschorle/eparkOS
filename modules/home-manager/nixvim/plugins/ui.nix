@@ -46,6 +46,7 @@ in {
         lualine.enable = true;
         web-devicons.enable = true;
         visual-whitespace.enable = true;
+        whitespace.enable = true;
         render-markdown.enable = true;
       };
     };

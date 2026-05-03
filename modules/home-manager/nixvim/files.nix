@@ -9,6 +9,10 @@ in {
 
   config = lib.mkIf cfg.enable {
     programs.nixvim = {
+      filetype.pattern = {
+        ".*%.ya?ml%.j2" = "jinja.yaml";
+      };
+
       files = {
         "ftplugin/nix.lua" = {
           opts = {

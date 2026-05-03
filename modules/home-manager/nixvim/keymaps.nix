@@ -36,7 +36,7 @@ in {
       }
       {
         key = "<leader>p";
-        action = "\"_dP";
+        action = "\"+p";
         mode = "v";
       }
     ];

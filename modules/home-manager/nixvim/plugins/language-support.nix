@@ -52,6 +52,10 @@ in {
             xml
             yaml
             ruby
+            jinja
+            jinja-inline
+            terraform
+            zsh
           ];
         };
         luasnip.enable = true;
