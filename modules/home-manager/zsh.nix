@@ -37,7 +37,7 @@ in {
         bindkey '^E' edit-command-line
       '';
       shellAliases = {
-        ll = "ls -l";
+        ll = "ls -lh";
       };
       shellGlobalAliases = {
         G = "| grep";
