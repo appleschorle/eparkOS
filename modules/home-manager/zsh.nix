@@ -10,14 +10,23 @@ in {
   config = lib.mkIf cfg.enable {
     # And add pasting to nvim from + when in visual mode
     home.sessionPath = [
+      "/opt/homebrew/opt/ruby@3.3/bin"
+      "/opt/homebrew/lib/ruby/gems/3.3.0/bin"
       "/opt/homebrew/bin"
       "/opt/homebrew/sbin"
       "$HOME/.local/bin"
+      "$HOME/repos/gdk/bin"
       "/Applications/Rancher Desktop.app/Contents/Resources/resources/darwin/bin"
     ];
 
     programs.zsh = {
       enable = true;
+      envExtra = ''
+        # Nix - source here to survive macOS updates wiping /etc/zshrc
+        if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+          . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+        fi
+      '';
       enableCompletion = true;
       enableVteIntegration = true;
       autocd = true;
