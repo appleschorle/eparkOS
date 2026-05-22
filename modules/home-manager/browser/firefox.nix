@@ -14,11 +14,6 @@ in
         default = [];
         description = "Bookmarks in firefox";
       };
-      order = lib.mkOption {
-        type = lib.types.listOf lib.types.str;
-        default = ["google"];
-        description = "Order of search engines";
-      };
       engines = lib.mkOption {
         type = lib.types.attrs;
         default = {};
@@ -39,8 +34,6 @@ in
             isDefault = true;
             search = {
               force = true;
-              default = lib.head cfg.order;
-              order = cfg.order;
               engines = cfg.engines;
             };
             settings = {

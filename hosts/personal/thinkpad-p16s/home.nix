@@ -40,7 +40,6 @@ in {
         enable = true;
         firefox = {
           autofillCreditCardEnabled = true;
-          order = ["google"];
           engines = {
             "Nix Packages" = {
               urls = [
