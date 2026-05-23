@@ -17,22 +17,18 @@ in {
       shortcut = "a";
       sensibleOnTop = true;
       terminal = "screen-256color";
-      extraConfig = ''
-        ${lib.optionalString pkgs.stdenv.isDarwin ''
-          # Needed on macOS for proper clipboard integration
-          set -g default-command "${pkgs.reattach-to-user-namespace}/bin/reattach-to-user-namespace ${pkgs.zsh}/bin/zsh"
-        ''}
+      extraConfig =
+        ''
+          ${lib.optionalString pkgs.stdenv.isDarwin ''
+            # Needed on macOS for proper clipboard integration
+            set -g default-command "${pkgs.reattach-to-user-namespace}/bin/reattach-to-user-namespace ${pkgs.zsh}/bin/zsh"
+          ''}
 
-        ${lib.optionalString pkgs.stdenv.isLinux ''
-          set -g default-command "${pkgs.zsh}/bin/zsh"
-        ''}
-
-        ### Copy mode navigation ###
-        setw -g mode-keys vi
-
-        ### Lazygit popup ###
-        bind -r g popup -d '#{pane_current_path}' -E -w 90% -h 90% lazygit
-      '';
+          ${lib.optionalString pkgs.stdenv.isLinux ''
+            set -g default-command "${pkgs.zsh}/bin/zsh"
+          ''}
+        ''
+        + builtins.readFile ./tmux/tmux.conf;
       # TODO: Set up tmux properly with vim https://github.com/christoomey/vim-tmux-navigator
       plugins = with pkgs; [
         {

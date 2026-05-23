@@ -55,6 +55,7 @@ in {
             jinja
             jinja-inline
             terraform
+            tmux
             zsh
           ];
         };

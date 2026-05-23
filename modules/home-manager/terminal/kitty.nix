@@ -17,8 +17,6 @@ in {
       };
       settings = {
         scrollback_lines = 10000;
-        shell = "zsh";
-        editor = "nvim";
       };
     };
   };
