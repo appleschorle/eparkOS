@@ -3,12 +3,18 @@
   config,
   ...
 }: let
-  cfg = config.epark.git;
+  cfg = config.epark.development.git;
 in
   with lib; {
-    imports = [];
-
-    options.epark.git.enable = mkEnableOption "Enable Git";
+    options.epark.development.git = {
+      enable = mkEnableOption "Enable Git";
+      userEmail = mkOption {
+        type = lib.types.str;
+        default = "";
+        description = "Email used for git";
+        example = "max.mustermann@gmail.com";
+      };
+    };
 
     config = mkIf cfg.enable {
       # https://jvns.ca/blog/2024/02/16/popular-git-config-options/
@@ -17,7 +23,7 @@ in
         settings = {
           init.defaultBranch = "main";
           user.name = "Eugene Park";
-          user.email = "eugenepark2001@gmail.com";
+          user.email = cfg.userEmail;
           pull.rebase = true;
           push.autoSetupRemote = true;
           help.autocorrect = "prompt";

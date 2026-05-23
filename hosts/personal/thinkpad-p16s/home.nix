@@ -8,11 +8,11 @@ in {
   imports = [
     ./home-manager/browser/firefox.nix
     ./home-manager/terminal/zsh.nix
+    ./home-manager/development/git.nix
     "${flakeRootPath}/modules/home-manager/terminal/kitty.nix"
     "${flakeRootPath}/modules/home-manager/terminal/tmux.nix"
     "${flakeRootPath}/modules/home-manager/terminal/xdg.nix"
     "${flakeRootPath}/modules/home-manager/terminal/zoxide.nix"
-    "${flakeRootPath}/modules/home-manager/development/git.nix"
     "${flakeRootPath}/modules/home-manager/development/lazygit.nix"
     "${flakeRootPath}/modules/home-manager/development/ruby.nix"
     "${flakeRootPath}/modules/home-manager/development/direnv.nix"
@@ -39,7 +39,6 @@ in {
     epark = {
       nixvim.enable = true;
       hyprland.enable = true;
-      git.enable = true;
       discord.enable = true;
       cursor.enable = true;
       dunst.enable = true;
