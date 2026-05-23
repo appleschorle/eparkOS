@@ -7,6 +7,8 @@
 in {
   imports = [
     ./home-manager/browser/firefox.nix
+    ./home-manager/terminal/zsh.nix
+    "${flakeRootPath}/modules/home-manager/terminal/xdg.nix"
     "${flakeRootPath}/modules/home-manager/nixvim"
     "${flakeRootPath}/modules/home-manager/hyprland"
     "${flakeRootPath}/modules/home-manager/git.nix"
@@ -15,7 +17,6 @@ in {
     "${flakeRootPath}/modules/home-manager/tmux.nix"
     "${flakeRootPath}/modules/home-manager/lazygit.nix"
     "${flakeRootPath}/modules/home-manager/zoxide.nix"
-    "${flakeRootPath}/modules/home-manager/zsh.nix"
     "${flakeRootPath}/modules/home-manager/kitty.nix"
     "${flakeRootPath}/modules/home-manager/icon-pack.nix"
     "${flakeRootPath}/modules/home-manager/dunst.nix"
@@ -46,7 +47,7 @@ in {
       lazygit.enable = true;
       tmux.enable = true;
       zoxide.enable = true;
-      zsh.enable = true;
+      xdg.enable = true;
       kitty.enable = true;
       ruby.enable = true;
       direnv.enable = true;

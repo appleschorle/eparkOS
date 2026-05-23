@@ -82,7 +82,7 @@
   services.libinput.enable = true; # Touchpad support
 
   programs.zsh.enable = true;
-  environment.pathsToLink = ["/share/zsh"];
+  environment.pathsToLink = ["/share/zsh"]; # NOTE: needed for zsh completion
 
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
