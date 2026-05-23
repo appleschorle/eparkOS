@@ -8,20 +8,20 @@ in {
   imports = [
     ./home-manager/browser/firefox.nix
     ./home-manager/terminal/zsh.nix
+    "${flakeRootPath}/modules/home-manager/terminal/kitty.nix"
+    "${flakeRootPath}/modules/home-manager/terminal/tmux.nix"
     "${flakeRootPath}/modules/home-manager/terminal/xdg.nix"
+    "${flakeRootPath}/modules/home-manager/terminal/zoxide.nix"
+    "${flakeRootPath}/modules/home-manager/development/git.nix"
+    "${flakeRootPath}/modules/home-manager/development/lazygit.nix"
+    "${flakeRootPath}/modules/home-manager/development/ruby.nix"
+    "${flakeRootPath}/modules/home-manager/development/direnv.nix"
+    "${flakeRootPath}/modules/home-manager/desktop/discord.nix"
+    "${flakeRootPath}/modules/home-manager/desktop/cursor.nix"
+    "${flakeRootPath}/modules/home-manager/desktop/icon-pack.nix"
+    "${flakeRootPath}/modules/home-manager/desktop/dunst.nix"
     "${flakeRootPath}/modules/home-manager/nixvim"
     "${flakeRootPath}/modules/home-manager/hyprland"
-    "${flakeRootPath}/modules/home-manager/git.nix"
-    "${flakeRootPath}/modules/home-manager/discord.nix"
-    "${flakeRootPath}/modules/home-manager/cursor.nix"
-    "${flakeRootPath}/modules/home-manager/tmux.nix"
-    "${flakeRootPath}/modules/home-manager/lazygit.nix"
-    "${flakeRootPath}/modules/home-manager/zoxide.nix"
-    "${flakeRootPath}/modules/home-manager/kitty.nix"
-    "${flakeRootPath}/modules/home-manager/icon-pack.nix"
-    "${flakeRootPath}/modules/home-manager/dunst.nix"
-    "${flakeRootPath}/modules/home-manager/ruby.nix"
-    "${flakeRootPath}/modules/home-manager/direnv.nix"
   ];
 
   config = {
