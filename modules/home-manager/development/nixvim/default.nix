@@ -8,15 +8,15 @@
   cfg = config.epark.nixvim;
 in {
   imports = [
-    inputs.nixvim.homeModules.nixvim
     ./extra-config.nix
-    ./lsp.nix
-    ./keymaps.nix
-    ./options.nix
-    ./globals.nix
-    ./plugins
-    ./highlight.nix
     ./files.nix
+    ./globals.nix
+    ./highlight.nix
+    ./keymaps.nix
+    ./lsp.nix
+    ./options.nix
+    ./plugins
+    inputs.nixvim.homeModules.nixvim
   ];
 
   options = {

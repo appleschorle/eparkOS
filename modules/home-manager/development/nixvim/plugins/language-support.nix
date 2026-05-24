@@ -38,24 +38,24 @@ in {
             incremental_selection.enable = true;
           };
           grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
-            css
             bash
+            css
+            jinja
+            jinja-inline
             json
             lua
             make
             markdown
             nix
             regex
+            ruby
+            terraform
+            tmux
             toml
             vim
             vimdoc
             xml
             yaml
-            ruby
-            jinja
-            jinja-inline
-            terraform
-            tmux
             zsh
           ];
         };
