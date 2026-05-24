@@ -28,7 +28,7 @@ in {
             set -g default-command "${pkgs.zsh}/bin/zsh"
           ''}
         ''
-        + builtins.readFile ./tmux/tmux.conf;
+        + builtins.readFile ./tmux.conf;
       # TODO: Set up tmux properly with vim https://github.com/christoomey/vim-tmux-navigator
       plugins = with pkgs; [
         {

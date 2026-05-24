@@ -10,7 +10,7 @@ in {
     ./home-manager/terminal/zsh.nix
     ./home-manager/development/git.nix
     "${flakeRootPath}/modules/home-manager/terminal/kitty.nix"
-    "${flakeRootPath}/modules/home-manager/terminal/tmux.nix"
+    "${flakeRootPath}/modules/home-manager/terminal/tmux"
     "${flakeRootPath}/modules/home-manager/terminal/xdg.nix"
     "${flakeRootPath}/modules/home-manager/terminal/zoxide.nix"
     "${flakeRootPath}/modules/home-manager/development/lazygit.nix"
