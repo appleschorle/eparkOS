@@ -19,16 +19,16 @@ in {
 
         listener = [
           {
-            timeout = 300;
+            timeout = 3000;
             on-timeout = "loginctl lock-session";
           }
           {
-            timeout = 450;
+            timeout = 4500;
             on-timeout = "hyprctl dispatch dpms off";
             on-resume = "hyprctl dispatch dpms on";
           }
           {
-            timeout = 1800;
+            timeout = 18000;
             on-timeout = "systemctl suspend";
           }
         ];
