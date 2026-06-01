@@ -75,6 +75,15 @@ in {
         };
       };
 
+      pylsp = {
+        enable = true;
+        config = {
+          cmd = ["pylsp"];
+          filetypes = ["python"];
+          root_markers = ["main.py" ".venv" ".git"];
+        };
+      };
+
       lua_ls = {
         enable = true;
         config = {
