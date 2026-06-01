@@ -4,16 +4,13 @@
   pkgs,
   ...
 }: let
-  cfg = config.epark.discord;
-in
-  with lib; {
-    imports = [];
+  cfg = config.epark.desktop.discord;
+in {
+  options.epark.desktop.discord.enable = lib.mkEnableOption "Enable Discord";
 
-    options.epark.discord.enable = mkEnableOption "Enable Discord";
-
-    config = mkIf cfg.enable {
-      home.packages = [
-        pkgs.discord
-      ];
-    };
-  }
+  config = lib.mkIf cfg.enable {
+    home.packages = [
+      pkgs.discord
+    ];
+  };
+}

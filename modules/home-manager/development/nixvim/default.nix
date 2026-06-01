@@ -5,7 +5,7 @@
   lib,
   ...
 }: let
-  cfg = config.epark.nixvim;
+  cfg = config.epark.development.nixvim;
 in {
   imports = [
     ./extra-config.nix
@@ -20,7 +20,7 @@ in {
   ];
 
   options = {
-    epark.nixvim.enable = lib.mkEnableOption "Enable NeoVim";
+    epark.development.nixvim.enable = lib.mkEnableOption "Enable NeoVim";
   };
 
   config = lib.mkIf cfg.enable {
@@ -34,14 +34,14 @@ in {
       shfmt
     ];
 
-    epark.nixvim.extra-config.enable = true;
-    epark.nixvim.lsp.enable = true;
-    epark.nixvim.keymaps.enable = true;
-    epark.nixvim.opts.enable = true;
-    epark.nixvim.globals.enable = true;
-    epark.nixvim.plugins.enable = true;
-    epark.nixvim.highlight.enable = true;
-    epark.nixvim.files.enable = true;
+    epark.development.nixvim.extra-config.enable = true;
+    epark.development.nixvim.lsp.enable = true;
+    epark.development.nixvim.keymaps.enable = true;
+    epark.development.nixvim.opts.enable = true;
+    epark.development.nixvim.globals.enable = true;
+    epark.development.nixvim.plugins.enable = true;
+    epark.development.nixvim.highlight.enable = true;
+    epark.development.nixvim.files.enable = true;
 
     programs.nixvim = {
       enable = true;

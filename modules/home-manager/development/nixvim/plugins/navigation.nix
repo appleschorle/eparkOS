@@ -3,12 +3,12 @@
   lib,
   ...
 }: let
-  cfg = config.epark.nixvim.plugins.navigation;
+  cfg = config.epark.development.nixvim.plugins.navigation;
 in {
   imports = [];
 
   options = {
-    epark.nixvim.plugins.navigation.enable = lib.mkEnableOption "Enable NeoVim Plugins for Navigation";
+    epark.development.nixvim.plugins.navigation.enable = lib.mkEnableOption "Enable NeoVim Plugins for Navigation";
   };
 
   config = lib.mkIf cfg.enable {

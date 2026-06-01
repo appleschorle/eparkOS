@@ -3,9 +3,9 @@
   lib,
   ...
 }: let
-  cfg = config.epark.nixvim.files;
+  cfg = config.epark.development.nixvim.files;
 in {
-  options.epark.nixvim.files.enable = lib.mkEnableOption "Enable files for NixVim";
+  options.epark.development.nixvim.files.enable = lib.mkEnableOption "Enable files for NixVim";
 
   config = lib.mkIf cfg.enable {
     programs.nixvim = {

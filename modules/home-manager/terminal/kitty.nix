@@ -3,9 +3,9 @@
   lib,
   ...
 }: let
-  cfg = config.epark.kitty;
+  cfg = config.epark.terminal.kitty;
 in {
-  options.epark.kitty.enable = lib.mkEnableOption "Enable Kitty";
+  options.epark.terminal.kitty.enable = lib.mkEnableOption "Enable Kitty";
 
   config = lib.mkIf cfg.enable {
     programs.kitty = {

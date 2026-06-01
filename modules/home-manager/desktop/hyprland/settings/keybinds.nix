@@ -3,9 +3,9 @@
   lib,
   ...
 }: let
-  cfg = config.epark.hyprland.settings.keybinds;
+  cfg = config.epark.desktop.hyprland.settings.keybinds;
 in {
-  options.epark.hyprland.settings.keybinds.enable = lib.mkEnableOption "Enable keybind settings for Hyprland";
+  options.epark.desktop.hyprland.settings.keybinds.enable = lib.mkEnableOption "Enable keybind settings for Hyprland";
 
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland.settings = {

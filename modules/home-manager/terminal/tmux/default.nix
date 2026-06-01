@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: let
-  cfg = config.epark.tmux;
+  cfg = config.epark.terminal.tmux;
 in {
-  options.epark.tmux = {
+  options.epark.terminal.tmux = {
     enable = lib.mkEnableOption "Enable Tmux";
   };
 

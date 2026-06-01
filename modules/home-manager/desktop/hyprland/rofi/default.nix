@@ -4,14 +4,14 @@
   pkgs,
   ...
 }: let
-  cfg = config.epark.hyprland.rofi;
+  cfg = config.epark.desktop.hyprland.rofi;
 in {
   imports = [
     ./powermenu.nix
     ./launchermenu.nix
   ];
 
-  options.epark.hyprland.rofi.enable = lib.mkEnableOption "Enable Rofi";
+  options.epark.desktop.hyprland.rofi.enable = lib.mkEnableOption "Enable Rofi";
 
   config = lib.mkIf cfg.enable {
     programs.rofi = {
@@ -25,7 +25,7 @@ in {
       terminal = "${pkgs.kitty}/bin/kitty";
     };
 
-    epark.hyprland.rofi = {
+    epark.desktop.hyprland.rofi = {
       powermenu.enable = true;
       launchermenu.enable = true;
     };

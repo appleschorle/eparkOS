@@ -3,12 +3,12 @@
   lib,
   ...
 }: let
-  cfg = config.epark.nixvim.plugins.productivity;
+  cfg = config.epark.development.nixvim.plugins.productivity;
 in {
   imports = [];
 
   options = {
-    epark.nixvim.plugins.productivity.enable = lib.mkEnableOption "Enable NeoVim Plugins for Productivity Tools";
+    epark.development.nixvim.plugins.productivity.enable = lib.mkEnableOption "Enable NeoVim Plugins for Productivity Tools";
   };
 
   config = lib.mkIf cfg.enable {

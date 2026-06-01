@@ -4,9 +4,9 @@
   ...
 }: let
   colors = config.colorScheme.palette;
-  cfg = config.epark.hyprland.settings.general;
+  cfg = config.epark.desktop.hyprland.settings.general;
 in {
-  options.epark.hyprland.settings.general.enable = lib.mkEnableOption "Enable general settings for Hyprland";
+  options.epark.desktop.hyprland.settings.general.enable = lib.mkEnableOption "Enable general settings for Hyprland";
 
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland.settings = {

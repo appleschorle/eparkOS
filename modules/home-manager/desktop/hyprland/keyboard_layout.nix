@@ -3,9 +3,9 @@
   lib,
   ...
 }: let
-  cfg = config.epark.hyprland.keyboard_layout;
+  cfg = config.epark.desktop.hyprland.keyboard_layout;
 in {
-  options.epark.hyprland.keyboard_layout = {
+  options.epark.desktop.hyprland.keyboard_layout = {
     enable = lib.mkEnableOption "Enable Different Keyboard Layouts for Hyprland";
   };
 

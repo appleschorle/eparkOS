@@ -5,9 +5,9 @@
 }: let
   # https://gruvbox-wallpapers.pages.dev/
   astronautWallpaper = "~/Wallpapers/gruvbox_astro.jpg";
-  cfg = config.epark.hyprland.hyprpaper;
+  cfg = config.epark.desktop.hyprland.hyprpaper;
 in {
-  options.epark.hyprland.hyprpaper.enable = lib.mkEnableOption "Enable Hyprpaper for Hyprland";
+  options.epark.desktop.hyprland.hyprpaper.enable = lib.mkEnableOption "Enable Hyprpaper for Hyprland";
 
   config = lib.mkIf cfg.enable {
     home.file."Wallpapers".source = ./static/Wallpapers;

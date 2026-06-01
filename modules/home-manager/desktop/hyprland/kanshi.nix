@@ -3,9 +3,9 @@
   lib,
   ...
 }: let
-  cfg = config.epark.hyprland.kanshi;
+  cfg = config.epark.desktop.hyprland.kanshi;
 in {
-  options.epark.hyprland.kanshi.enable = lib.mkEnableOption "Enable Kanshi for Hyprland";
+  options.epark.desktop.hyprland.kanshi.enable = lib.mkEnableOption "Enable Kanshi for Hyprland";
 
   config = lib.mkIf cfg.enable {
     services.kanshi = {

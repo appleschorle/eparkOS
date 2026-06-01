@@ -21,9 +21,9 @@
   };
   rofiLauncherMenu = pkgs.writeShellScriptBin "rofi-launchermenu" (builtins.readFile launcherMenuScript);
 
-  cfg = config.epark.hyprland.rofi.launchermenu;
+  cfg = config.epark.desktop.hyprland.rofi.launchermenu;
 in {
-  options.epark.hyprland.rofi.launchermenu.enable = lib.mkEnableOption "Enable launcher menu for Rofi";
+  options.epark.desktop.hyprland.rofi.launchermenu.enable = lib.mkEnableOption "Enable launcher menu for Rofi";
 
   config = lib.mkIf cfg.enable {
     home.packages = [

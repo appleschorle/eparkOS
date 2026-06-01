@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: let
-  cfg = config.epark.icon-pack;
+  cfg = config.epark.desktop.icon-pack;
 in {
-  options.epark.icon-pack.enable = lib.mkEnableOption "Enable icon-pack";
+  options.epark.desktop.icon-pack.enable = lib.mkEnableOption "Enable icon-pack";
 
   config = lib.mkIf cfg.enable {
     gtk = {

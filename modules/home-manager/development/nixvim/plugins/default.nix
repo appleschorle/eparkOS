@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  cfg = config.epark.nixvim;
+  cfg = config.epark.development.nixvim;
 in {
   imports = [
     ./editing.nix
@@ -14,14 +14,14 @@ in {
   ];
 
   options = {
-    epark.nixvim.plugins.enable = lib.mkEnableOption "Enable NeoVim Plugins";
+    epark.development.nixvim.plugins.enable = lib.mkEnableOption "Enable NeoVim Plugins";
   };
 
   config = lib.mkIf cfg.enable {
-    epark.nixvim.plugins.editing.enable = true;
-    epark.nixvim.plugins.language-support.enable = true;
-    epark.nixvim.plugins.navigation.enable = true;
-    epark.nixvim.plugins.productivity.enable = true;
-    epark.nixvim.plugins.ui.enable = true;
+    epark.development.nixvim.plugins.editing.enable = true;
+    epark.development.nixvim.plugins.language-support.enable = true;
+    epark.development.nixvim.plugins.navigation.enable = true;
+    epark.development.nixvim.plugins.productivity.enable = true;
+    epark.development.nixvim.plugins.ui.enable = true;
   };
 }

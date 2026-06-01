@@ -3,9 +3,9 @@
   lib,
   ...
 }: let
-  cfg = config.epark.xdg;
+  cfg = config.epark.terminal.xdg;
 in {
-  options.epark.xdg = {
+  options.epark.terminal.xdg = {
     enable = lib.mkEnableOption "Enable XDG";
   };
 

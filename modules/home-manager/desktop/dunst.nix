@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: let
-  cfg = config.epark.dunst;
+  cfg = config.epark.desktop.dunst;
 in {
-  options.epark.dunst.enable = lib.mkEnableOption "Enable dunst";
+  options.epark.desktop.dunst.enable = lib.mkEnableOption "Enable dunst";
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [

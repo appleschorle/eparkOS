@@ -37,19 +37,19 @@ in {
     colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
 
     epark = {
-      nixvim.enable = true;
-      hyprland.enable = true;
-      discord.enable = true;
-      cursor.enable = true;
-      dunst.enable = true;
-      icon-pack.enable = true;
-      lazygit.enable = true;
-      tmux.enable = true;
-      zoxide.enable = true;
-      xdg.enable = true;
-      kitty.enable = true;
-      ruby.enable = true;
-      direnv.enable = true;
+      development.nixvim.enable = true;
+      desktop.hyprland.enable = true;
+      desktop.discord.enable = true;
+      desktop.cursor.enable = true;
+      desktop.dunst.enable = true;
+      desktop.icon-pack.enable = true;
+      development.lazygit.enable = true;
+      development.direnv.enable = true;
+      development.ruby.enable = true;
+      terminal.tmux.enable = true;
+      terminal.zoxide.enable = true;
+      terminal.kitty.enable = true;
+      terminal.xdg.enable = true;
     };
   };
 }

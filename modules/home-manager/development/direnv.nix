@@ -3,20 +3,15 @@
   config,
   ...
 }: let
-  cfg = config.epark.direnv;
-in
-  with lib; {
-    imports = [];
+  cfg = config.epark.development.direnv;
+in {
+  options.epark.development.direnv.enable = lib.mkEnableOption "Enable DirEnv";
 
-    options.epark.direnv.enable = mkEnableOption "Enable DirEnv";
-
-    config = mkIf cfg.enable {
-      programs.direnv = {
-        enable = true;
-        silent = true;
-        nix-direnv = {
-          enable = true;
-        };
-      };
+  config = lib.mkIf cfg.enable {
+    programs.direnv = {
+      enable = true;
+      silent = true;
+      nix-direnv.enable = true;
     };
-  }
+  };
+}

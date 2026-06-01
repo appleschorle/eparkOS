@@ -16,9 +16,9 @@
     blue = "#${colors.base0D}";
     cyan = "#${colors.base0C}";
   };
-  cfg = config.epark.hyprland.waybar;
+  cfg = config.epark.desktop.hyprland.waybar;
 in {
-  options.epark.hyprland.waybar = {
+  options.epark.desktop.hyprland.waybar = {
     enable = lib.mkEnableOption "Enable Waybar for Hyprland";
   };
 

@@ -3,9 +3,9 @@
   lib,
   ...
 }: let
-  cfg = config.epark.zoxide;
+  cfg = config.epark.terminal.zoxide;
 in {
-  options.epark.zoxide.enable = lib.mkEnableOption "Enable zoxide";
+  options.epark.terminal.zoxide.enable = lib.mkEnableOption "Enable zoxide";
 
   config = lib.mkIf cfg.enable {
     programs.zoxide = {

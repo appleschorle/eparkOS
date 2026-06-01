@@ -3,9 +3,9 @@
   lib,
   ...
 }: let
-  cfg = config.epark.lazygit;
+  cfg = config.epark.development.lazygit;
 in {
-  options.epark.lazygit.enable = lib.mkEnableOption "Enable lazygit";
+  options.epark.development.lazygit.enable = lib.mkEnableOption "Enable lazygit";
 
   config = lib.mkIf cfg.enable {
     programs.lazygit = {

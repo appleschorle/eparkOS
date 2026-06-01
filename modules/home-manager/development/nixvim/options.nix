@@ -3,12 +3,12 @@
   lib,
   ...
 }: let
-  cfg = config.epark.nixvim.opts;
+  cfg = config.epark.development.nixvim.opts;
 in {
   imports = [];
 
   options = {
-    epark.nixvim.opts.enable = lib.mkEnableOption "Enable NeoVim Options";
+    epark.development.nixvim.opts.enable = lib.mkEnableOption "Enable NeoVim Options";
   };
 
   config = lib.mkIf cfg.enable {
