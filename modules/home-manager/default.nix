@@ -9,14 +9,13 @@
     ./development/direnv.nix
     ./development/git.nix
     ./development/lazygit.nix
-    ./development/nixvim
     ./development/ruby.nix
     ./terminal/kitty.nix
     ./terminal/tmux
     ./terminal/xdg.nix
     ./terminal/zoxide.nix
     ./terminal/zsh.nix
+    inputs.nixvim.homeModules.nixvim
+    ./development/nixvim
   ];
-
-  _module.args.inputs = inputs;
 }

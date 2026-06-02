@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   config,
   lib,
   ...
@@ -16,7 +15,6 @@ in {
     ./lsp.nix
     ./options.nix
     ./plugins
-    inputs.nixvim.homeModules.nixvim
   ];
 
   options = {

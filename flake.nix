@@ -27,8 +27,10 @@
       development.git = ./modules/home-manager/development/git.nix;
       development.lazygit = ./modules/home-manager/development/lazygit.nix;
       development.nixvim = {
-        imports = [./modules/home-manager/development/nixvim];
-        _module.args.inputs = inputs;
+        imports = [
+          ./modules/home-manager/development/nixvim
+          inputs.nixvim.homeModules.nixvim
+        ];
       };
       development.ruby = ./modules/home-manager/development/ruby.nix;
 
