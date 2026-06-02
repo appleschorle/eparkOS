@@ -19,14 +19,7 @@ in {
       terminal = "screen-256color";
       extraConfig =
         ''
-          ${lib.optionalString pkgs.stdenv.isDarwin ''
-            # Needed on macOS for proper clipboard integration
-            set -g default-command "${pkgs.reattach-to-user-namespace}/bin/reattach-to-user-namespace ${pkgs.zsh}/bin/zsh"
-          ''}
-
-          ${lib.optionalString pkgs.stdenv.isLinux ''
-            set -g default-command "${pkgs.zsh}/bin/zsh"
-          ''}
+          set -g default-command "${pkgs.zsh}/bin/zsh"
         ''
         + builtins.readFile ./tmux.conf;
       # TODO: Set up tmux properly with vim https://github.com/christoomey/vim-tmux-navigator
