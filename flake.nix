@@ -1,79 +1,47 @@
 {
-  description = "Nix Configuration";
-  # TODO: rofi ricing (perhaps also a window picker),
-  # dunst notifications, better exponential sound and brightness see eric murphy,
-  # specific workspaces (AI, Browser, Terminal), AI integration in nvim and terminal,
-  # Nvim global paste on visual mode, keyboard binding utility app to see all keyboard bindings in one go,
-  # remap caps lock, refactoring to have a common colorscheme and fonts as inputs and be able to enable disable certain features, macos integration.
-  # Perhaps check better language defaults in nvim for indentation etc.
-  # Customize browser more with certain start pages and also with custom search engines for nixos or others etc.
+  description = "eparkOS — shared NixOS and home-manager modules";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nur = {
-      url = "github:nix-community/NUR";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nix-colors.url = "github:misterio77/nix-colors";
-    sysc-greet = {
-      url = "github:Nomadcxx/sysc-greet";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  # https://www.reddit.com/r/NixOS/comments/18eomkl/homemanager_as_nixos_module_or_as_standalone/
-  outputs = {
-    self,
-    nixpkgs,
-    ...
-  } @ inputs: let
-    linuxSystem = "x86_64-linux";
-    darwinSystem = "aarch64-darwin"; # or "x86_64-darwin" for Intel
-    linuxPkgs = nixpkgs.legacyPackages."${linuxSystem}".extend inputs.nur.overlays.default;
-    darwinPkgs = nixpkgs.legacyPackages."${darwinSystem}".extend inputs.nur.overlays.default;
-    personalPath = "${self}/hosts/personal/thinkpad-p16s";
-    workPath = "${self}/hosts/work/macbook-pro-m4";
-    flakeRootPath = ./.;
-  in {
-    nixosConfigurations = {
-      personal = nixpkgs.lib.nixosSystem {
-        system = linuxSystem;
+  outputs = {self, ...} @ inputs: {
+    homeManagerModules = {
+      # All modules in one import
+      default = import ./modules/home-manager {inherit inputs;};
 
-        specialArgs = {inherit inputs flakeRootPath;};
-        modules = [
-          "${personalPath}/configuration.nix"
-          inputs.sysc-greet.nixosModules.default
-        ];
+      # Individual modules
+      browser.firefox = ./modules/home-manager/browser/firefox.nix;
+
+      desktop.cursor = ./modules/home-manager/desktop/cursor.nix;
+      desktop.discord = ./modules/home-manager/desktop/discord.nix;
+      desktop.dunst = ./modules/home-manager/desktop/dunst.nix;
+      desktop.hyprland = ./modules/home-manager/desktop/hyprland;
+      desktop.icon-pack = ./modules/home-manager/desktop/icon-pack.nix;
+
+      development.direnv = ./modules/home-manager/development/direnv.nix;
+      development.git = ./modules/home-manager/development/git.nix;
+      development.lazygit = ./modules/home-manager/development/lazygit.nix;
+      development.nixvim = {
+        imports = [./modules/home-manager/development/nixvim];
+        _module.args.inputs = inputs;
       };
+      development.ruby = ./modules/home-manager/development/ruby.nix;
+
+      terminal.kitty = ./modules/home-manager/terminal/kitty.nix;
+      terminal.tmux = ./modules/home-manager/terminal/tmux;
+      terminal.xdg = ./modules/home-manager/terminal/xdg.nix;
+      terminal.zoxide = ./modules/home-manager/terminal/zoxide.nix;
+      terminal.zsh = ./modules/home-manager/terminal/zsh.nix;
     };
 
-    homeConfigurations = {
-      personal = inputs.home-manager.lib.homeManagerConfiguration {
-        pkgs = linuxPkgs;
-
-        extraSpecialArgs = {inherit inputs flakeRootPath;};
-        modules = [
-          inputs.nix-colors.homeManagerModules.default
-          "${personalPath}/home.nix"
-        ];
-      };
-
-      work = inputs.home-manager.lib.homeManagerConfiguration {
-        pkgs = darwinPkgs;
-        extraSpecialArgs = {inherit inputs flakeRootPath;};
-        modules = [
-          inputs.nix-colors.homeManagerModules.default
-          "${workPath}/home.nix"
-        ];
-      };
+    nixosModules = {
+      tuigreet = ./modules/nixos/tuigreet.nix;
+      sysc-greet = ./modules/nixos/sysc-greet.nix;
     };
   };
 }

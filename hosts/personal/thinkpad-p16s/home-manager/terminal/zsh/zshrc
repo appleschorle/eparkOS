@@ -1,7 +1,0 @@
-# Autosuggest Keybind
-bindkey '^F' autosuggest-accept
-
-# Editing command line in nvim
-autoload -Uz edit-command-line
-zle -N edit-command-line
-bindkey '^E' edit-command-line
