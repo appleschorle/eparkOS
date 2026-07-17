@@ -43,7 +43,6 @@
 
     nixosModules = {
       tuigreet = ./modules/nixos/tuigreet.nix;
-      sysc-greet = ./modules/nixos/sysc-greet.nix;
     };
   };
 }
