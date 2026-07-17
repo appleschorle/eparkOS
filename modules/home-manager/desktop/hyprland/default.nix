@@ -22,7 +22,6 @@ in {
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
       enable = true;
-      settings.exec-once = true;
       configType = "hyprlang";
     };
 
