@@ -23,6 +23,7 @@ in {
     wayland.windowManager.hyprland = {
       enable = true;
       settings.exec-once = true;
+      configType = "hyprlang";
     };
 
     epark.desktop.hyprland = {
