@@ -12,7 +12,7 @@
     ./development/ruby.nix
     ./terminal/kitty.nix
     ./terminal/tmux
-    ./terminal/xdg.nix
+    ./terminal/xdg-user.nix
     ./terminal/zoxide.nix
     ./terminal/zsh.nix
     inputs.nixvim.homeModules.nixvim

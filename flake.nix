@@ -36,7 +36,7 @@
 
       terminal.kitty = ./modules/home-manager/terminal/kitty.nix;
       terminal.tmux = ./modules/home-manager/terminal/tmux;
-      terminal.xdg = ./modules/home-manager/terminal/xdg.nix;
+      terminal.xdgUser = ./modules/home-manager/terminal/xdg-user.nix;
       terminal.zoxide = ./modules/home-manager/terminal/zoxide.nix;
       terminal.zsh = ./modules/home-manager/terminal/zsh.nix;
     };
