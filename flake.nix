@@ -43,6 +43,7 @@
 
     nixosModules = {
       tuigreet = ./modules/nixos/tuigreet.nix;
+      media = ./modules/nixos/media.nix;
     };
   };
 }
