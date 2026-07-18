@@ -43,6 +43,7 @@ in {
 
     programs.nixvim = {
       enable = true;
+      nixpkgs.source = pkgs;
       defaultEditor = true;
       viAlias = true;
       vimAlias = true;
