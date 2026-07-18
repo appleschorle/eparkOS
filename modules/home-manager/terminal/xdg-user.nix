@@ -24,6 +24,7 @@ in
           documents = "${config.home.homeDirectory}/Documents";
           pictures = "${config.home.homeDirectory}/Pictures";
           videos = "${config.home.homeDirectory}/Videos";
+          setSessionVariables = false;
         };
       };
     };
