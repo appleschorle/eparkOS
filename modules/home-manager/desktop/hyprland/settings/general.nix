@@ -13,6 +13,9 @@ in {
       configType = "hyprlang";
       systemd.variables = ["--all"];
       settings = {
+        exec-once = [
+          "systemctl --user restart hyprpolkitagent"
+        ];
         general = {
           border_size = 2;
           gaps_out = 20;

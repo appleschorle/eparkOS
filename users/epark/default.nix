@@ -20,7 +20,6 @@
       stateVersion = "25.05";
     };
     programs.home-manager.enable = true;
-    nixpkgs.config.allowUnfree = true;
 
     colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
 
@@ -34,6 +33,7 @@
       desktop.cursor.enable = true;
       desktop.dunst.enable = true;
       desktop.icon-pack.enable = true;
+      desktop.hyprpolkitagent.enable = true;
       terminal.tmux.enable = true;
       terminal.zoxide.enable = true;
       terminal.kitty.enable = true;

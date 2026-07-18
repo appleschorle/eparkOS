@@ -27,6 +27,7 @@
       personal = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         specialArgs = {inherit inputs;};
+
         modules = [
           ./hosts/personal
           inputs.home-manager.nixosModules.home-manager
@@ -35,6 +36,9 @@
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = {inherit inputs;};
             home-manager.users.epark = ./users/epark;
+            home-manager.sharedModules = [
+              {nixpkgs.overlays = [inputs.nur.overlays.default];}
+            ];
           }
         ];
       };

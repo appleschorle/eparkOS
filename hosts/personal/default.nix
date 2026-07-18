@@ -1,17 +1,8 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./hardware-configuration.nix
     ../../modules/nixos
   ];
-
-  nixpkgs.overlays = [
-    inputs.nur.overlays.default
-  ];
-
   programs.dconf.enable = true;
 
   epark.tuigreet.enable = true;
