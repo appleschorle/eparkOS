@@ -21,6 +21,8 @@ in
         config.common.default = "*";
       };
 
+      security.polkit.enable = true;
+
       # Electron apps running on Wayland
       environment.sessionVariables.NIXOS_OZONE_WL = "1";
     };

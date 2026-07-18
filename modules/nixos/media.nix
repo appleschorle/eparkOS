@@ -9,6 +9,7 @@ in
     options.epark.media.enable = mkEnableOption "Enable multimedia modules";
 
     config = mkIf cfg.enable {
+      security.rtkit.enable = true;
       services.pipewire = {
         enable = true;
         pulse.enable = true;
