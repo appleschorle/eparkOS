@@ -31,14 +31,12 @@
         modules = [
           ./hosts/personal
           inputs.home-manager.nixosModules.home-manager
+          {nixpkgs.overlays = [inputs.nur.overlays.default];}
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = {inherit inputs;};
             home-manager.users.epark = ./users/epark;
-            home-manager.sharedModules = [
-              {nixpkgs.overlays = [inputs.nur.overlays.default];}
-            ];
           }
         ];
       };
