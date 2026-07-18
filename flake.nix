@@ -1,14 +1,18 @@
 {
-  description = "eparkOS — shared NixOS and home-manager modules";
+  description = "eparkOS";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nixvim = {
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-colors.url = "github:misterio77/nix-colors";
@@ -16,20 +20,24 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = {...} @ inputs: {
-    homeManagerModules = {
-      homeManager = import ./modules/home-manager {inherit inputs;};
-      nixOS = import ./modules/home-manager/nixOS {inherit inputs;};
-    };
-
-    nixosModules = {
-      default = ./modules/nixos;
+  outputs = {nixpkgs, ...} @ inputs: {
+    nixosConfigurations = {
+      personal = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {inherit inputs;};
+        modules = [
+          ./hosts/personal
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = {inherit inputs;};
+            home-manager.users.epark = ./users/epark;
+          }
+        ];
+      };
     };
   };
 }

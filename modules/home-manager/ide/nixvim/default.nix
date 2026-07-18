@@ -2,11 +2,13 @@
   pkgs,
   config,
   lib,
+  inputs,
   ...
 }: let
   cfg = config.epark.development.nixvim;
 in {
   imports = [
+    inputs.nixvim.homeModules.nixvim
     ./extra-config.nix
     ./files.nix
     ./globals.nix

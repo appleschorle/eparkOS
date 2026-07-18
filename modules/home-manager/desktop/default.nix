@@ -1,9 +1,9 @@
 {...}: {
   imports = [
-    ./desktop/cursor.nix
-    ./desktop/discord.nix
-    ./desktop/dunst.nix
-    ./desktop/hyprland
-    ./desktop/icon-pack.nix
+    ./cursor.nix
+    ./discord.nix
+    ./dunst.nix
+    ./hyprland
+    ./icon-pack.nix
   ];
 }

@@ -1,6 +1,5 @@
-{nixvim}: {
+{...}: {
   imports = [
-    nixvim
     ./nixvim
   ];
 }
