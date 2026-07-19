@@ -32,8 +32,9 @@
       desktop.discord.enable = true;
       desktop.cursor.enable = true;
       desktop.dunst.enable = true;
-      desktop.icon-pack.enable = true;
       desktop.hyprpolkitagent.enable = true;
+      desktop.fonts.enable = true;
+      desktop.theme.enable = true;
       terminal.tmux.enable = true;
       terminal.zoxide.enable = true;
       terminal.kitty.enable = true;
