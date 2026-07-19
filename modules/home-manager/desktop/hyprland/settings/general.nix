@@ -10,7 +10,7 @@ in {
 
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
-      configType = "hyprlang";
+      configType = "lua";
       systemd.variables = ["--all"];
       settings = {
         exec-once = [
