@@ -11,17 +11,17 @@ in {
 
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
-      settings = {
-        input = {
-          kb_layout = "us,se,de";
-          kb_variant = ",,";
-
-          kb_options = "grp:alt_space_toggle";
-
-          follow_mouse = 1;
-          touchpad.natural_scroll = false;
-        };
-      };
+      # settings = {
+      #   input = {
+      #     kb_layout = "us,se,de";
+      #     kb_variant = ",,";
+      #
+      #     kb_options = "grp:alt_space_toggle";
+      #
+      #     follow_mouse = 1;
+      #     touchpad.natural_scroll = false;
+      #   };
+      # };
     };
   };
 }
