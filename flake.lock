@@ -114,11 +114,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784489491,
-        "narHash": "sha256-j9maqjx1T8+ljAVntAdSI5hSGCm77QNZz64JF1rJNu0=",
+        "lastModified": 1784546264,
+        "narHash": "sha256-jxVr5EHMYAOkFvS2k0abIvt6NqyshyWmiHHzV17sT2g=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "3139deb8cafbe73b39b24451255b2fdd3426077e",
+        "rev": "e3dea8e4792b09a6c0eb5836b0284ad05b1acba0",
         "type": "github"
       },
       "original": {
@@ -220,10 +220,10 @@
     "hyprland-dots": {
       "flake": false,
       "locked": {
-        "lastModified": 1784544319,
-        "narHash": "sha256-UQ0INZo+k8Jpe/vmDevMtSDbvGvbPbyGZxlVq7oGpzw=",
+        "lastModified": 1784550210,
+        "narHash": "sha256-IGAuuUSR40g6PI/QpI/bJ3QrZ2EALQ87y1NDNep1yZQ=",
         "ref": "refs/heads/main",
-        "rev": "875a44449f0706add7c3a37d734c3d580c6bd390",
+        "rev": "e3471ee5fe32f8f006e58cd3450b2ec82fb493b8",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/appleschorle/hyprland-dots.git"
@@ -545,11 +545,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1784544770,
-        "narHash": "sha256-a1m34vQ9/HHgwQ4WRF7VBQVpANCMCZDy7m+Dd8rNEFk=",
+        "lastModified": 1784549840,
+        "narHash": "sha256-DDnyOXmrSdOqgDobhD+lZTo8VugQ4sMFwuiftbQffAM=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "9ddf39fec20a5d1ee6226a0608680ba4a4f23b4d",
+        "rev": "bd64a2f7a1cfe5cde1ff09b77c43c0661a65a19d",
         "type": "github"
       },
       "original": {
