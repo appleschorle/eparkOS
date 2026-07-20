@@ -220,10 +220,10 @@
     "hyprland-dots": {
       "flake": false,
       "locked": {
-        "lastModified": 1784550210,
-        "narHash": "sha256-IGAuuUSR40g6PI/QpI/bJ3QrZ2EALQ87y1NDNep1yZQ=",
+        "lastModified": 1784572619,
+        "narHash": "sha256-PzHCqeovHJZBuy97I9IG8Ox0fP60PF+FgGy36kswo/0=",
         "ref": "refs/heads/main",
-        "rev": "e3471ee5fe32f8f006e58cd3450b2ec82fb493b8",
+        "rev": "c9da7454b70f4dc7bcd5c0237e391ca730656234",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/appleschorle/hyprland-dots.git"
