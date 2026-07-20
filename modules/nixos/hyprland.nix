@@ -16,8 +16,6 @@ in
         withUWSM = true;
       };
 
-      programs.uwsm.enable = true;
-
       xdg.portal = {
         enable = true;
         extraPortals = [pkgs.xdg-desktop-portal-gtk];
