@@ -1,4 +1,5 @@
 {
+  inputs,
   lib,
   config,
   ...
@@ -20,23 +21,28 @@ in {
   options.epark.desktop.hyprland.enable = lib.mkEnableOption "Enable Hyprland";
 
   config = lib.mkIf cfg.enable {
-    wayland.windowManager.hyprland = {
-      enable = true;
+    # wayland.windowManager.hyprland = {
+    #   enable = true;
+    # };
+
+    xdg.configFile."hypr/hyprland.lua" = {
+      source = inputs.hyprland-dots + "/hyprland.lua";
+      # recursive = true;
     };
 
     epark.desktop.hyprland = {
-      hypridle.enable = true;
-      hyprlock.enable = true;
-      hyprpaper.enable = true;
-      kanshi.enable = true;
-      rofi.enable = true;
+      # hypridle.enable = true;
+      # hyprlock.enable = true;
+      # hyprpaper.enable = true;
+      # kanshi.enable = true;
+      # rofi.enable = true;
       waybar.enable = true;
-      keyboard_layout.enable = true;
+      # keyboard_layout.enable = true;
 
-      settings = {
-        general.enable = true;
-        keybinds.enable = true;
-      };
+      # settings = {
+      #   general.enable = true;
+      #   keybinds.enable = true;
+      # };
     };
   };
 }

@@ -11,7 +11,10 @@ in {
   config = lib.mkIf cfg.enable {
     wayland.windowManager.hyprland = {
       configType = "lua";
-      systemd.variables = ["--all"];
+      systemd = {
+        enable = true;
+        variables = ["--all"];
+      };
       settings = {
         # on = {
         #   _args = [

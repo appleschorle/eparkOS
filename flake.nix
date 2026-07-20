@@ -20,6 +20,10 @@
       url = "github:nix-community/NUR";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland-dots = {
+      url = "git+ssh://git@github.com/appleschorle/hyprland-dots.git?shallow=1";
+      flake = false;
+    };
   };
 
   outputs = {nixpkgs, ...} @ inputs: {
@@ -37,6 +41,7 @@
             home-manager.useUserPackages = true;
             home-manager.extraSpecialArgs = {inherit inputs;};
             home-manager.users.epark = ./users/epark;
+            home-manager.backupFileExtension = "backup";
           }
         ];
       };

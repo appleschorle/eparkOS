@@ -33,24 +33,36 @@ in {
               (lib.generators.mkLuaInline "hl.dsp.exec_cmd(\"firefox\")")
             ];
           }
-          # {
-          #   _args = [
-          #     "SUPER + Tab"
-          #     (mkInline "hl.dsp.exec_cmd({ workspace = \"e+1\"})")
-          #   ];
-          # }
-          # {
-          #   _args = [
-          #     "SUPER + SHIFT + Tab"
-          #     (mkInline "hl.dsp.focus({ workspace = \"e-1\"})")
-          #   ];
-          # }
-          # {
-          #   _args = [
-          #     "SUPER + F"
-          #     (mkInline "hl.dsp.window.fullscreen({ mode = \"fullscreen\"})")
-          #   ];
-          # }
+          {
+            _args = [
+              "SUPER + F"
+              (lib.generators.mkLuaInline "hl.dsp.window.fullscreen({mode = \"fullscreen\", action = \"toggle\"})")
+            ];
+          }
+          {
+            _args = [
+              "SUPER + Tab"
+              (mkInline "hl.dsp.focus({ workspace = \"e+1\"})")
+            ];
+          }
+          {
+            _args = [
+              "SUPER + SHIFT + Tab"
+              (mkInline "hl.dsp.focus({ workspace = \"e-1\"})")
+            ];
+          }
+          {
+            _args = [
+              "SUPER + 1"
+              (mkInline "hl.dsp.focus({ workspace = \"1\"})")
+            ];
+          }
+          {
+            _args = [
+              "SUPER + 2"
+              (mkInline "hl.dsp.focus({ workspace = \"2\"})")
+            ];
+          }
           {
             _args = [
               "SUPER + SHIFT + Q"
