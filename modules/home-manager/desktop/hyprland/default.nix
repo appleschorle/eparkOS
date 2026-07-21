@@ -14,20 +14,13 @@ in {
     ./hypridle.nix
     ./hyprlock.nix
     ./keyboard_layout.nix
-    ./settings/keybinds.nix
-    ./settings/general.nix
   ];
 
   options.epark.desktop.hyprland.enable = lib.mkEnableOption "Enable Hyprland";
 
   config = lib.mkIf cfg.enable {
-    # wayland.windowManager.hyprland = {
-    #   enable = true;
-    # };
-
     xdg.configFile."hypr/hyprland.lua" = {
       source = inputs.hyprland-dots + "/hyprland.lua";
-      # recursive = true;
     };
 
     epark.desktop.hyprland = {
@@ -38,11 +31,6 @@ in {
       # rofi.enable = true;
       waybar.enable = true;
       # keyboard_layout.enable = true;
-
-      # settings = {
-      #   general.enable = true;
-      #   keybinds.enable = true;
-      # };
     };
   };
 }
