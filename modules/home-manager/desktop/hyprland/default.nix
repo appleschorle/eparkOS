@@ -25,7 +25,7 @@ in {
     epark.desktop.hyprland = {
       # hypridle.enable = true;
       # hyprlock.enable = true;
-      # hyprpaper.enable = true;
+      hyprpaper.enable = true;
       # kanshi.enable = true;
       # rofi.enable = true;
       # keyboard_layout.enable = true;

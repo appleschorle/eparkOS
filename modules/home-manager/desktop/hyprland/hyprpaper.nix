@@ -15,10 +15,12 @@ in {
       enable = true;
       settings = {
         preload = [astronautWallpaper];
+
         wallpaper = [
-          "DP-2,${astronautWallpaper}" # Main
-          "DP-1,${astronautWallpaper}" # Vertical
-          "eDP-1,${astronautWallpaper}" # Built-In
+          {
+            monitor = "";
+            path = astronautWallpaper;
+          }
         ];
       };
     };
