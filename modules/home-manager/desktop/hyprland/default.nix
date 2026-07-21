@@ -10,7 +10,6 @@ in {
     ./hyprpaper.nix
     ./kanshi.nix
     ./rofi
-    ./waybar.nix
     ./hypridle.nix
     ./hyprlock.nix
     ./keyboard_layout.nix
@@ -29,7 +28,6 @@ in {
       # hyprpaper.enable = true;
       # kanshi.enable = true;
       # rofi.enable = true;
-      waybar.enable = true;
       # keyboard_layout.enable = true;
     };
   };

@@ -7,5 +7,6 @@
     ./hyprpolkitagent.nix
     ./theme.nix
     ./fonts.nix
+    ./waybar.nix
   ];
 }

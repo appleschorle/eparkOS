@@ -24,6 +24,10 @@
       url = "git+ssh://git@github.com/appleschorle/hyprland-dots.git?shallow=1";
       flake = false;
     };
+    waybar-dots = {
+      url = "git+ssh://git@github.com/appleschorle/waybar-dots.git?shallow=1";
+      flake = false;
+    };
   };
 
   outputs = {nixpkgs, ...} @ inputs: {

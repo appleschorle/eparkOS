@@ -588,7 +588,8 @@
         "nix-colors": "nix-colors",
         "nixpkgs": "nixpkgs",
         "nixvim": "nixvim",
-        "nur": "nur"
+        "nur": "nur",
+        "waybar-dots": "waybar-dots"
       }
     },
     "systems": {
@@ -620,6 +621,23 @@
         "ref": "future-26.11",
         "repo": "default",
         "type": "github"
+      }
+    },
+    "waybar-dots": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1784637465,
+        "narHash": "sha256-1hkIsRILrHJnOpf7WbucuXgIGMC611x28g2RRQgjiXY=",
+        "ref": "refs/heads/main",
+        "rev": "15bbaee60bcb0adfa577392335e228092fbfc79c",
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@github.com/appleschorle/waybar-dots.git"
+      },
+      "original": {
+        "shallow": true,
+        "type": "git",
+        "url": "ssh://git@github.com/appleschorle/waybar-dots.git"
       }
     },
     "xdph": {
