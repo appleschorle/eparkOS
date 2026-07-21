@@ -21,6 +21,14 @@ in {
         };
       };
 
+      jsonls = {
+        enable = true;
+        config = {
+          filetypes = ["json" "jsonc"];
+          cmd = ["vscode-json-language-server" "--stdio"];
+        };
+      };
+
       clangd = {
         enable = true;
         config = {

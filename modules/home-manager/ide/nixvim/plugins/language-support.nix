@@ -22,6 +22,8 @@ in {
               nix = ["alejandra"];
               # ruby = ["rubyfmt"];
               css = ["prettier"];
+              json = ["prettier"];
+              jsonc = ["prettier"];
             };
             format_on_save = {
               lsp_format = "fallback";
