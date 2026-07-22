@@ -220,10 +220,10 @@
     "hyprland-dots": {
       "flake": false,
       "locked": {
-        "lastModified": 1784572904,
-        "narHash": "sha256-rit70Hf7tMuNukETijv389NooKgUIa47MdU3+JX2UgU=",
+        "lastModified": 1784731881,
+        "narHash": "sha256-UAeAqmbgpMgOqe/rCXOg6gWIXaKuLcTKjhaGHRDpjRY=",
         "ref": "refs/heads/main",
-        "rev": "e297eebc5c5ae87aa56f0a3863f219ca8d2859b5",
+        "rev": "e649a3de18fb6fb6f16fb683c62e1e047c963136",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/appleschorle/hyprland-dots.git"
@@ -626,10 +626,10 @@
     "waybar-dots": {
       "flake": false,
       "locked": {
-        "lastModified": 1784638367,
-        "narHash": "sha256-q2IWT+VmgT1WEUKODYa+hcQuDtdNb6EEVygDHfzkru8=",
+        "lastModified": 1784640340,
+        "narHash": "sha256-7WtWGvOpvACBD+eICJQS2JzIWhgVE/RB+oOrUzrP8UE=",
         "ref": "refs/heads/main",
-        "rev": "be2830410da0f00155932a68b909079ab5bdb5ce",
+        "rev": "d17ed732e969f23533805fb0bf7d598d2dbd63b3",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/appleschorle/waybar-dots.git"

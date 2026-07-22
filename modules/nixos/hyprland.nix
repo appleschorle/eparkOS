@@ -26,5 +26,17 @@ in
 
       # Electron apps running on Wayland
       environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+      environment.systemPackages = with pkgs; [
+        nemo-with-extensions
+
+        grim
+        slurp
+        swappy
+        wl-clipboard
+      ];
+      services.gvfs.enable = true;
+
+      programs.evince.enable = true;
     };
   }
