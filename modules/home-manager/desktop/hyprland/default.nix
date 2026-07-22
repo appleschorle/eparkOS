@@ -27,7 +27,7 @@ in {
       # hyprlock.enable = true;
       hyprpaper.enable = true;
       # kanshi.enable = true;
-      # rofi.enable = true;
+      rofi.enable = true;
       # keyboard_layout.enable = true;
     };
   };
