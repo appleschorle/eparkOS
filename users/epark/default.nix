@@ -36,6 +36,7 @@
       desktop.fonts.enable = true;
       desktop.theme.enable = true;
       desktop.waybar.enable = true;
+      desktop.androidIntegration.enable = true;
       terminal.tmux.enable = true;
       terminal.zoxide.enable = true;
       terminal.kitty.enable = true;

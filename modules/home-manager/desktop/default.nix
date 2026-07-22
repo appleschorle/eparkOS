@@ -8,5 +8,6 @@
     ./theme.nix
     ./fonts.nix
     ./waybar.nix
+    ./android-integration.nix
   ];
 }

@@ -72,5 +72,16 @@
         }
       ];
     }
+    {
+      name = "Android";
+      bookmarks = [
+        {
+          name = "SendFiles";
+          tags = ["Android" "Phone"];
+          keyword = "send";
+          url = "https://drop.fydeos.io/";
+        }
+      ];
+    }
   ];
 }

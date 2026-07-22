@@ -35,8 +35,11 @@ in
         swappy
         wl-clipboard
       ];
-      services.gvfs.enable = true;
 
       programs.evince.enable = true;
+
+      # Open firewall ports automatically
+      programs.kdeconnect.enable = true;
+      services.gvfs.enable = true;
     };
   }
