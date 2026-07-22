@@ -9,5 +9,6 @@
     ./fonts.nix
     ./waybar.nix
     ./android-integration.nix
+    ./color-picker.nix
   ];
 }
