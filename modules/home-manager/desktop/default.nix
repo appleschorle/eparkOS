@@ -10,5 +10,6 @@
     ./waybar.nix
     ./android-integration.nix
     ./color-picker.nix
+    ./clipboard.nix
   ];
 }
