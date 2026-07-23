@@ -12,7 +12,6 @@ in {
     ./rofi
     ./hypridle.nix
     ./hyprlock.nix
-    ./keyboard_layout.nix
   ];
 
   options.epark.desktop.hyprland.enable = lib.mkEnableOption "Enable Hyprland";
@@ -24,11 +23,10 @@ in {
 
     epark.desktop.hyprland = {
       # hypridle.enable = true;
-      # hyprlock.enable = true;
+      hyprlock.enable = true;
       hyprpaper.enable = true;
       # kanshi.enable = true;
       rofi.enable = true;
-      # keyboard_layout.enable = true;
     };
   };
 }
