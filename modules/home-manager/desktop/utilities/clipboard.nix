@@ -10,10 +10,9 @@ in {
     lib.mkEnableOption "Enable persistent clipboard history via cliphist";
 
   config = lib.mkIf cfg.enable {
-    # 1. Install necessary utility packages
     home.packages = [
-      pkgs.cliphist # The history tracking database engine
-      pkgs.wl-clipboard # Provides wl-copy and wl-paste protocol handlers
+      pkgs.cliphist
+      pkgs.wl-clipboard
     ];
 
     services.cliphist.enable = true;

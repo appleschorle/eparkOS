@@ -3,11 +3,10 @@
   config,
   ...
 }: let
-  cfg = config.epark.browser.firefox;
+  cfg = config.epark.desktop.app.firefox;
 in {
-  options.epark.browser.firefox = {
+  options.epark.desktop.app.firefox = {
     enable = lib.mkEnableOption "Enable FireFox";
-    autofillCreditCardEnabled = lib.mkEnableOption "Enable auto fill of credit cards in firefox";
     bookmarks = lib.mkOption {
       type = lib.types.listOf lib.types.attrs;
       default = [];
@@ -74,7 +73,7 @@ in {
         BlockAboutProfiles = true;
 
         # UI and behavior
-        AutofillCreditCardEnabled = cfg.autofillCreditCardEnabled;
+        AutofillCreditCardEnabled = false;
         DontCheckDefaultBrowser = true;
         EnableTrackingProtection = {
           Value = true;

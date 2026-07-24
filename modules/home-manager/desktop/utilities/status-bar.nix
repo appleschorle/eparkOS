@@ -4,9 +4,9 @@
   lib,
   ...
 }: let
-  cfg = config.epark.desktop.waybar;
+  cfg = config.epark.desktop.linux.wayland.statusBars.waybar;
 in {
-  options.epark.desktop.waybar = {
+  options.epark.desktop.linux.wayland.statusBars.waybar = {
     enable = lib.mkEnableOption "Enable Waybar";
   };
 
