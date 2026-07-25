@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: let
-  cfg = config.epark.desktop.linux.phoneConnect.android;
+  cfg = config.epark.desktop.linux.utilities.phone;
 in {
-  options.epark.desktop.phoneConnect.android.enable =
+  options.epark.desktop.linux.utilities.phone.enable =
     lib.mkEnableOption "Enable Android device tools and integration (KDE Connect, Mirroring, Transfer)";
 
   config = lib.mkIf cfg.enable {

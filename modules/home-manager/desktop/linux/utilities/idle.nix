@@ -3,9 +3,9 @@
   lib,
   ...
 }: let
-  cfg = config.epark.desktop.hyprland.hypridle;
+  cfg = config.epark.desktop.linux.utilities.idle;
 in {
-  options.epark.desktop.hyprland.hypridle.enable = lib.mkEnableOption "Enable Hypridle for Hyprland";
+  options.epark.desktop.linux.utilities.idle.enable = lib.mkEnableOption "Enable Hypridle for Hyprland";
 
   config = lib.mkIf cfg.enable {
     services.hypridle = {

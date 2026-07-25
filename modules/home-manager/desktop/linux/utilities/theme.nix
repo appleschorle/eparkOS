@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: let
-  cfg = config.epark.desktop.theme;
+  cfg = config.epark.desktop.linux.utilities.theme;
 in {
-  options.epark.desktop.theme.enable = lib.mkEnableOption "Enable Gruvbox Material theme and icons for desktop";
+  options.epark.desktop.linux.utilities.theme.enable = lib.mkEnableOption "Enable Gruvbox Material theme and icons for desktop";
 
   config = lib.mkIf cfg.enable {
     home.packages = with pkgs; [

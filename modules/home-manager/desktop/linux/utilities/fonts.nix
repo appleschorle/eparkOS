@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: let
-  cfg = config.epark.desktop.fonts;
+  cfg = config.epark.desktop.linux.utilities.fonts;
 in {
-  options.epark.desktop.fonts.enable = lib.mkEnableOption "Enable system fonts and icon packages";
+  options.epark.desktop.linux.utilities.fonts.enable = lib.mkEnableOption "Enable system fonts and icon packages";
 
   config = lib.mkIf cfg.enable {
     fonts.fontconfig.enable = true;

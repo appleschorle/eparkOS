@@ -15,9 +15,6 @@
 
   environment.systemPackages = with pkgs; [
     wget
-    grim
-    slurp
-    wl-clipboard
     brightnessctl
   ];
 

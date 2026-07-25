@@ -1,5 +1,5 @@
 {
-  epark.browser.firefox.bookmarks = [
+  epark.desktop.app.firefox.bookmarks = [
     {
       name = "AI";
       bookmarks = [

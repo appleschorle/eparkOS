@@ -5,9 +5,9 @@
 }: let
   colors = config.colorScheme.palette;
   defaultFontFamily = "FiraCode Nerd Font";
-  cfg = config.epark.desktop.hyprland.hyprlock;
+  cfg = config.epark.desktop.linux.utilities.lockscreen;
 in {
-  options.epark.desktop.hyprland.hyprlock.enable = lib.mkEnableOption "Enable Hyprlock for Hyprland";
+  options.epark.desktop.linux.utilities.lockscreen.enable = lib.mkEnableOption "Enable Hyprlock for Hyprland";
 
   config = lib.mkIf cfg.enable {
     programs.hyprlock = {

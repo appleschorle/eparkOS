@@ -3,14 +3,14 @@
   lib,
   ...
 }: let
-  cfg = config.epark.desktop.hyprland.kanshi;
+  cfg = config.epark.desktop.linux.utilities.monitor;
 in {
-  options.epark.desktop.hyprland.kanshi.enable = lib.mkEnableOption "Enable Kanshi for Hyprland";
+  options.epark.desktop.linux.utilities.monitor.enable = lib.mkEnableOption "Enable configuring external monitors";
 
   config = lib.mkIf cfg.enable {
     services.kanshi = {
       enable = true;
-      systemdTarget = "hyprland-session.target";
+      # systemdTarget = "hyprland-session.target";
 
       settings = [
         # Default outputs

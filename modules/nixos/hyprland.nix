@@ -29,11 +29,6 @@ in
 
       environment.systemPackages = with pkgs; [
         nemo-with-extensions
-
-        grim
-        slurp
-        swappy
-        wl-clipboard
       ];
 
       programs.evince.enable = true;

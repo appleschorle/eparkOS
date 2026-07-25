@@ -1,5 +1,5 @@
 {
-  epark.browser.firefox.engines = {
+  epark.desktop.app.firefox.engines = {
     "Nix Packages" = {
       urls = [
         {

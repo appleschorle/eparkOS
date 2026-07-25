@@ -2,12 +2,12 @@
   imports = [
     inputs.nix-colors.homeManagerModules.default
 
-    ../../modules/home-manager/browser
-    ../../modules/home-manager/desktop
+    ../../modules/home-manager/desktop/app
+    ../../modules/home-manager/desktop/linux/wayland/hyprland
     ../../modules/home-manager/development
+    ../../modules/home-manager/ide
     ../../modules/home-manager/terminal
 
-    (import ../../modules/home-manager/ide {nixvim = inputs.nixvim.nixosModules.nixvim;})
     ./browser/firefox.nix
     ./development/git.nix
     ./terminal/zsh.nix
@@ -28,21 +28,12 @@
       development.lazygit.enable = true;
       development.direnv.enable = true;
       development.ruby.enable = true;
-      desktop.hyprland.enable = true;
-      desktop.discord.enable = true;
-      desktop.cursor.enable = true;
-      desktop.dunst.enable = true;
-      desktop.hyprpolkitagent.enable = true;
-      desktop.fonts.enable = true;
-      desktop.theme.enable = true;
-      desktop.waybar.enable = true;
-      desktop.androidIntegration.enable = true;
-      desktop.colorPicker.enable = true;
-      desktop.clipboard.enable = true;
+      desktop.app.discord.enable = true;
+      desktop.app.firefox.enable = true;
+      desktop.linux.wayland.hyprland.enable = true;
       terminal.tmux.enable = true;
       terminal.zoxide.enable = true;
       terminal.kitty.enable = true;
-      terminal.xdgUser.enable = true;
     };
   };
 }

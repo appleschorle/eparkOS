@@ -1,7 +1,7 @@
 {
   config,
-  lib,
   pkgs,
+  lib,
   ...
 }: let
   themeFileBackgroundImagePath = "rofi/themes/launchermenu.png";
@@ -20,11 +20,9 @@
     themeFile = "$HOME/.config/${themeFilePath}";
   };
   rofiLauncherMenu = pkgs.writeShellScriptBin "rofi-launchermenu" (builtins.readFile launcherMenuScript);
-
-  cfg = config.epark.desktop.hyprland.rofi.launchermenu;
+  cfg = config.epark.desktop.linux.utilities.launchMenu.app;
 in {
-  options.epark.desktop.hyprland.rofi.launchermenu.enable = lib.mkEnableOption "Enable launcher menu for Rofi";
-
+  options.epark.desktop.linux.utilities.launchMenu.app.enable = lib.mkEnableOption "Enable application menu";
   config = lib.mkIf cfg.enable {
     home.packages = [
       rofiLauncherMenu

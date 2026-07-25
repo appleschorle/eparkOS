@@ -1,13 +1,12 @@
-# filename: xdg-user.nix (Home Manager Level)
 {
   lib,
   config,
   ...
 }: let
-  cfg = config.epark.terminal.xdgUser;
+  cfg = config.epark.desktop.linux.utilities.dirs;
 in
   with lib; {
-    options.epark.terminal.xdgUser.enable = mkEnableOption "Enable user XDG base directories and paths";
+    options.epark.desktop.linux.utilities.dirs.enable = mkEnableOption "Enable user XDG base directories and paths";
 
     config = mkIf cfg.enable {
       xdg = {

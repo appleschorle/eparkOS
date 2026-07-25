@@ -1,7 +1,7 @@
 {
   config,
-  lib,
   pkgs,
+  lib,
   ...
 }: let
   themeFileBackgroundImagePath = "rofi/themes/powermenu.png";
@@ -20,10 +20,9 @@
     themeFile = "$HOME/.config/${themeFilePath}";
   };
   rofiPowerMenu = pkgs.writeShellScriptBin "rofi-powermenu" (builtins.readFile powerMenuScript);
-
-  cfg = config.epark.desktop.hyprland.rofi.powermenu;
+  cfg = config.epark.desktop.linux.utilities.launchMenu.power;
 in {
-  options.epark.desktop.hyprland.rofi.powermenu.enable = lib.mkEnableOption "Enable Powermenu for Rofi";
+  options.epark.desktop.linux.utilities.launchMenu.power.enable = lib.mkEnableOption "Enable power menu";
 
   config = lib.mkIf cfg.enable {
     home.packages = [

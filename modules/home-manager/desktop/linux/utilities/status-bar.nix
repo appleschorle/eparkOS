@@ -4,10 +4,10 @@
   lib,
   ...
 }: let
-  cfg = config.epark.desktop.linux.wayland.statusBars.waybar;
+  cfg = config.epark.desktop.linux.utilities.statusBar;
 in {
-  options.epark.desktop.linux.wayland.statusBars.waybar = {
-    enable = lib.mkEnableOption "Enable Waybar";
+  options.epark.desktop.linux.utilities.statusBar = {
+    enable = lib.mkEnableOption "Enable a status bar";
   };
 
   config = lib.mkIf cfg.enable {

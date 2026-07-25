@@ -4,9 +4,9 @@
   pkgs,
   ...
 }: let
-  cfg = config.epark.desktop.cursor;
+  cfg = config.epark.desktop.linux.utilities.cursor;
 in {
-  options.epark.desktop.cursor.enable = lib.mkEnableOption "Enable cursor for desktop";
+  options.epark.desktop.linux.utilities.cursor.enable = lib.mkEnableOption "Enable cursor for desktop";
 
   config = lib.mkIf cfg.enable {
     home.pointerCursor = {

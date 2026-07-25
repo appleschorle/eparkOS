@@ -4,8 +4,7 @@
     ./firefox/search_engines.nix
   ];
 
-  epark.browser.firefox = {
+  epark.desktop.app.firefox = {
     enable = true;
-    autofillCreditCardEnabled = true;
   };
 }
