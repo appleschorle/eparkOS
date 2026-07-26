@@ -21,6 +21,7 @@ in {
       enable = true;
       settings = {
         preload = [deployedPath];
+        splash = false;
 
         wallpaper = [
           {

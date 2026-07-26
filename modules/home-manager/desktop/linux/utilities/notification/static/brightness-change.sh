@@ -9,17 +9,17 @@ BRIGHTNESS=$(brightnessctl -m | awk -F, '{print substr($4, 1, length($4)-1)}')
 
 # 3. Choose a descriptive display icon based on current brightness strength
 if [ "$BRIGHTNESS" -lt 35 ]; then
-	ICON="display-brightness-low"
+  ICON="display-brightness-low"
 elif [ "$BRIGHTNESS" -lt 70 ]; then
-	ICON="display-brightness-medium"
+  ICON="display-brightness-medium"
 else
-	ICON="display-brightness-high"
+  ICON="display-brightness-high"
 fi
 
 # 4. Dispatch the updated values to your Dunst tracking card
 notify-send \
-	-h string:x-dunst-stack-tag:backlight_status \
-	-h int:value:"$BRIGHTNESS" \
-	-t 1500 \
-	-i "$ICON" \
-	"Brightness" "$BRIGHTNESS%"
+  -h string:x-dunst-stack-tag:backlight_status \
+  -h int:value:"$BRIGHTNESS" \
+  -t 1500 \
+  -i "$ICON" \
+  "Brightness" "$BRIGHTNESS%"
