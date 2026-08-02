@@ -28,8 +28,11 @@
       development.lazygit.enable = true;
       development.direnv.enable = true;
       development.ruby.enable = true;
+      desktop.app.libreOffice.enable = true;
       desktop.app.discord.enable = true;
       desktop.app.firefox.enable = true;
+      desktop.app.vlc.enable = true;
+      desktop.app.vpn.enable = true;
       desktop.linux.wayland.hyprland.enable = true;
       terminal.tmux.enable = true;
       terminal.zoxide.enable = true;

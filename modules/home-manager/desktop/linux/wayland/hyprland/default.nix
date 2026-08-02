@@ -7,14 +7,15 @@
   cfg = config.epark.desktop.linux.wayland.hyprland;
 in {
   imports = [
-    ../../utilities/launch-menu
     ../../utilities/authentication.nix
+    ../../utilities/autoMount.nix
     ../../utilities/clipboard.nix
     ../../utilities/colorpicker.nix
     ../../utilities/cursor.nix
     ../../utilities/dirs.nix
     ../../utilities/fonts.nix
     ../../utilities/idle.nix
+    ../../utilities/launch-menu
     ../../utilities/lockscreen.nix
     ../../utilities/monitor.nix
     ../../utilities/notification
@@ -33,13 +34,14 @@ in {
     };
 
     epark.desktop.linux.utilities = {
-      launchMenu.enable = true;
       authentication.enable = true;
+      autoMount.enable = true;
       clipboard.enable = true;
       colorpicker.enable = true;
       cursor.enable = true;
       fonts.enable = true;
       idle.enable = true;
+      launchMenu.enable = true;
       lockscreen.enable = true;
       monitor.enable = false;
       notification.enable = true;

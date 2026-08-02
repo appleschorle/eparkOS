@@ -8,6 +8,7 @@
   epark.tuigreet.enable = true;
   epark.media.enable = true;
   epark.hyprland.enable = true;
+  epark.vpn.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
