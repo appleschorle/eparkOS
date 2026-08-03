@@ -38,6 +38,8 @@
     efi.canTouchEfiVariables = true;
   };
 
+  virtualisation.docker.enable = true;
+
   users.mutableUsers = true;
   users.users.epark = {
     isNormalUser = true;
@@ -50,6 +52,8 @@
       "camera"
       "lp"
       "scanner"
+      "pipewire"
+      "docker"
     ];
     packages = [];
     shell = pkgs.zsh;
