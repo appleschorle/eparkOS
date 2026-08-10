@@ -626,10 +626,10 @@
     "waybar-dots": {
       "flake": false,
       "locked": {
-        "lastModified": 1785068925,
-        "narHash": "sha256-g1RdKAKreYYruAo0t89RmToH3T7PlSUOwGAiTvQ7JOI=",
+        "lastModified": 1786352991,
+        "narHash": "sha256-QZYgXHxfkbR4oa5e8Ytr/vJQPOOutT5lDIEKN3dcnUU=",
         "ref": "refs/heads/main",
-        "rev": "425618207c75f07af50668a674c501ea7f1b8f02",
+        "rev": "6cdef168e847158f96fef6ebf05b30a1b4c16e02",
         "shallow": true,
         "type": "git",
         "url": "ssh://git@github.com/appleschorle/waybar-dots.git"
