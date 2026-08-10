@@ -17,6 +17,7 @@
   environment.systemPackages = with pkgs; [
     wget
     brightnessctl
+    networkmanagerapplet
   ];
 
   nix.gc = {
@@ -39,6 +40,7 @@
   };
 
   virtualisation.docker.enable = true;
+  services.nginx.enable = true;
 
   users.mutableUsers = true;
   users.users.epark = {
