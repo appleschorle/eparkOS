@@ -3,11 +3,9 @@
     ./hardware-configuration.nix
     ../../modules/nixos
   ];
-  programs.dconf.enable = true;
 
-  epark.tuigreet.enable = true;
   epark.media.enable = true;
-  epark.hyprland.enable = true;
+  epark.gnome.enable = true;
   epark.vpn.enable = true;
 
   nixpkgs.config.allowUnfree = true;
@@ -17,7 +15,6 @@
   environment.systemPackages = with pkgs; [
     wget
     brightnessctl
-    networkmanagerapplet
   ];
 
   nix.gc = {
@@ -54,7 +51,6 @@
       "camera"
       "lp"
       "scanner"
-      "pipewire"
       "docker"
     ];
     packages = [];
@@ -65,10 +61,6 @@
     enable = true;
     powerOnBoot = true;
   };
-
-  services.blueman.enable = true;
-
-  services.libinput.enable = true;
 
   programs.zsh.enable = true;
   environment.pathsToLink = ["/share/applications" "/share/xdg-desktop-portal" "/share/zsh"];
