@@ -38,7 +38,6 @@
       development.nixvim.enable = true;
       development.lazygit.enable = true;
       development.direnv.enable = true;
-      development.ruby.enable = true;
       desktop.app.firefox.enable = true;
       desktop.linux.wayland.gnome.enable = true;
       terminal.tmux.enable = true;
