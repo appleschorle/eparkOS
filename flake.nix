@@ -1,6 +1,19 @@
 {
   description = "eparkOS";
 
+  nixConfig = {
+    substituters = [
+      # status: https://mirror.sjtu.edu.cn/
+      "https://mirror.sjtu.edu.cn/nix-channels/store"
+
+      # status: https://mirrors.tuna.tsinghua.edu.cn/
+      "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
+
+      # status: https://mirrors.ustc.edu.cn/status/
+      "https://mirrors.ustc.edu.cn/nix-channels/store"
+    ];
+  };
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
