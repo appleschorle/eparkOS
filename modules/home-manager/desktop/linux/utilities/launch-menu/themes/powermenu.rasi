@@ -4,12 +4,12 @@ configuration {
 
 * {
 	font: "FiraCode Nerd Font 16";
-	message-bg: #@base03@;
-	listview-bg: #@base00@;
-	element-bg: #@base03@;
-	fg: #@base05@;
-	selected-fg: #@base00@;
-	selected-bg: #@base08@;
+	message-bg: #@borderGray@;
+	listview-bg: #@bgHard@;
+	element-bg: #@borderGray@;
+	fg: #@textMain@;
+	selected-fg: #@bgHard@;
+	selected-bg: #@red@;
 }
 
 window {
@@ -82,3 +82,4 @@ element-text {
 element-text selected.normal {
 	text-color: @selected-fg;
 }
+

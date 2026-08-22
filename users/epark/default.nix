@@ -1,7 +1,5 @@
-{inputs, ...}: {
+{...}: {
   imports = [
-    inputs.nix-colors.homeManagerModules.default
-
     ../../modules/home-manager/desktop/app
     ../../modules/home-manager/desktop/linux/wayland/gnome
     ../../modules/home-manager/development
@@ -20,8 +18,6 @@
       stateVersion = "25.05";
     };
     programs.home-manager.enable = true;
-
-    colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
 
     epark = {
       development.nixvim.enable = true;

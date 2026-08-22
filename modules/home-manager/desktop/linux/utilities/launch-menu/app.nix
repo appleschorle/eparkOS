@@ -6,11 +6,18 @@
 }: let
   themeFileBackgroundImagePath = "rofi/themes/launchermenu.png";
   themeFilePath = "rofi/themes/launchermenu.rasi";
+  colors = {
+    bgHard = "1d2021"; # Hard contrast background
+    borderGray = "665c54"; # Muted gray for borders
+    textMain = "ebdbb2"; # Main foreground text color
+    red = "fb4934"; # Error / alert / active highlight
+  };
+
   themeFile = pkgs.replaceVars ./themes/launchermenu.rasi {
-    base00 = config.colorscheme.palette.base00;
-    base03 = config.colorscheme.palette.base03;
-    base05 = config.colorscheme.palette.base05;
-    base08 = config.colorscheme.palette.base08;
+    bgHard = colors.bgHard;
+    borderGray = colors.borderGray;
+    textMain = colors.textMain;
+    red = colors.red;
 
     backgroundImage = "/home/epark/.config/${themeFileBackgroundImagePath}";
   };
