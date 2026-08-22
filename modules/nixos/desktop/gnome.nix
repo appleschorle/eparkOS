@@ -3,10 +3,10 @@
   config,
   ...
 }: let
-  cfg = config.epark.gnome;
+  cfg = config.epark.desktop.gnome;
 in
   with lib; {
-    options.epark.gnome.enable = mkEnableOption "Enable Gnome";
+    options.epark.desktop.gnome.enable = mkEnableOption "Enable Gnome";
 
     config = mkIf cfg.enable {
       services.displayManager.gdm.enable = true;
