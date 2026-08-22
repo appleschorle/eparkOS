@@ -22,8 +22,11 @@
       discord
       evolution
       foot
+      homepage-dashboard
       karere
       libreoffice-fresh
+      python314
+      ruby
       vlc
     ];
 

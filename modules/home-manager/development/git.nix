@@ -9,7 +9,7 @@ in {
     enable = lib.mkEnableOption "Enable Git";
     userEmail = lib.mkOption {
       type = lib.types.str;
-      default = "";
+      default = "eugenepark2001@gmail.com";
       description = "Email used for git";
       example = "max.mustermann@gmail.com";
     };
