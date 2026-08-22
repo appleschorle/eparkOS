@@ -1,14 +1,10 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }: let
   cfg = config.epark.desktop.linux.wayland.gnome;
 in {
-  imports = [
-  ];
-
   options.epark.desktop.linux.wayland.gnome.enable = lib.mkEnableOption "Enable config for gnome";
 
   config = lib.mkIf cfg.enable {
@@ -30,11 +26,5 @@ in {
         picture-uri-dark = "file://${./gruvbox_astro.jpg}"; # Used in Dark Mode
       };
     };
-
-    home.packages = with pkgs; [
-      karere
-      foot
-      evolution
-    ];
   };
 }

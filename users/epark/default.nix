@@ -20,6 +20,9 @@
 
     home.packages = with pkgs; [
       discord
+      evolution
+      foot
+      karere
       libreoffice-fresh
       vlc
     ];
