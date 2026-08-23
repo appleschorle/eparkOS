@@ -39,6 +39,10 @@ in {
           settings = {
             "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
             "browser.bookmarks.addedImportButton" = false;
+            "browser.startup.page" = 1;
+
+            # Set your custom homepage address
+            "browser.startup.homepage" = "http://localhost:8082";
           };
           bookmarks = {
             force = true;
