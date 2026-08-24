@@ -1,7 +1,15 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     ../../modules/nixos
+  ];
+
+  environment.systemPackages = with pkgs; [
+    sops
   ];
 
   time.timeZone = "Europe/Stockholm";
@@ -49,6 +57,9 @@
     settings = {
       title = "Homepage";
     };
+    environmentFiles = [
+      (/. + config.sops.secrets."homepage/google_calendar_api_url".path)
+    ];
     widgets = [
       {
         openmeteo = {
@@ -63,6 +74,65 @@
           };
         };
       }
+      {
+        datetime = {
+          text_size = "xl";
+          format = {
+            timeStyle = "short";
+            dateStyle = "short";
+          };
+        };
+      }
+      {
+        greeting = {
+          text_size = "xl";
+          text = "Hello!";
+        };
+      }
+      {
+        search = {
+          provier = "google";
+          focus = true;
+          showSearchSuggestions = true;
+          target = "_blank";
+        };
+      }
+    ];
+    services = [
+      {
+        Calendars = [
+          {
+            Personal = {
+              widget = {
+                type = "calendar";
+                integrations = [
+                  {
+                    type = "ical";
+                    name = "Google";
+                    url = "{{HOMEPAGE_VAR_GOOGLE_CALENDAR_API_URL}}";
+                  }
+                ];
+              };
+            };
+          }
+          {
+            Agenda = {
+              widget = {
+                type = "calendar";
+                view = "agenda";
+                showTime = true;
+                integrations = [
+                  {
+                    type = "ical";
+                    name = "Google";
+                    url = "{{HOMEPAGE_VAR_GOOGLE_CALENDAR_API_URL}}";
+                  }
+                ];
+              };
+            };
+          }
+        ];
+      }
     ];
     bookmarks = [
       {
@@ -71,6 +141,7 @@
             OpenAI = [
               {
                 abbr = "OP";
+                icon = "openai.png";
                 href = "https://openai.com";
               }
             ];
@@ -79,6 +150,7 @@
             Gemini = [
               {
                 abbr = "GE";
+                icon = "google-gemini.png";
                 href = "https://google.com";
               }
             ];
@@ -91,6 +163,7 @@
             WhatsApp = [
               {
                 abbr = "WA";
+                icon = "si-whatsapp";
                 href = "https://whatsapp.com";
               }
             ];
@@ -99,6 +172,7 @@
             LinkedIn = [
               {
                 abbr = "LI";
+                icon = "si-linkedin";
                 href = "https://linkedin.com";
               }
             ];
@@ -111,6 +185,7 @@
             Crunchyroll = [
               {
                 abbr = "CR";
+                icon = "crunchyroll.png";
                 href = "https://crunchyroll.com";
               }
             ];
@@ -119,6 +194,7 @@
             YouTube = [
               {
                 abbr = "YT";
+                icon = "si-youtube";
                 href = "https://www.youtube.com/";
               }
             ];
@@ -131,6 +207,7 @@
             MyNixOS = [
               {
                 abbr = "MY";
+                icon = "nixos.png";
                 href = "https://mynixos.com";
               }
             ];
@@ -139,7 +216,8 @@
             NixOS = [
               {
                 abbr = "NI";
-                href = "https://nixos.org/";
+                icon = "nixos.png";
+                href = "https://nixos.org";
               }
             ];
           }
@@ -147,7 +225,8 @@
             NixOSWiki = [
               {
                 abbr = "WI";
-                href = "https://wiki.nixos.org/";
+                icon = "nixos.png";
+                href = "https://nixos.org";
               }
             ];
           }
@@ -159,6 +238,7 @@
             FydeOS = [
               {
                 abbr = "SF";
+                icon = "mdi-android";
                 href = "https://fydeos.io";
               }
             ];

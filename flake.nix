@@ -40,6 +40,10 @@
       url = "git+ssh://git@github.com/appleschorle/waybar-dots.git?shallow=1";
       flake = false;
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {nixpkgs, ...} @ inputs: {
@@ -51,6 +55,13 @@
         modules = [
           ./hosts/personal
           inputs.home-manager.nixosModules.home-manager
+          inputs.sops-nix.nixosModules.sops
+          {
+            sops.defaultSopsFile = ./secrets/secrets.yaml;
+            sops.defaultSopsFormat = "yaml";
+            sops.age.keyFile = "/home/epark/.config/sops/age/keys.txt";
+            sops.secrets."homepage/google_calendar_api_url" = {};
+          }
           {nixpkgs.overlays = [inputs.nur.overlays.default];}
           {
             home-manager.useGlobalPkgs = true;
