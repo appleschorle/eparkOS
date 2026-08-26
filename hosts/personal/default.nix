@@ -9,6 +9,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    ghostty
     sops
     spotify
     zoxide

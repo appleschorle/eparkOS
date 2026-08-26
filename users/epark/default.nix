@@ -4,7 +4,6 @@
     ../../modules/home-manager/desktop/linux/wayland/gnome
     ../../modules/home-manager/development
     ../../modules/home-manager/ide
-    ../../modules/home-manager/terminal
 
     ./browser/firefox.nix
     ./development/git.nix
@@ -38,7 +37,6 @@
       development.direnv.enable = true;
       desktop.app.firefox.enable = true;
       desktop.linux.wayland.gnome.enable = true;
-      terminal.kitty.enable = true;
     };
   };
 }
