@@ -8,7 +8,6 @@
 
     ./browser/firefox.nix
     ./development/git.nix
-    ./terminal/zsh.nix
   ];
 
   config = {
@@ -40,7 +39,6 @@
       desktop.app.firefox.enable = true;
       desktop.linux.wayland.gnome.enable = true;
       terminal.tmux.enable = true;
-      terminal.zoxide.enable = true;
       terminal.kitty.enable = true;
     };
   };

@@ -10,12 +10,14 @@
 
   environment.systemPackages = with pkgs; [
     sops
+    spotify
+    zoxide
+    zsh
   ];
 
   time.timeZone = "Europe/Stockholm";
   networking.hostName = "eugene-laptop";
 
-  programs.zsh.enable = true;
   users.mutableUsers = true;
   users.users.epark = {
     isNormalUser = true;
@@ -49,6 +51,10 @@
     enable = true;
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
+  };
+
+  services.ollama = {
+    enable = true;
   };
 
   services.mullvad-vpn.enable = true;
