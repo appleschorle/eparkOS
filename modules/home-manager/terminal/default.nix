@@ -1,6 +1,5 @@
 {...}: {
   imports = [
-    ./tmux
     ./kitty.nix
   ];
 }

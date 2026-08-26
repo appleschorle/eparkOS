@@ -38,7 +38,6 @@
       development.direnv.enable = true;
       desktop.app.firefox.enable = true;
       desktop.linux.wayland.gnome.enable = true;
-      terminal.tmux.enable = true;
       terminal.kitty.enable = true;
     };
   };
