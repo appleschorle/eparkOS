@@ -12,12 +12,12 @@
     sops
     spotify
     zoxide
-    zsh
   ];
 
   time.timeZone = "Europe/Stockholm";
   networking.hostName = "eugene-laptop";
 
+  programs.zsh.enable = true;
   users.mutableUsers = true;
   users.users.epark = {
     isNormalUser = true;
