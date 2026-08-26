@@ -12,6 +12,7 @@
     ghostty
     sops
     spotify
+    tmux
     zoxide
   ];
 
