@@ -6,7 +6,6 @@
     ../../modules/home-manager/ide
 
     ./browser/firefox.nix
-    ./development/git.nix
   ];
 
   config = {
