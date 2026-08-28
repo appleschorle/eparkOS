@@ -2,8 +2,6 @@
   imports = [
     ../../modules/home-manager
     ../../modules/home-manager/desktop/linux/wayland/gnome
-    ../../modules/home-manager/development
-    ../../modules/home-manager/ide
 
     ./browser/firefox.nix
   ];
@@ -30,9 +28,6 @@
     };
 
     epark = {
-      development.nixvim.enable = true;
-      development.lazygit.enable = true;
-      development.direnv.enable = true;
       desktop.app.firefox.enable = true;
       desktop.linux.wayland.gnome.enable = true;
     };

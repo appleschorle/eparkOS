@@ -9,10 +9,18 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    direnv
     ghostty
+    git
+    lazygit
+    lua-language-server
+    neovim
+    prettier
     sops
     spotify
+    stylua
     tmux
+    tree-sitter
     zoxide
   ];
 
@@ -254,6 +262,11 @@
         ];
       }
     ];
+  };
+
+  services.xserver.xkb = {
+    layout = "us,se,de";
+    options = "grp:alt_shift_toggle"; # Shortcut to switch languages
   };
 
   system.stateVersion = "25.05";
