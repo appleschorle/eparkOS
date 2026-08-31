@@ -2,19 +2,21 @@
   lib,
   config,
   ...
-}: let
+}:
+let
   cfg = config.epark.desktop.app.firefox;
-in {
+in
+{
   options.epark.desktop.app.firefox = {
     enable = lib.mkEnableOption "Enable FireFox";
     bookmarks = lib.mkOption {
       type = lib.types.listOf lib.types.attrs;
-      default = [];
+      default = [ ];
       description = "Bookmarks in firefox";
     };
     engines = lib.mkOption {
       type = lib.types.attrs;
-      default = {};
+      default = { };
       description = "Customisation of engines";
     };
   };
@@ -26,7 +28,7 @@ in {
 
       configPath = "${config.xdg.configHome}/mozilla/firefox";
 
-      languagePacks = ["en-US"];
+      languagePacks = [ "en-US" ];
 
       profiles = {
         personal = {
@@ -40,9 +42,6 @@ in {
             "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
             "browser.bookmarks.addedImportButton" = false;
             "browser.startup.page" = 1;
-
-            # Set your custom homepage address
-            "browser.startup.homepage" = "http://localhost:8082";
           };
           bookmarks = {
             force = true;
@@ -93,20 +92,22 @@ in {
         # Check about:support for extension/add-on ID strings.
         # Valid strings for installation_mode are "allowed", "blocked",
         # "force_installed" and "normal_installed".
-        ExtensionSettings = let
-          moz = short: "https://addons.mozilla.org/firefox/downloads/latest/${short}/latest.xpi";
-        in {
-          "*".installation_mode = "blocked"; # blocks all addons except the ones specified below
-          # uBlock Origin:
-          "uBlock0@raymondhill.net" = {
-            install_url = moz "ublock-origin";
-            installation_mode = "force_installed";
+        ExtensionSettings =
+          let
+            moz = short: "https://addons.mozilla.org/firefox/downloads/latest/${short}/latest.xpi";
+          in
+          {
+            "*".installation_mode = "blocked"; # blocks all addons except the ones specified below
+            # uBlock Origin:
+            "uBlock0@raymondhill.net" = {
+              install_url = moz "ublock-origin";
+              installation_mode = "force_installed";
+            };
+            "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
+              install_url = moz "bitwarden-password-manager";
+              installation_mode = "force_installed";
+            };
           };
-          "{446900e4-71c2-419f-a6a7-df9c091e268b}" = {
-            install_url = moz "bitwarden-password-manager";
-            installation_mode = "force_installed";
-          };
-        };
       };
     };
   };
