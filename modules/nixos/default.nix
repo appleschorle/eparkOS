@@ -1,13 +1,15 @@
-{...}: {
+{ ... }: {
   imports = [
-    ./desktop/gnome.nix
-    ./desktop/hyprland.nix
+    ./gnome.nix
     ./media.nix
   ];
 
   config = {
     nixpkgs.config.allowUnfree = true;
-    nix.settings.experimental-features = ["nix-command" "flakes"];
+    nix.settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     nix.gc = {
       automatic = true;
       options = "--delete-older-than 30d";

@@ -20,6 +20,7 @@
     nixd
     nixfmt
     prettier
+    ripgrep
     sops
     spotify
     stylua

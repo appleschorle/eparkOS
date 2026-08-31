@@ -2,18 +2,20 @@
   lib,
   config,
   ...
-}: let
+}:
+let
   cfg = config.epark.desktop.linux.wayland.gnome;
-in {
+in
+{
   options.epark.desktop.linux.wayland.gnome.enable = lib.mkEnableOption "Enable config for gnome";
 
   config = lib.mkIf cfg.enable {
     xdg.mimeApps = {
       enable = true;
       defaultApplications = {
-        "text/html" = ["firefox.desktop"];
-        "x-scheme-handler/http" = ["firefox.desktop"];
-        "x-scheme-handler/https" = ["firefox.desktop"];
+        "text/html" = [ "firefox.desktop" ];
+        "x-scheme-handler/http" = [ "firefox.desktop" ];
+        "x-scheme-handler/https" = [ "firefox.desktop" ];
       };
     };
     dconf.settings = {
