@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   ...
 }:
 {
@@ -12,20 +11,30 @@
   environment.systemPackages = with pkgs; [
     clang
     direnv
+    discord
+    evolution
+    firefox
     ghostty
     git
+    google-chrome
+    karere
     lazygit
+    libreoffice-fresh
     lua-language-server
+    mullvad-vpn
     neovim
     nixd
     nixfmt
     prettier
+    python314
     ripgrep
+    ruby
     sops
     spotify
     stylua
     tmux
     tree-sitter
+    vlc
     zoxide
   ];
 
