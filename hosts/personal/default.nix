@@ -2,19 +2,23 @@
   pkgs,
   config,
   ...
-}: {
+}:
+{
   imports = [
     ./hardware-configuration.nix
     ../../modules/nixos
   ];
 
   environment.systemPackages = with pkgs; [
+    clang
     direnv
     ghostty
     git
     lazygit
     lua-language-server
     neovim
+    nixd
+    nixfmt
     prettier
     sops
     spotify
@@ -42,7 +46,7 @@
       "scanner"
       "docker"
     ];
-    packages = [];
+    packages = [ ];
     shell = pkgs.zsh;
   };
 
