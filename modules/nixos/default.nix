@@ -16,21 +16,14 @@
       dates = "weekly";
       randomizedDelaySec = "45min";
     };
-
     boot.loader = {
       systemd-boot.enable = true;
       efi.canTouchEfiVariables = true;
     };
-
     networking.networkmanager.enable = true;
     hardware.bluetooth = {
       enable = true;
       powerOnBoot = true;
-    };
-
-    epark = {
-      desktop.gnome.enable = true;
-      media.enable = true;
     };
   };
 }
