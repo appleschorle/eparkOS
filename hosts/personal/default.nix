@@ -89,6 +89,8 @@
 
     services.mullvad-vpn.enable = true;
 
+    programs.kdeconnect.enable = true;
+
     system.stateVersion = "25.05";
   };
 }
