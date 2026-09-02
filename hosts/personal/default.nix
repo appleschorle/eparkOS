@@ -1,18 +1,18 @@
 {
+  inputs,
   pkgs,
   ...
 }:
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/nixos
+    ../../modules/nixos/nixos.nix
+    ../../modules/nixos/gnome.nix
+    ../../modules/nixos/media.nix
   ];
 
   config = {
-    epark = {
-      gnome.enable = true;
-      media.enable = true;
-    };
+    nixpkgs.overlays = [ inputs.nur.overlays.default ];
 
     environment.systemPackages = with pkgs; [
       clang

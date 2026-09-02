@@ -83,8 +83,7 @@
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
         "nur": "nur",
-        "sops-nix": "sops-nix",
-        "waybar-dots": "waybar-dots"
+        "sops-nix": "sops-nix"
       }
     },
     "sops-nix": {
@@ -105,23 +104,6 @@
         "owner": "Mic92",
         "repo": "sops-nix",
         "type": "github"
-      }
-    },
-    "waybar-dots": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1786352991,
-        "narHash": "sha256-QZYgXHxfkbR4oa5e8Ytr/vJQPOOutT5lDIEKN3dcnUU=",
-        "ref": "refs/heads/main",
-        "rev": "6cdef168e847158f96fef6ebf05b30a1b4c16e02",
-        "shallow": true,
-        "type": "git",
-        "url": "ssh://git@github.com/appleschorle/waybar-dots.git"
-      },
-      "original": {
-        "shallow": true,
-        "type": "git",
-        "url": "ssh://git@github.com/appleschorle/waybar-dots.git"
       }
     }
   },

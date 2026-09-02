@@ -1,28 +1,16 @@
+{ ... }:
 {
-  lib,
-  config,
-  ...
-}:
-let
-  cfg = config.epark.media;
-in
-with lib;
-{
-  options.epark.media.enable = mkEnableOption "Enable multimedia modules";
+  security.rtkit.enable = true;
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+    wireplumber.enable = true;
 
-  config = mkIf cfg.enable {
-    security.rtkit.enable = true;
-    services.pipewire = {
+    alsa = {
       enable = true;
-      pulse.enable = true;
-      wireplumber.enable = true;
-
-      alsa = {
-        enable = true;
-        support32Bit = true;
-      };
+      support32Bit = true;
     };
-
-    programs.fuse.enable = true;
   };
+
+  programs.fuse.enable = true;
 }
