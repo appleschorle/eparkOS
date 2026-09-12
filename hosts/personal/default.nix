@@ -23,6 +23,7 @@
       ghostty
       git
       google-chrome
+      google-java-format
       jdt-language-server
       karere
       lazygit
