@@ -23,6 +23,7 @@
       ghostty
       git
       google-chrome
+      jdt-language-server
       karere
       lazygit
       libreoffice-fresh
@@ -90,6 +91,8 @@
     services.mullvad-vpn.enable = true;
 
     programs.kdeconnect.enable = true;
+
+    programs.java.enable = true;
 
     system.stateVersion = "25.05";
   };
