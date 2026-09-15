@@ -28,6 +28,7 @@
       lazygit
       libreoffice-fresh
       lua-language-server
+      maven
       mullvad-vpn
       neovim
       nixd
