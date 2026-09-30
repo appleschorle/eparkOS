@@ -26,6 +26,7 @@
       jdt-language-server
       karere
       lazygit
+      lemminx
       libreoffice-fresh
       lua-language-server
       maven
@@ -94,6 +95,9 @@
     programs.kdeconnect.enable = true;
 
     programs.java.enable = true;
+
+    programs.ausweisapp.enable = true;
+    programs.ausweisapp.openFirewall = true;
 
     system.stateVersion = "25.05";
   };
