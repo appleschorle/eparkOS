@@ -38,6 +38,7 @@
       python314
       ripgrep
       ruby
+      simple-scan
       sops
       spotify
       stylua
@@ -98,6 +99,8 @@
 
     programs.ausweisapp.enable = true;
     programs.ausweisapp.openFirewall = true;
+
+    hardware.sane.enable = true;
 
     system.stateVersion = "25.05";
   };
