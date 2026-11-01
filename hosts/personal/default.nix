@@ -34,6 +34,7 @@
       neovim
       nixd
       nixfmt
+      obsidian
       prettier
       python314
       ripgrep
