@@ -16,6 +16,7 @@
 
     environment.systemPackages = with pkgs; [
       clang
+      claude-code
       direnv
       discord
       evolution
