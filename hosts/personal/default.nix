@@ -35,6 +35,7 @@
       neovim
       nixd
       nixfmt
+      nodejs
       obsidian
       prettier
       python314
