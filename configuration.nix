@@ -14,11 +14,12 @@
     ghostty
     git
     go
+    gopls
     google-chrome
     jdt-language-server
     lazygit
     lemminx
-    libreoffice-fresh
+    libreoffice
     lua-language-server
     maven
     mullvad-vpn
