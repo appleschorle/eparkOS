@@ -108,14 +108,6 @@
   systemd.tmpfiles.rules = [
     "d /home/epark/Media 0700 epark users -"
     "d /home/epark/Media/Screenshots 0700 epark users -"
-
-    "L+ /home/epark/.config/direnv - - - - /home/epark/repos/dotfiles/direnv"
-    "L+ /home/epark/.config/ghostty - - - - /home/epark/repos/dotfiles/ghostty"
-    "L+ /home/epark/.config/git - - - - /home/epark/repos/dotfiles/git"
-    "L+ /home/epark/.config/lazygit - - - - /home/epark/repos/dotfiles/lazygit"
-    "L+ /home/epark/.config/nvim - - - - /home/epark/repos/dotfiles/nvim"
-    "L+ /home/epark/.config/tmux - - - - /home/epark/repos/dotfiles/tmux"
-    "L+ /home/epark/.config/zsh - - - - /home/epark/repos/dotfiles/zsh"
   ];
 
   fonts.packages = with pkgs; [
